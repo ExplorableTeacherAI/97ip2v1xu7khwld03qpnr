@@ -33,20 +33,26 @@ import {
 } from "../model";
 
 // ── View constants ────────────────────────────────────────────────────────────
-// Compact layout to fit within the ~340px max figure height constraint
+// Compact layout: f(x)=180px, A(x)=200px, gap=50px, max total 450px
 
 const VIEW_WIDTH = 560;
-const VIEW_HEIGHT = 280; // Very compact height for section bounds
-const GRAPH_HEIGHT = 100; // Compact graph display
-const GRAPH_GAP = 20; // Compact gap between graphs
-const PADDING_X = 48;
-const PADDING_Y = 16;
+const GRAPH_HEIGHT_F = 140; // f(x) graph height
+const GRAPH_HEIGHT_A = 160; // A(x) graph height
+const GRAPH_GAP = 36; // Gap between graphs
+const PADDING_X = 56; // Left padding for labels
+const PADDING_TOP = 12;
+const PADDING_BOTTOM = 36; // Space for x-axis labels
+const VIEW_HEIGHT = PADDING_TOP + GRAPH_HEIGHT_F + GRAPH_GAP + GRAPH_HEIGHT_A + PADDING_BOTTOM; // ~384px
 
 // Graph domains
 const X_MIN = 0;
 const X_MAX = 8;
 const F_Y_MAX = 70;
 const A_Y_MAX = 320;
+
+// Safe margins for draggable range
+const X_DRAG_MIN = 0.5;
+const X_DRAG_MAX = 7.8;
 
 // Colors following the design language
 const INK = "#334155";
@@ -59,17 +65,24 @@ const FILL_TEAL = "rgba(98, 208, 173, 0.15)";
 
 // Transform from math coordinates to SVG coordinates
 function xToSvg(x: number): number {
-    return PADDING_X + ((x - X_MIN) / (X_MAX - X_MIN)) * (VIEW_WIDTH - 2 * PADDING_X);
+    return PADDING_X + ((x - X_MIN) / (X_MAX - X_MIN)) * (VIEW_WIDTH - PADDING_X - 16);
 }
 
 function fYToSvg(y: number): number {
-    return PADDING_Y + GRAPH_HEIGHT - (y / F_Y_MAX) * GRAPH_HEIGHT;
+    return PADDING_TOP + GRAPH_HEIGHT_F - (y / F_Y_MAX) * GRAPH_HEIGHT_F;
 }
 
 function aYToSvg(y: number): number {
-    const topOfAGraph = PADDING_Y + GRAPH_HEIGHT + GRAPH_GAP;
-    return topOfAGraph + GRAPH_HEIGHT - (y / A_Y_MAX) * GRAPH_HEIGHT;
+    const topOfAGraph = PADDING_TOP + GRAPH_HEIGHT_F + GRAPH_GAP;
+    return topOfAGraph + GRAPH_HEIGHT_A - (y / A_Y_MAX) * GRAPH_HEIGHT_A;
 }
+
+// Graph bounds for rendering
+const F_GRAPH_TOP = PADDING_TOP;
+const F_GRAPH_BOTTOM = PADDING_TOP + GRAPH_HEIGHT_F;
+const A_GRAPH_TOP = PADDING_TOP + GRAPH_HEIGHT_F + GRAPH_GAP;
+const A_GRAPH_BOTTOM = A_GRAPH_TOP + GRAPH_HEIGHT_A;
+const X_AXIS_Y = VIEW_HEIGHT - PADDING_BOTTOM + 8;
 
 // ── Flower Component (planted along A(x) curve) ───────────────────────────────
 
@@ -238,8 +251,8 @@ function FTCVisualization() {
         const rect = svg.getBoundingClientRect();
         const svgX = ((event.clientX - rect.left) / rect.width) * VIEW_WIDTH;
         // Convert back to math coordinates
-        const mathX = X_MIN + ((svgX - PADDING_X) / (VIEW_WIDTH - 2 * PADDING_X)) * (X_MAX - X_MIN);
-        return clamp(mathX, 0.5, 8);
+        const mathX = X_MIN + ((svgX - PADDING_X) / (VIEW_WIDTH - PADDING_X - 16)) * (X_MAX - X_MIN);
+        return clamp(mathX, X_DRAG_MIN, X_DRAG_MAX);
     }, [xPos]);
 
     const handlePointerMove = useCallback((event: React.PointerEvent<SVGCircleElement>) => {
@@ -257,12 +270,9 @@ function FTCVisualization() {
         const svgY = ((event.clientY - rect.top) / rect.height) * VIEW_HEIGHT;
 
         // Only plant if clicking in the A(x) graph region
-        const aGraphTop = PADDING_Y + GRAPH_HEIGHT + GRAPH_GAP;
-        const aGraphBottom = aGraphTop + GRAPH_HEIGHT;
-
-        if (svgY >= aGraphTop && svgY <= aGraphBottom) {
+        if (svgY >= A_GRAPH_TOP && svgY <= A_GRAPH_BOTTOM) {
             const svgX = ((event.clientX - rect.left) / rect.width) * VIEW_WIDTH;
-            const mathX = X_MIN + ((svgX - PADDING_X) / (VIEW_WIDTH - 2 * PADDING_X)) * (X_MAX - X_MIN);
+            const mathX = X_MIN + ((svgX - PADDING_X) / (VIEW_WIDTH - PADDING_X - 16)) * (X_MAX - X_MIN);
 
             if (mathX >= boundA + 0.5 && mathX <= X_MAX - 0.5) {
                 // Add flower at this position
@@ -301,9 +311,9 @@ function FTCVisualization() {
                 {/* Background and axes */}
                 <rect
                     x={PADDING_X}
-                    y={PADDING_Y}
-                    width={VIEW_WIDTH - 2 * PADDING_X}
-                    height={GRAPH_HEIGHT}
+                    y={F_GRAPH_TOP}
+                    width={VIEW_WIDTH - PADDING_X - 16}
+                    height={GRAPH_HEIGHT_F}
                     fill="#FAFBFC"
                     stroke={INK_QUIET}
                     strokeWidth="1"
@@ -315,7 +325,7 @@ function FTCVisualization() {
                         key={`f-grid-${y}`}
                         x1={PADDING_X}
                         y1={fYToSvg(y)}
-                        x2={VIEW_WIDTH - PADDING_X}
+                        x2={VIEW_WIDTH - 16}
                         y2={fYToSvg(y)}
                         stroke={INK_QUIET}
                         strokeWidth="0.5"
@@ -325,21 +335,21 @@ function FTCVisualization() {
 
                 {/* Y-axis label */}
                 <text
-                    x={PADDING_X - 8}
-                    y={PADDING_Y + GRAPH_HEIGHT / 2}
-                    fill={INK}
-                    fontSize="12"
+                    x={PADDING_X - 6}
+                    y={F_GRAPH_TOP + GRAPH_HEIGHT_F / 2 - 8}
+                    fill={ACCENT_INDIGO}
+                    fontSize="13"
                     textAnchor="end"
-                    dominantBaseline="middle"
+                    fontWeight="600"
                     fontStyle="italic"
                 >
                     f(x)
                 </text>
                 <text
-                    x={PADDING_X - 8}
-                    y={PADDING_Y + GRAPH_HEIGHT / 2 + 14}
+                    x={PADDING_X - 6}
+                    y={F_GRAPH_TOP + GRAPH_HEIGHT_F / 2 + 8}
                     fill={INK_STRUCTURE}
-                    fontSize="10"
+                    fontSize="9"
                     textAnchor="end"
                 >
                     speed
@@ -366,7 +376,7 @@ function FTCVisualization() {
                 {/* Vertical line at x */}
                 <line
                     x1={markerSvgX}
-                    y1={PADDING_Y}
+                    y1={F_GRAPH_TOP}
                     x2={markerSvgX}
                     y2={fYToSvg(0)}
                     stroke={ACCENT_TEAL}
@@ -385,29 +395,37 @@ function FTCVisualization() {
                     strokeDasharray="6,3"
                 />
 
-                {/* f(x) value readout */}
+                {/* f(x) value readout - positioned to stay within bounds */}
                 <g data-concept="ftc_fValue">
-                    <rect
-                        x={PADDING_X - 48}
-                        y={fMarkerY - 10}
-                        width="42"
-                        height="20"
-                        fill="white"
-                        stroke={ACCENT_INDIGO}
-                        strokeWidth="1"
-                        rx="3"
-                    />
-                    <text
-                        x={PADDING_X - 27}
-                        y={fMarkerY + 4}
-                        fill={ACCENT_INDIGO}
-                        fontSize="12"
-                        textAnchor="middle"
-                        fontWeight="600"
-                        style={{ fontVariantNumeric: "tabular-nums" }}
-                    >
-                        {fValue.toFixed(1)}
-                    </text>
+                    {(() => {
+                        // Clamp readout Y to stay within graph bounds
+                        const readoutY = Math.max(F_GRAPH_TOP + 2, Math.min(fMarkerY - 10, F_GRAPH_BOTTOM - 22));
+                        return (
+                            <>
+                                <rect
+                                    x={4}
+                                    y={readoutY}
+                                    width="46"
+                                    height="20"
+                                    fill="white"
+                                    stroke={ACCENT_INDIGO}
+                                    strokeWidth="1"
+                                    rx="3"
+                                />
+                                <text
+                                    x={27}
+                                    y={readoutY + 14}
+                                    fill={ACCENT_INDIGO}
+                                    fontSize="12"
+                                    textAnchor="middle"
+                                    fontWeight="600"
+                                    style={{ fontVariantNumeric: "tabular-nums" }}
+                                >
+                                    {fValue.toFixed(1)}
+                                </text>
+                            </>
+                        );
+                    })()}
                 </g>
 
                 {/* Point on f(x) curve */}

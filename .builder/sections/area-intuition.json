@@ -1,27 +1,20 @@
 {
   "section_id": "area-intuition",
   "title": "Predict-Then-Measure Area Betting",
-  "status": "needs_attention",
-  "detail": "built, but verification did not pass \u2014 review this section",
-  "summary": "Predict-Then-Measure Area Betting \u2014 Realizing that narrow-but-tall sections contribute as much area as wide-but-short sections, and that systematic over/underestimation patterns emerge based on curve concavity",
-  "verify_passed": false,
-  "is_revision": false,
-  "registered": true,
-  "issues": [
-    "Visual check failed: shaded region visible between bounds, no fill animation running, area value hidden or showing placeholder",
-    "Breaks within its control range: {'type': 'clipped_content', 'detail': '<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 369px', 'var': 'areaIntuiti",
-    "Breaks within its control range: {'type': 'clipped_content', 'detail': '<g> [f-graph] \"f(x)speed51.2\" overflows the section by 205px', 'var': 'areaIntuition_boundA', 'value'",
-    "'areaIntuition_boundA' doesn't behave as designed: Frame 3 (areaIntuition_boundA=3.5): The circled interaction marker appears disconnected or; Frames 2-4 show the curved region shape itself changing in height/profile rather than only",
-    "'areaIntuition_boundB' doesn't behave as designed: Frame 3 (areaIntuition_boundB=4.5): The prediction token and measurement region appear mis; Frame 4 (areaIntuition_boundB=6.2): The shaded region under the curve narrows significantl",
-    "JavaScript errors occurred while interacting with it"
-  ],
+  "status": "building",
+  "detail": "revising",
+  "summary": "",
+  "verify_passed": null,
+  "is_revision": true,
+  "registered": false,
+  "issues": [],
   "skip_verification": false,
   "sdk_session_id": "a5ecc1d5-559d-4bdd-aa37-608f0d40f3e0",
-  "created_at": 1784599921.097997,
-  "updated_at": 1784601656.8889751,
+  "created_at": 1784601808.2013152,
+  "updated_at": 1784601808.203041,
   "payload": {
     "section_id": "area-intuition",
-    "learning_objective": "Understand that integrals measure area under a curve - students place a numerical prediction for area, then watch the region fill to reveal the true value, building intuition that curved shapes have precise measurable areas",
+    "learning_objective": "Understand that integrals measure area under a curve - students drag bounds to see the shaded area update, building intuition that curved shapes have precise measurable areas",
     "mini_spec": {
       "title": "Predict-Then-Measure Area Betting",
       "narrative_wrapper": "The student sees a curved region on the dashboard's route elevation profile and places a numerical prediction token showing their guess for the area. When they press 'Measure', the region fills incrementally with animated liquid (like a fuel tank filling), and a running counter shows the true area climbing toward the final value. Their prediction token remains frozen on screen, letting them see how far off they were.",
@@ -34,8 +27,8 @@
     },
     "target_misconception": "Students think area only applies to simple geometric shapes",
     "audience": "Post-Secondary (ages 17-20)",
-    "section_context": "Opening section of The Rolling Odometer lesson - first introduction to the concept that curved regions have precise, measurable areas",
-    "design_brief": "This is the first section of a comprehensive lesson on integrals using The Rolling Odometer as the unifying metaphor. The shared domain model will include functions for computing area under curves. All sections should maintain visual consistency with soft teal (#62D0AD) as the primary accent color. The tone is curious and exploratory, aimed at post-secondary students with no prior knowledge of integrals.",
+    "section_context": "Opening section of The Rolling Odometer lesson - first introduction to the concept that curved regions have precise, measurable areas. Keep it SIMPLE - just draggable bounds and live area display.",
+    "design_brief": "This is the FIRST section - introduce the area concept simply. Show a speed curve with draggable bounds a and b. As students drag, the shaded region updates and the area value updates in real-time. Use soft teal (#62D0AD) for the primary accent. Single visualization, maximum 400px height, all content within bounds.",
     "narrative_draft": "You're about to drive a route where your speed changes constantly\u2014maybe coasting downhill, then braking through a turn, then accelerating on the straightaway. Your odometer will track the total distance traveled, but here's the challenge: you can't watch the speedometer continuously. You have only eight fuel tokens to spend, and each one buys you a single speed reading at one moment in time. Can you predict what the odometer will show at the end of the trip?\n\nClick anywhere along the timeline to check your speed at that instant. Each click costs one precious fuel token and drops a marker showing the speed reading. Your car will estimate the distance traveled by multiplying each recorded speed by the time interval since your last check, then add all those little distance chunks together. If your estimate lands within the tolerance band, you've succeeded\u2014but waste your samples on boring stretches where speed barely changes, and you'll miss the sharp curves that matter most.\n\nNotice how the odometer's final reading emerges from summing thin slices of distance, each slice built from a speed snapshot and a time interval. The thinner you slice (more samples, closer together), the closer you get to the true total\u2014but you'll never have infinite fuel. This is the area problem in disguise: the region under the speed curve represents distance traveled, and measuring it requires smart sampling where change happens fastest. Every integral you'll ever compute is answering this same question: how do we add up infinitely many infinitely thin slices to find an exact total?",
     "contract": {
       "student_changes": "drags the left and right bounds (a, b) along the x-axis",
@@ -44,6 +37,7 @@
         "a",
         "b"
       ]
-    }
+    },
+    "revision_instruction": "FIX THESE SPECIFIC PROBLEMS:\n\n1. SVG OVERFLOW: The visualization overflows by 369px and 205px. CRITICAL FIX:\n   - Use a SINGLE graph visualization, NOT two stacked graphs\n   - Maximum total height: 400px for the entire visualization\n   - Set proper viewBox with safe margins (at least 20px on all sides)\n   - Ensure ALL content stays within bounds at ALL values of a and b\n\n2. SIMPLIFY THE DESIGN: This is the FIRST section introducing area. Keep it simple:\n   - Show ONE graph with the speed curve f(x)\n   - Draggable bounds a and b on the x-axis\n   - Shaded region between bounds that updates as user drags\n   - Live area readout that updates in real-time\n   - DO NOT show a second A(x) graph - that comes in later sections\n\n3. FIX BOUND DRAGGING: When dragging areaIntuition_boundA or areaIntuition_boundB:\n   - The shaded region should expand/contract smoothly\n   - The curve shape should NOT change - only the shaded portion changes\n   - Bound markers should stay connected to the x-axis\n   - Ensure bounds cannot cross each other (a < b always)\n\n4. FIX LABELS: Text \"f(x)speed51.2A(x)areaslope\" running together:\n   - Use proper spacing between labels\n   - Position labels INSIDE the viewBox with safe margins\n   - Use fixed-width tabular figures for numbers\n\n5. FIX JavaScript ERRORS: Check for undefined/NaN when bounds are at extremes\n\n6. REMOVE complex features not needed for this intro section:\n   - No prediction tokens or betting for now\n   - No fill animation\n   - Just simple bound dragging with live area update"
   }
 }
