@@ -1,0 +1,42 @@
+{
+  "section_id": "area-intuition",
+  "title": "Predict-Then-Measure Area Betting",
+  "status": "building",
+  "detail": "writing spec and code",
+  "summary": "",
+  "verify_passed": null,
+  "is_revision": false,
+  "registered": false,
+  "issues": [],
+  "skip_verification": false,
+  "sdk_session_id": "a5ecc1d5-559d-4bdd-aa37-608f0d40f3e0",
+  "created_at": 1784599921.097997,
+  "updated_at": 1784599922.099474,
+  "payload": {
+    "section_id": "area-intuition",
+    "learning_objective": "Understand that integrals measure area under a curve - students place a numerical prediction for area, then watch the region fill to reveal the true value, building intuition that curved shapes have precise measurable areas",
+    "mini_spec": {
+      "title": "Predict-Then-Measure Area Betting",
+      "narrative_wrapper": "The student sees a curved region on the dashboard's route elevation profile and places a numerical prediction token showing their guess for the area. When they press 'Measure', the region fills incrementally with animated liquid (like a fuel tank filling), and a running counter shows the true area climbing toward the final value. Their prediction token remains frozen on screen, letting them see how far off they were.",
+      "manipulated_variable": "The predicted numerical area value itself, typed or dialed before revelation",
+      "primary_visual_feedback": "The prediction token locks in place; then liquid fill animation begins from bottom-up, with a live running counter that climbs smoothly from zero to the true area value, showing the gap between prediction and reality",
+      "goal_structure": "Commit-a-prediction (place numerical guess), then reveal (trigger fill animation to see true area); repeat with new curve or new bounds to calibrate intuition",
+      "causal_chain_exposed": "Running area counter during fill shows rate of area accumulation; fill speed visually correlates to curve height at each horizontal position, revealing that taller sections contribute more area per unit width",
+      "trace_strategy": "Previous prediction tokens remain as faint ghosts with error bars, building a history of improving estimates across multiple trials",
+      "aha_moment": "Realizing that narrow-but-tall sections contribute as much area as wide-but-short sections, and that systematic over/underestimation patterns emerge based on curve concavity"
+    },
+    "target_misconception": "Students think area only applies to simple geometric shapes",
+    "audience": "Post-Secondary (ages 17-20)",
+    "section_context": "Opening section of The Rolling Odometer lesson - first introduction to the concept that curved regions have precise, measurable areas",
+    "design_brief": "This is the first section of a comprehensive lesson on integrals using The Rolling Odometer as the unifying metaphor. The shared domain model will include functions for computing area under curves. All sections should maintain visual consistency with soft teal (#62D0AD) as the primary accent color. The tone is curious and exploratory, aimed at post-secondary students with no prior knowledge of integrals.",
+    "narrative_draft": "You're about to drive a route where your speed changes constantly\u2014maybe coasting downhill, then braking through a turn, then accelerating on the straightaway. Your odometer will track the total distance traveled, but here's the challenge: you can't watch the speedometer continuously. You have only eight fuel tokens to spend, and each one buys you a single speed reading at one moment in time. Can you predict what the odometer will show at the end of the trip?\n\nClick anywhere along the timeline to check your speed at that instant. Each click costs one precious fuel token and drops a marker showing the speed reading. Your car will estimate the distance traveled by multiplying each recorded speed by the time interval since your last check, then add all those little distance chunks together. If your estimate lands within the tolerance band, you've succeeded\u2014but waste your samples on boring stretches where speed barely changes, and you'll miss the sharp curves that matter most.\n\nNotice how the odometer's final reading emerges from summing thin slices of distance, each slice built from a speed snapshot and a time interval. The thinner you slice (more samples, closer together), the closer you get to the true total\u2014but you'll never have infinite fuel. This is the area problem in disguise: the region under the speed curve represents distance traveled, and measuring it requires smart sampling where change happens fastest. Every integral you'll ever compute is answering this same question: how do we add up infinitely many infinitely thin slices to find an exact total?",
+    "contract": {
+      "student_changes": "drags the left and right bounds (a, b) along the x-axis",
+      "student_sees": "the shaded region grows/shrinks and the area value updates in real-time",
+      "unlocks": [
+        "a",
+        "b"
+      ]
+    }
+  }
+}

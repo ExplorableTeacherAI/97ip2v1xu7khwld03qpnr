@@ -1,0 +1,45 @@
+{
+  "section_id": "riemann-sums",
+  "title": "Slider Increases Rectangle Count Under Curve",
+  "status": "building",
+  "detail": "writing spec and code",
+  "summary": "",
+  "verify_passed": null,
+  "is_revision": false,
+  "registered": false,
+  "issues": [],
+  "skip_verification": false,
+  "sdk_session_id": "e37282d3-a513-4d7e-a537-3b752d03f5f7",
+  "created_at": 1784600052.1987689,
+  "updated_at": 1784600054.263954,
+  "payload": {
+    "section_id": "riemann-sums",
+    "learning_objective": "Discover that curved areas can be approximated with rectangles, and understand why we need infinitely many rectangles for exact area - the approximation improves as rectangles multiply but never reaches perfection at any finite count",
+    "mini_spec": {
+      "title": "Slider Increases Rectangle Count Under Curve",
+      "narrative_wrapper": "Students see a curved line above the x-axis with a few tall rectangles underneath trying to fill the space. They drag a slider labeled 'number of rectangles' and watch the rectangles multiply and shrink in width, fitting the curve more snugly. The total shaded area value updates as they drag.",
+      "manipulated_variable": "Slider controlling n, the number of rectangles in the partition",
+      "primary_visual_feedback": "Rectangles redraw immediately with new widths and heights, appearing directly beneath the curve in the same coordinate system where the slider sits below the graph",
+      "goal_structure": "Free exploration with suggested milestones: try n=4, n=10, n=50, n=100 to observe convergence toward a target value displayed separately",
+      "causal_chain_exposed": "Width of each rectangle (\u0394x = (b-a)/n), height of sample rectangle, individual rectangle area, running sum of all rectangle areas, and gap between approximation and true area",
+      "trace_strategy": "None\u2014previous rectangle configurations disappear to avoid clutter, since the learning focuses on the current state's accuracy rather than the path of improvement",
+      "aha_moment": "The approximation error shrinks but never quite vanishes at any finite n; there's always visible gap between rectangle tops and curve, requiring infinite rectangles for exactness"
+    },
+    "target_misconception": "Students don't see why we can't just use a few rectangles to get the exact area",
+    "audience": "Post-Secondary (ages 17-20)",
+    "section_context": "Second section building on area intuition - students now learn HOW to approximate the area they just explored, introducing Riemann sums",
+    "design_brief": "Part of The Rolling Odometer lesson. Uses the same domain model (area under curves). The odometer metaphor continues - rectangles represent discrete speed readings over time intervals. Maintain visual consistency with soft teal (#62D0AD) accent. This section should feel like a natural progression from the area prediction game.",
+    "narrative_draft": "You're driving along a highway, your speedometer showing 40 mph for the first few minutes, then 60 mph, then slowing to 30 mph as you approach a town. When you arrive, your odometer says you've traveled 12 miles. Here's the puzzle: if your speed kept changing throughout the trip, how did the odometer figure out the exact distance?\n\nThe secret lies beneath the speedometer curve. Right now you're seeing a rough approximation using just a few rectangles, each one capturing your speed over a chunk of time. The odometer displays the total area of these rectangles, which gives you an estimate of distance traveled. Rotate the quality dial clockwise to demand better precision. Watch what happens: the rectangles multiply and shrink, their combined area climbing closer and closer to the true 12 miles. The approximation error gauge drops as your estimate improves.\n\nKeep turning the dial toward perfect precision. Feel how it gets harder to rotate? The rectangles are crowding together, but the dial slows down as if pushing through honey. You'll never quite reach 100% because that would require infinitely many infinitely thin rectangles. This is why calculus exists: to find exact areas under curves, we need a way to reason about what happens when rectangles become so numerous and so narrow that they stop being rectangles at all. The odometer doesn't actually use rectangles, it uses the mathematical limit of this infinite process, which is exactly what an integral computes.",
+    "contract": {
+      "student_changes": "drags the number of rectangles (n) from 1 to 100+",
+      "student_sees": "rectangles fill the region; the sum updates and converges toward the true area as n increases",
+      "unlocks": [
+        "n"
+      ],
+      "carries_over": [
+        "a",
+        "b"
+      ]
+    }
+  }
+}

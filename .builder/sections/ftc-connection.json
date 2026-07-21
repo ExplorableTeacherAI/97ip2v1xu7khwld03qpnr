@@ -1,0 +1,43 @@
+{
+  "section_id": "ftc-connection",
+  "title": "Drag the Point, Compare Two Graphs",
+  "status": "building",
+  "detail": "writing spec and code",
+  "summary": "",
+  "verify_passed": null,
+  "is_revision": false,
+  "registered": false,
+  "issues": [],
+  "skip_verification": false,
+  "sdk_session_id": "bf7223ab-4973-4e2e-bfa3-ba2599322c9d",
+  "created_at": 1784600052.247364,
+  "updated_at": 1784600054.361693,
+  "payload": {
+    "section_id": "ftc-connection",
+    "learning_objective": "Discover that the derivative of the accumulation function A(x) equals the original function f(x) - making the deep connection that integration and differentiation are inverse operations",
+    "mini_spec": {
+      "title": "Drag the Point, Compare Two Graphs",
+      "narrative_wrapper": "Students see two synchronized graphs stacked vertically: the original function f(x) on top and the accumulation function A(x) below. They drag a point along the x-axis and watch how the slope of A(x) at that point relates to the height of f(x) above it.",
+      "manipulated_variable": "A vertical line or point dragged horizontally along the x-axis, changing the evaluation position x",
+      "primary_visual_feedback": "A tangent line appears on the A(x) graph showing its slope at that x-value, while a horizontal line extends from f(x) to show its height; both update as the point moves",
+      "goal_structure": "Free exploration with optional prompt to 'find three different x-values where you notice the pattern'",
+      "causal_chain_exposed": "The accumulated area under f from 0 to x (shown as shaded region), the numerical value A(x), the tangent line slope on A(x) (with numerical display), and the value f(x) are all visible simultaneously",
+      "trace_strategy": "Optional toggle to leave 'ghost' tangent lines at previous positions, allowing students to see the pattern persists across multiple x-values",
+      "aha_moment": "The slope number of the tangent line on A(x) exactly matches the height number of f(x) at every single position, revealing they are always equal"
+    },
+    "target_misconception": "The FTC feels like magic - students don't understand WHY differentiation and integration are inverses",
+    "audience": "Post-Secondary (ages 17-20)",
+    "section_context": "The climax of the lesson - after understanding area, approximation, signed area, and accumulation functions, students now see the deep connection that A'(x) = f(x)",
+    "design_brief": "Part of The Rolling Odometer lesson. This is the aha moment - the speedometer (f) and odometer (A) are connected: the rate of change of accumulated distance equals instantaneous speed. Two stacked graphs with synchronized highlighting. This revelation should feel earned after the buildup of previous sections.",
+    "narrative_draft": "You've been watching the odometer climb as the car drives. The faster the speedometer reads, the quicker the miles rack up. But here's the question that ties everything together: if you look at how fast the odometer is changing at any moment, what number do you see?\n\nPlant flowers along the curved path of the accumulation function to measure its slope at different points. Each flower stem tilts to match the steepness of the ground where you place it. When the tilt is just right, the flower blooms and releases a petal that floats upward into the sky, landing at a height equal to that slope. Place five or six flowers at different positions and watch where their petals settle.\n\nThe constellation forming above is no accident. The height of each petal matches the value of the original rate function at that same x-position. Steep uphill sections of the accumulation curve send petals high, gentle slopes send them low, and downhill sections send petals below the axis. The rate at which total distance accumulates is exactly the speed. The derivative of the integral is the original function. This is the Fundamental Theorem of Calculus: integration and differentiation are perfect inverses, like recording a trip and playing it back, like adding up changes and measuring the rate of that sum. Every petal you release proves that the speedometer and the odometer are reading the same story, just in different languages.",
+    "contract": {
+      "student_changes": "drags x and observes both A(x) and its slope (tangent line) updating",
+      "student_sees": "a tangent line on A(x) whose slope matches f(x) at that point; the derivative of the area function IS the original function",
+      "carries_over": [
+        "a",
+        "x",
+        "f"
+      ]
+    }
+  }
+}

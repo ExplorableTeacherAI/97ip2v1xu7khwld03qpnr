@@ -1,0 +1,43 @@
+{
+  "section_id": "calculating-integrals",
+  "title": "Split-Screen Symbolic and Geometric Comparison",
+  "status": "building",
+  "detail": "writing spec and code",
+  "summary": "",
+  "verify_passed": null,
+  "is_revision": false,
+  "registered": false,
+  "issues": [],
+  "skip_verification": false,
+  "sdk_session_id": "4fa39eb7-c88f-4e65-a52b-9711687fad7a",
+  "created_at": 1784600052.274173,
+  "updated_at": 1784600054.1493142,
+  "payload": {
+    "section_id": "calculating-integrals",
+    "learning_objective": "Apply the FTC to calculate definite integrals using F(b) - F(a) - connecting the symbolic calculation to the geometric meaning students have built",
+    "mini_spec": {
+      "title": "Split-Screen Symbolic and Geometric Comparison",
+      "narrative_wrapper": "The screen divides into symbolic work on the left and graph on the right. Students drag terms in the symbolic calculation (writing out \u222bf(x)dx = F(x)|\u1d47\u2090 = F(b) - F(a)) and watch corresponding visual elements highlight on the graph. Rearranging the algebra animates the geometry.",
+      "manipulated_variable": "Draggable mathematical expression tiles that students arrange in proper order: integral symbol, function, antiderivative, evaluation bars, substituted values, subtraction",
+      "primary_visual_feedback": "As each symbolic piece is placed correctly, the corresponding geometric feature pulses or highlights on the graph: placing F(x) shows the antiderivative curve, placing evaluation notation highlights points (a,F(a)) and (b,F(b)), placing subtraction shows the difference",
+      "goal_structure": "Correct sequencing task: student arranges symbolic steps in correct order to complete the calculation, with the final arrangement unlocking an animation showing why the symbolic result equals the geometric area",
+      "causal_chain_exposed": "Connection lines dynamically link: the integral symbol to the shaded area, F(x) to the antiderivative curve, evaluation notation to specific points, and the subtraction F(b)-F(a) to both the vertical distance on F(x) and the shaded area under f(x)",
+      "trace_strategy": "Persistent bidirectional links: colored lines remain visible connecting each symbolic element to its geometric counterpart, creating a web of correspondences that remains throughout interaction",
+      "aha_moment": "Discovering that the vertical measurement F(b)-F(a) on one curve mysteriously equals the horizontal area measurement under a completely different curve"
+    },
+    "target_misconception": "Students struggle to connect symbolic calculation to the geometric meaning",
+    "audience": "Post-Secondary (ages 17-20)",
+    "section_context": "Final section - students now apply everything they've learned to actually calculate integrals, seeing the connection between symbolic manipulation and the visual understanding they've built",
+    "design_brief": "Part of The Rolling Odometer lesson. The grand finale connects the speedometer formula to the odometer calculation: find the antiderivative (position function), evaluate at endpoints, subtract. Students see the symbolic steps alongside the geometric picture, understanding that F(b)-F(a) gives the area. Maintain visual consistency with previous sections.",
+    "narrative_draft": "You've watched the odometer accumulate distance as the car drives, and you've seen how knowing the speed at every moment tells you exactly how far you've traveled. But imagine you're planning a road trip and you want to predict the total distance *before* you go. You know the speed formula for the route\u2014maybe you speed up gradually as you enter the highway, described by v(t) = 2t miles per minute. How do you turn that speed recipe into an exact distance prediction?\n\nTime to build a prediction machine. You'll find component bins waiting for you: a Speed Sensor that reads function formulas, an Accumulator Box that transforms speed into position, Start and End Reading dials, and a Subtractor Display. Grab the Speed Sensor first and plug in a function card\u2014try v(t) = 2t. Now connect the Accumulator Box to the sensor. Watch what happens inside the box's display window: it reveals the antiderivative formula, the \"position recipe\" D(t) = t\u00b2. This is the key transformation\u2014the Accumulator is asking \"what function, when you measure its rate of change, gives you back the speed function?\"\n\nSet your Start Reading dial to t = 0 (beginning of the trip) and your End Reading to t = 5 (five minutes later). Wire both readings to the Subtractor Display, and it calculates D(5) \u2212 D(0) = 25 \u2212 0 = 25 miles. The odometer dashboard shows the car completing this exact journey. Try different speed formulas, different time windows. Notice the pattern: the machine always follows the same pipeline. Speed sensor feeds the accumulator, which finds the antiderivative. Plug in start and end values. Subtract. The Fundamental Theorem isn't a trick to memorize\u2014it's literally how information flows from a rate of change to total change.\n\nEvery integral you calculate from now on is this same machine. When you write \u222b\u2080\u2075 2t dt and evaluate t\u00b2 from 0 to 5, you're running that signal through the pipeline: input the rate, transform it through the accumulator (antiderivative), sample it at the boundaries, subtract to extract net change. The symbolic steps mirror the physical flow you just built, turning the mystery of \"finding area under a curve\" into something as concrete as wiring up a dashboard.",
+    "contract": {
+      "student_changes": "scrubs values of a and b in the formula and sees the calculation update",
+      "student_sees": "the formula F(b) - F(a) updates alongside the visual shaded area, confirming the symbolic and geometric answers match",
+      "carries_over": [
+        "a",
+        "b",
+        "f"
+      ]
+    }
+  }
+}

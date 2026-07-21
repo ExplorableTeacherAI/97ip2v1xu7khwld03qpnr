@@ -1,0 +1,108 @@
+{
+  "sectionId": "area-intuition",
+  "learningObjective": "Understand that integrals measure area under a curve - students place a numerical prediction for area, then watch the region fill to reveal the true value, building intuition that curved shapes have precise measurable areas",
+  "ahaMoment": "Realizing that narrow-but-tall sections contribute as much area as wide-but-short sections, and that systematic over/underestimation patterns emerge based on curve concavity",
+  "targetMisconception": "Students think area only applies to simple geometric shapes",
+  "miniSpec": {
+    "title": "Predict-Then-Measure Area Betting",
+    "narrative_wrapper": "The student sees a curved region on the dashboard's route elevation profile and places a numerical prediction token showing their guess for the area. When they press 'Measure', the region fills incrementally with animated liquid (like a fuel tank filling), and a running counter shows the true area climbing toward the final value. Their prediction token remains frozen on screen, letting them see how far off they were.",
+    "manipulated_variable": "The predicted numerical area value itself, typed or dialed before revelation",
+    "primary_visual_feedback": "The prediction token locks in place; then liquid fill animation begins from bottom-up, with a live running counter that climbs smoothly from zero to the true area value, showing the gap between prediction and reality",
+    "goal_structure": "Commit-a-prediction (place numerical guess), then reveal (trigger fill animation to see true area); repeat with new curve or new bounds to calibrate intuition",
+    "causal_chain_exposed": "Running area counter during fill shows rate of area accumulation; fill speed visually correlates to curve height at each horizontal position, revealing that taller sections contribute more area per unit width",
+    "trace_strategy": "Previous prediction tokens remain as faint ghosts with error bars, building a history of improving estimates across multiple trials",
+    "aha_moment": "Realizing that narrow-but-tall sections contribute as much area as wide-but-short sections, and that systematic over/underestimation patterns emerge based on curve concavity"
+  },
+  "interactionContract": {
+    "student_changes": "drags the left and right bounds (a, b) along the x-axis",
+    "student_sees": "the shaded region grows/shrinks and the area value updates in real-time",
+    "unlocks": ["a", "b"]
+  },
+  "modelVariables": {
+    "areaIntuition_boundA": "left bound of integration region, student-dragged along x-axis",
+    "areaIntuition_boundB": "right bound of integration region, student-dragged along x-axis",
+    "areaIntuition_trueArea": "derived: the true computed area under the curve between bounds a and b",
+    "areaIntuition_prediction": "student's numerical prediction for the area before reveal",
+    "areaIntuition_fillProgress": "derived: 0-1 progress of the fill animation during reveal",
+    "areaIntuition_animatedArea": "derived: the current displayed area value during animation (climbs from 0 to trueArea)",
+    "areaIntuition_revealed": "boolean: whether the reveal animation has been triggered",
+    "areaIntuition_samplesUsed": "number: how many fuel token samples the student has clicked",
+    "areaIntuition_samplePoints": "array: x-positions where the student has sampled"
+  },
+  "assertions": [
+    {
+      "id": "initial-state-poses-problem",
+      "description": "On load, the shaded region is visible but area is not revealed - posing the challenge of estimating area under a curve",
+      "expect": [
+        { "var": "areaIntuition_revealed", "op": "==", "value": false },
+        { "var": "areaIntuition_fillProgress", "op": "==", "value": 0 }
+      ],
+      "visualCheck": "shaded region visible between bounds, no fill animation running, area value hidden or showing placeholder"
+    },
+    {
+      "id": "bound-a-control-exists-and-works",
+      "description": "The left bound (a) can be dragged along the x-axis",
+      "setup": { "areaIntuition_boundA": 0, "areaIntuition_boundB": 8, "areaIntuition_revealed": false },
+      "action": { "var": "areaIntuition_boundA", "to": 2 },
+      "expect": [
+        { "var": "areaIntuition_boundA", "op": "==", "value": 2 },
+        { "var": "areaIntuition_trueArea", "op": "<", "value": 50 }
+      ],
+      "visualCheck": "left bound handle moves to x=2, shaded region shrinks from left"
+    },
+    {
+      "id": "bound-b-control-exists-and-works",
+      "description": "The right bound (b) can be dragged along the x-axis",
+      "setup": { "areaIntuition_boundA": 0, "areaIntuition_boundB": 8, "areaIntuition_revealed": false },
+      "action": { "var": "areaIntuition_boundB", "to": 4 },
+      "expect": [
+        { "var": "areaIntuition_boundB", "op": "==", "value": 4 },
+        { "var": "areaIntuition_trueArea", "op": "<", "value": 30 }
+      ],
+      "visualCheck": "right bound handle moves to x=4, shaded region shrinks from right"
+    },
+    {
+      "id": "area-updates-when-bounds-change",
+      "description": "Dragging bounds causes the shaded region and area value to update in real-time",
+      "setup": { "areaIntuition_boundA": 0, "areaIntuition_boundB": 4 },
+      "action": { "var": "areaIntuition_boundB", "to": 8 },
+      "expect": [
+        { "var": "areaIntuition_trueArea", "op": ">", "value": 30 }
+      ],
+      "visualCheck": "shaded region expands to cover more area under curve, area readout increases"
+    },
+    {
+      "id": "clicking-timeline-uses-fuel-token",
+      "description": "Clicking on the timeline to sample speed costs one fuel token",
+      "setup": { "areaIntuition_samplesUsed": 0 },
+      "action": { "var": "areaIntuition_samplesUsed", "to": 1 },
+      "expect": [
+        { "var": "areaIntuition_samplesUsed", "op": "==", "value": 1 }
+      ],
+      "visualCheck": "a sample marker appears at the clicked x-position, fuel token counter decreases by 1"
+    }
+  ],
+  "invariants": [
+    {
+      "id": "bounds-stay-ordered",
+      "description": "The left bound is always less than or equal to the right bound",
+      "expect": [
+        { "expr": "areaIntuition_boundA <= areaIntuition_boundB" }
+      ]
+    },
+    {
+      "id": "area-is-non-negative",
+      "description": "The computed area is always non-negative",
+      "expect": [
+        { "expr": "areaIntuition_trueArea >= 0" }
+      ]
+    },
+    {
+      "id": "fill-progress-bounded",
+      "description": "Fill animation progress stays between 0 and 1",
+      "expect": [
+        { "expr": "areaIntuition_fillProgress >= 0 && areaIntuition_fillProgress <= 1" }
+      ]
+    }
+  ]
+}

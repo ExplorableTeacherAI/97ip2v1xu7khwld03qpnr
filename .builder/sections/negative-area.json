@@ -1,0 +1,43 @@
+{
+  "section_id": "negative-area",
+  "title": "Draggable Function Graph with Signed Area Shading",
+  "status": "building",
+  "detail": "writing spec and code",
+  "summary": "",
+  "verify_passed": null,
+  "is_revision": false,
+  "registered": false,
+  "issues": [],
+  "skip_verification": false,
+  "sdk_session_id": "92858748-00e4-4f0f-9345-1a2c65cf6610",
+  "created_at": 1784600052.216238,
+  "updated_at": 1784600054.474744,
+  "payload": {
+    "section_id": "negative-area",
+    "learning_objective": "Understand that regions below the x-axis contribute negative area and can cancel positive area - the integral measures net signed area, not just total magnitude",
+    "mini_spec": {
+      "title": "Draggable Function Graph with Signed Area Shading",
+      "narrative_wrapper": "Students see a curve graphed above the x-axis with the area beneath it shaded and labeled with a positive number. They drag the curve vertically, and when it dips below the axis, the submerged region turns a different color and the total integral value decreases or becomes negative.",
+      "manipulated_variable": "The student drags the entire function curve up or down, changing the vertical offset or position of f(x)",
+      "primary_visual_feedback": "The shaded regions immediately recolor (positive areas in one color, negative areas in another) and the displayed integral value updates in real-time next to or above the graph",
+      "goal_structure": "Free exploration with optional prompts like 'Make the integral equal zero' or 'Create an integral of -5'",
+      "causal_chain_exposed": "The area above the axis (shown in one color with positive contribution), the area below the axis (shown contrasting color with negative contribution), and the algebraic sum displayed as the total integral value",
+      "trace_strategy": "None, because the focus is on the immediate relationship between curve position and signed area; historical positions would clutter the comparison",
+      "aha_moment": "Realizing that area below the axis doesn't just 'not count' but actively subtracts from the total, and that the integral can be zero even when visible area exists"
+    },
+    "target_misconception": "Area below the x-axis is negative - students forget that regions below contribute negative area",
+    "audience": "Post-Secondary (ages 17-20)",
+    "section_context": "Third section after Riemann sums - now students confront what happens when the curve crosses zero, a common source of confusion",
+    "design_brief": "Part of The Rolling Odometer lesson. The odometer metaphor extends to reversing - when velocity is negative, the car moves backward and distance subtracts. Use teal for positive area and a contrasting color (soft coral #F4A89A or soft red) for negative area. Keep the visual language consistent with previous sections.",
+    "narrative_draft": "You've been thinking of integrals as area, always positive, always accumulating. But what happens when your velocity graph dips below the axis? Does the odometer run backward?\n\nTry this delivery challenge: a truck drives a predetermined route with a speed profile that includes some reversing segments. At each waypoint along the journey, you'll assign a cargo operation\u2014either PICKUP (add inventory) or DROPOFF (subtract inventory). Your goal is to end with exactly the target cargo total. Click each waypoint marker to toggle between pickup and dropoff, then watch what happens as the truck drives the route. Pay special attention to what occurs during the red reverse-velocity segments.\n\nHere's the surprise: a pickup during a reverse segment can actually decrease your inventory, and a dropoff can increase it. When the truck moves backward, the direction of travel flips the effect of every cargo operation. This is exactly what happens when you integrate below the x-axis. A positive function value in a reverse interval contributes negatively to the total, and the integral accumulates signed change, not just magnitude. The odometer doesn't care whether you call it \"forward\" or \"backward\"\u2014it tracks net displacement, and regions below the axis subtract from regions above.",
+    "contract": {
+      "student_changes": "drags the right bound past where the curve crosses zero, or adjusts the function",
+      "student_sees": "regions below the axis shade differently (e.g., red) and subtract from the total; the net area can be less than the 'visible' area",
+      "carries_over": [
+        "a",
+        "b",
+        "n"
+      ]
+    }
+  }
+}

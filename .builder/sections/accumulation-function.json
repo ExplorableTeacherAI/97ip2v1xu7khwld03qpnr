@@ -1,0 +1,45 @@
+{
+  "section_id": "accumulation-function",
+  "title": "Integral Evolution Stepper: Day-by-Day",
+  "status": "building",
+  "detail": "writing spec and code",
+  "summary": "",
+  "verify_passed": null,
+  "is_revision": false,
+  "registered": false,
+  "issues": [],
+  "skip_verification": false,
+  "sdk_session_id": "8a84fbc7-b41a-42b5-acf1-a9bf437ac6d3",
+  "created_at": 1784600052.229991,
+  "updated_at": 1784600054.2654011,
+  "payload": {
+    "section_id": "accumulation-function",
+    "learning_objective": "See that the integral is not just a number but a function A(x) of the upper bound - students step through the accumulation process and watch A(x) build up as a function",
+    "mini_spec": {
+      "title": "Integral Evolution Stepper: Day-by-Day",
+      "narrative_wrapper": "The student sees a calendar or step counter showing 'Day 1, Day 2, Day 3...' and can step forward or backward one day at a time. Each day, the car travels exactly one unit rightward (\u0394x=1), and the odometer adds the area of that day's strip. The student watches the area function build up discretely, then can switch to 'hourly' steps to see it smooth out.",
+      "manipulated_variable": "Discrete time step number n (or continuous step size \u0394x via a separate control), where each forward step advances the integration by one interval. Physically clicking 'Next Step' and 'Previous Step' arrow buttons, or dragging a granularity slider to adjust step size.",
+      "primary_visual_feedback": "Each forward step: a thin vertical rectangle (Riemann strip) appears between the current x and x+\u0394x, colored distinctly and labeled with its area contribution. The odometer jumps up by that rectangle's area. The rectangles stack left-to-right as steps accumulate. Backward steps remove the rightmost rectangle and decrement the odometer.",
+      "goal_structure": "Free exploration with granularity challenges: 'Start with daily steps (\u0394x=1), then switch to hourly (\u0394x=0.1), then minutely (\u0394x=0.01) and watch how the staircase smooths into a continuous rise.' A toggle switches between discrete-step mode and continuous-sweep mode.",
+      "causal_chain_exposed": "For each step, three values appear: (1) the interval width \u0394x, (2) the rectangle height f(x_i) sampled at the step position, (3) the area contribution \u0394x \u00b7 f(x_i), and (4) the running total odometer reading as a sum notation that updates: A(x) = \u03a3[\u0394x \u00b7 f(x_i)].",
+      "trace_strategy": "All previous rectangles remain visible in a stacked column chart, each labeled with its step number and area. As \u0394x shrinks, the rectangles compress horizontally and proliferate, visually converging to a solid shaded region. A 'ghost curve' of A(x) emerges atop the staircase of partial sums.",
+      "aha_moment": "By stepping backward through the process, students see that each A(x) value is built from all the previous contributions\u2014the integral is inherently cumulative. Adjusting step size reveals that the limiting continuous curve A(x) is what we really mean by 'area as a function.'"
+    },
+    "target_misconception": "Confusing definite integral (a number) with indefinite integral (a function)",
+    "audience": "Post-Secondary (ages 17-20)",
+    "section_context": "Fourth section - the pivotal transition from thinking of integrals as a single number to understanding them as a function of the upper bound, preparing for the FTC",
+    "design_brief": "Part of The Rolling Odometer lesson. The odometer now shows how distance accumulates over time - at any point x along the journey, there's a specific accumulated distance A(x). This section bridges to the FTC by showing that the integral creates a new function. Maintain teal accent and visual consistency.",
+    "narrative_draft": "You've been watching the car accumulate distance as it drives, and you've seen the odometer climb each time the car moves forward. But here's a question that might catch you off guard: if you stop the car at different points along the road\u2014say at mile 2, then mile 5, then mile 8\u2014what pattern do those odometer readings follow? Each stopping point gives you a different accumulated distance, and something remarkable is hiding in that collection of numbers.\n\nDrive the car forward along the road, and whenever you're curious about the current state of things, press the camera button to freeze that moment. A snapshot card appears in the gallery above, capturing exactly where you stopped, what the shaded region looks like from start to that point, and what the odometer reads. Keep driving and take more snapshots at different positions. Try capturing one near the beginning, another halfway through, maybe one after a downhill stretch where the car rolled backward. Arrange your cards in the gallery and compare them: how does the odometer reading change as your stopping position moves further along the road?\n\nOnce you've collected four or five snapshots, something clicks. Each position x on the road has its own unique odometer value A(x), and you've just sampled that relationship by hand. You're not looking at a single number anymore\u2014you're looking at a function. The accumulated area isn't trapped at one final answer; it lives at every point along the journey, waiting to be measured. This is the heart of the integral as a function: the upper bound isn't just a limit of integration, it's the input to a machine that outputs accumulated area. And that shift in perspective\u2014from \"the area under the curve\" to \"the area function\"\u2014is what unlocks the Fundamental Theorem itself.",
+    "contract": {
+      "student_changes": "drags a sweep point x from a toward b",
+      "student_sees": "a second graph plots A(x) in real-time as x moves; the accumulated area grows (or shrinks when below the axis)",
+      "unlocks": [
+        "x"
+      ],
+      "carries_over": [
+        "a",
+        "f"
+      ]
+    }
+  }
+}
