@@ -2,7 +2,7 @@
   "section_id": "riemann-sums",
   "title": "Slider Increases Rectangle Count Under Curve",
   "status": "verifying",
-  "detail": "repairing issues (round 1/2)",
+  "detail": "repairing issues (round 2/2)",
   "summary": "",
   "verify_passed": false,
   "is_revision": false,
@@ -11,7 +11,7 @@
   "skip_verification": false,
   "sdk_session_id": "e37282d3-a513-4d7e-a537-3b752d03f5f7",
   "created_at": 1784600052.1987689,
-  "updated_at": 1784601383.781142,
+  "updated_at": 1784601661.692201,
   "payload": {
     "section_id": "riemann-sums",
     "learning_objective": "Discover that curved areas can be approximated with rectangles, and understand why we need infinitely many rectangles for exact area - the approximation improves as rectangles multiply but never reaches perfection at any finite count",

@@ -1,23 +1,17 @@
 {
   "section_id": "ftc-connection",
   "title": "Drag the Point, Compare Two Graphs",
-  "status": "needs_attention",
-  "detail": "built, but verification did not pass \u2014 review this section",
-  "summary": "Drag the Point, Compare Two Graphs \u2014 The slope number of the tangent line on A(x) exactly matches the height number of f(x) at every single position, revealing they are always equal",
-  "verify_passed": false,
-  "is_revision": false,
-  "registered": true,
-  "issues": [
-    "Visual check failed: Two stacked graphs visible: f(x) on top showing speed curve, A(x) below showing accumulated area. A vertical line marks the current x positi",
-    "Visual check failed: Vertical line moves to x=4, shaded region expands, A(x) value increases, tangent line on A(x) updates",
-    "Breaks within its control range: {'type': 'clipped_content', 'detail': '<svg> overflows the section by 206px', 'var': 'ftc_xPosition', 'value': 0.5}",
-    "Breaks within its control range: {'type': 'clipped_content', 'detail': '<svg> \"f(x)speed44.5A(x)areaslope:44.51902468xx\" overflows the section by 652px', 'var': 'ftc_xPositi",
-    "JavaScript errors occurred while interacting with it"
-  ],
+  "status": "building",
+  "detail": "revising",
+  "summary": "",
+  "verify_passed": null,
+  "is_revision": true,
+  "registered": false,
+  "issues": [],
   "skip_verification": false,
   "sdk_session_id": "bf7223ab-4973-4e2e-bfa3-ba2599322c9d",
-  "created_at": 1784600052.247364,
-  "updated_at": 1784601321.38952,
+  "created_at": 1784601679.7716029,
+  "updated_at": 1784601679.775163,
   "payload": {
     "section_id": "ftc-connection",
     "learning_objective": "Discover that the derivative of the accumulation function A(x) equals the original function f(x) - making the deep connection that integration and differentiation are inverse operations",
@@ -44,6 +38,7 @@
         "x",
         "f"
       ]
-    }
+    },
+    "revision_instruction": "FIX THESE SPECIFIC PROBLEMS:\n1. SVG overflow: The visualization overflows by 206px and 652px. REDUCE the total height significantly - use a maximum height of 450px total for both graphs stacked. Scale down the coordinate systems to fit within this height.\n2. Clipped content: Text labels \"f(x)speed44.5A(x)areaslope:44.51902468xx\" are running together and overflowing. Fix label positioning - ensure all labels have proper spacing and stay within bounds.\n3. JavaScript errors: Check for any undefined values or NaN calculations when x is at boundaries (0.5, 8).\n4. Ensure the viewBox is properly sized to contain all content with safe margins.\n5. Use a compact layout: f(x) graph should be ~180px tall, A(x) graph ~200px tall, with ~50px gap between them.\n6. Keep all numeric readouts stable width using tabular figures and fixed decimal places.\n7. Test that dragging x from 0.5 to 8 keeps everything visible and within bounds."
   }
 }
