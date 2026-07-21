@@ -1,0 +1,101 @@
+{
+  "sectionId": "negative-area",
+  "learningObjective": "Understand that regions below the x-axis contribute negative area and can cancel positive area - the integral measures net signed area, not just total magnitude",
+  "ahaMoment": "Realizing that area below the axis doesn't just 'not count' but actively subtracts from the total, and that the integral can be zero even when visible area exists",
+  "targetMisconception": "Area below the x-axis is negative - students forget that regions below contribute negative area",
+  "miniSpec": {
+    "title": "Draggable Function Graph with Signed Area Shading",
+    "narrative_wrapper": "Students see a curve graphed above the x-axis with the area beneath it shaded and labeled with a positive number. They drag the curve vertically, and when it dips below the axis, the submerged region turns a different color and the total integral value decreases or becomes negative.",
+    "manipulated_variable": "The student drags the entire function curve up or down, changing the vertical offset or position of f(x)",
+    "primary_visual_feedback": "The shaded regions immediately recolor (positive areas in one color, negative areas in another) and the displayed integral value updates in real-time next to or above the graph",
+    "goal_structure": "Free exploration with optional prompts like 'Make the integral equal zero' or 'Create an integral of -5'",
+    "causal_chain_exposed": "The area above the axis (shown in one color with positive contribution), the area below the axis (shown contrasting color with negative contribution), and the algebraic sum displayed as the total integral value",
+    "trace_strategy": "None, because the focus is on the immediate relationship between curve position and signed area; historical positions would clutter the comparison",
+    "aha_moment": "Realizing that area below the axis doesn't just 'not count' but actively subtracts from the total, and that the integral can be zero even when visible area exists"
+  },
+  "interactionContract": {
+    "student_changes": "drags the curve vertically using the slider or direct drag",
+    "student_sees": "regions below the axis shade coral and subtract from the total; net area updates live",
+    "carries_over": ["a", "b", "n"]
+  },
+  "modelVariables": {
+    "negativeArea_offset": "vertical offset of the curve, student-dragged, controls how much is above/below x-axis",
+    "negativeArea_positiveArea": "derived: the total area of the curve above the x-axis (teal shading)",
+    "negativeArea_negativeArea": "derived: the total area of the curve below the x-axis (coral shading, shown as positive magnitude)",
+    "negativeArea_netArea": "derived: the signed sum (positiveArea - negativeArea), the actual integral value",
+    "a": "carried over: left integration bound from previous sections",
+    "b": "carried over: right integration bound from previous sections",
+    "n": "carried over: number of rectangles from Riemann sums section"
+  },
+  "assertions": [
+    {
+      "id": "initial-state-poses-problem",
+      "description": "On load, the curve has both positive and negative regions visible, posing the signed area question",
+      "expect": [
+        { "var": "negativeArea_offset", "op": "==", "value": 0 }
+      ],
+      "visualCheck": "curve crosses x-axis, showing both teal (above) and coral (below) shaded regions; net area readout visible"
+    },
+    {
+      "id": "offset-control-exists-and-works",
+      "description": "The vertical offset can be adjusted by dragging the curve or using a slider",
+      "setup": { "negativeArea_offset": 0 },
+      "action": { "var": "negativeArea_offset", "to": 20 },
+      "expect": [
+        { "var": "negativeArea_offset", "op": "==", "value": 20 },
+        { "var": "negativeArea_negativeArea", "op": "<", "value": 5 }
+      ],
+      "visualCheck": "curve shifts upward, coral region shrinks significantly, more of the curve is above x-axis"
+    },
+    {
+      "id": "negative-area-subtracts-from-total",
+      "description": "When the curve dips below the axis, the negative region subtracts from the net area",
+      "setup": { "negativeArea_offset": 0 },
+      "action": { "var": "negativeArea_offset", "to": -20 },
+      "expect": [
+        { "var": "negativeArea_negativeArea", "op": ">", "value": 10 },
+        { "var": "negativeArea_netArea", "op": "<", "value": 0 }
+      ],
+      "visualCheck": "more coral shading below x-axis, net area readout shows negative value"
+    },
+    {
+      "id": "balanced-position-creates-zero-integral",
+      "description": "At a specific offset, positive and negative areas cancel to give net zero",
+      "setup": { "negativeArea_offset": -10 },
+      "action": { "var": "negativeArea_offset", "to": -5 },
+      "expect": [
+        { "var": "negativeArea_positiveArea", "op": ">", "value": 0 },
+        { "var": "negativeArea_negativeArea", "op": ">", "value": 0 }
+      ],
+      "visualCheck": "both teal and coral regions visible with similar magnitudes"
+    },
+    {
+      "id": "carries-over-a-b-n-frozen",
+      "description": "The parameters a, b, and n from previous sections are displayed but locked",
+      "setup": {},
+      "expect": [
+        { "var": "a", "op": "==", "value": 0 },
+        { "var": "b", "op": "==", "value": 8 },
+        { "var": "n", "op": "==", "value": 8 }
+      ],
+      "visualCheck": "integration bounds a and b shown as fixed markers on the x-axis"
+    }
+  ],
+  "invariants": [
+    {
+      "id": "net-equals-positive-minus-negative",
+      "description": "The net area always equals positive area minus negative area magnitude",
+      "expect": [
+        { "expr": "abs(negativeArea_netArea - (negativeArea_positiveArea - negativeArea_negativeArea)) < 0.1" }
+      ]
+    },
+    {
+      "id": "areas-are-non-negative-magnitudes",
+      "description": "Both positive and negative area magnitudes are non-negative",
+      "expect": [
+        { "expr": "negativeArea_positiveArea >= 0" },
+        { "expr": "negativeArea_negativeArea >= 0" }
+      ]
+    }
+  ]
+}

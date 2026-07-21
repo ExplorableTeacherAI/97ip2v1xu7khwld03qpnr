@@ -1,0 +1,117 @@
+{
+  "sectionId": "riemann-sums",
+  "learningObjective": "Discover that curved areas can be approximated with rectangles, and understand why we need infinitely many rectangles for exact area - the approximation improves as rectangles multiply but never reaches perfection at any finite count",
+  "ahaMoment": "The approximation error shrinks but never quite vanishes at any finite n; there's always visible gap between rectangle tops and curve, requiring infinite rectangles for exactness",
+  "targetMisconception": "Students don't see why we can't just use a few rectangles to get the exact area",
+  "miniSpec": {
+    "title": "Slider Increases Rectangle Count Under Curve",
+    "narrative_wrapper": "Students see a curved line above the x-axis with a few tall rectangles underneath trying to fill the space. They drag a slider labeled 'number of rectangles' and watch the rectangles multiply and shrink in width, fitting the curve more snugly. The total shaded area value updates as they drag.",
+    "manipulated_variable": "Slider controlling n, the number of rectangles in the partition",
+    "primary_visual_feedback": "Rectangles redraw immediately with new widths and heights, appearing directly beneath the curve in the same coordinate system where the slider sits below the graph",
+    "goal_structure": "Free exploration with suggested milestones: try n=4, n=10, n=50, n=100 to observe convergence toward a target value displayed separately",
+    "causal_chain_exposed": "Width of each rectangle (Δx = (b-a)/n), height of sample rectangle, individual rectangle area, running sum of all rectangle areas, and gap between approximation and true area",
+    "trace_strategy": "None—previous rectangle configurations disappear to avoid clutter, since the learning focuses on the current state's accuracy rather than the path of improvement",
+    "aha_moment": "The approximation error shrinks but never quite vanishes at any finite n; there's always visible gap between rectangle tops and curve, requiring infinite rectangles for exactness"
+  },
+  "interactionContract": {
+    "student_changes": "drags the number of rectangles (n) from 1 to 100+",
+    "student_sees": "rectangles fill the region; the sum updates and converges toward the true area as n increases",
+    "unlocks": ["n"],
+    "carries_over": ["a", "b"]
+  },
+  "modelVariables": {
+    "riemannSums_n": "number of rectangles in the partition, student-manipulated via slider or drag dial (range 1-200)",
+    "riemannSums_a": "left bound of integration (carried over from previous section, locked/frozen)",
+    "riemannSums_b": "right bound of integration (carried over from previous section, locked/frozen)",
+    "riemannSums_deltaX": "derived: width of each rectangle = (b-a)/n",
+    "riemannSums_riemannSum": "derived: total area of all rectangles (left Riemann sum)",
+    "riemannSums_trueArea": "derived: the true area under the curve using high-precision integration",
+    "riemannSums_error": "derived: absolute difference between riemannSum and trueArea",
+    "riemannSums_errorPercent": "derived: error as a percentage of trueArea",
+    "riemannSums_explored": "boolean: whether the student has interacted with the n control"
+  },
+  "assertions": [
+    {
+      "id": "initial-state-poses-problem",
+      "description": "On load, the visualization shows a small number of rectangles with visible gaps between rectangle tops and curve - posing the problem of imprecise approximation",
+      "expect": [
+        { "var": "riemannSums_n", "op": "<=", "value": 6 },
+        { "var": "riemannSums_error", "op": ">", "value": 0.5 }
+      ],
+      "visualCheck": "small number of wide rectangles visible under curve, obvious gaps between rectangle tops and the curve, error gauge shows non-trivial error"
+    },
+    {
+      "id": "n-control-exists-and-works",
+      "description": "The number of rectangles (n) can be changed via the quality dial or slider",
+      "setup": { "riemannSums_n": 4, "riemannSums_a": 0, "riemannSums_b": 8 },
+      "action": { "var": "riemannSums_n", "to": 20 },
+      "expect": [
+        { "var": "riemannSums_n", "op": "==", "value": 20 },
+        { "var": "riemannSums_deltaX", "op": "approx", "value": 0.4, "tolerance": 0.01 }
+      ],
+      "visualCheck": "rectangles multiply from 4 to 20, each becoming narrower"
+    },
+    {
+      "id": "increasing-n-improves-approximation",
+      "description": "As n increases, the Riemann sum converges toward the true area",
+      "setup": { "riemannSums_n": 4, "riemannSums_a": 0, "riemannSums_b": 8 },
+      "action": { "var": "riemannSums_n", "to": 100 },
+      "expect": [
+        { "var": "riemannSums_errorPercent", "op": "<", "value": 5 }
+      ],
+      "visualCheck": "rectangles now fit curve snugly, gaps barely visible, error gauge shows small error"
+    },
+    {
+      "id": "carried-over-bounds-stay-frozen",
+      "description": "The bounds a and b are carried over from the previous section and cannot be changed by the student",
+      "setup": { "riemannSums_a": 0, "riemannSums_b": 8, "riemannSums_n": 10 },
+      "action": { "var": "riemannSums_n", "to": 50 },
+      "expect": [
+        { "var": "riemannSums_a", "op": "==", "value": 0 },
+        { "var": "riemannSums_b", "op": "==", "value": 8 }
+      ],
+      "visualCheck": "bounds remain fixed at a=0 and b=8, only rectangles change"
+    },
+    {
+      "id": "error-never-reaches-zero",
+      "description": "Even at high n values, the error never quite reaches zero - the aha moment",
+      "setup": { "riemannSums_n": 200, "riemannSums_a": 0, "riemannSums_b": 8 },
+      "action": { "var": "riemannSums_n", "to": 200 },
+      "expect": [
+        { "var": "riemannSums_error", "op": ">", "value": 0 },
+        { "var": "riemannSums_errorPercent", "op": "<", "value": 2 }
+      ],
+      "visualCheck": "error gauge shows tiny but non-zero error, demonstrating that perfection requires infinite rectangles"
+    }
+  ],
+  "invariants": [
+    {
+      "id": "delta-x-formula-holds",
+      "description": "The width of each rectangle is always (b-a)/n",
+      "expect": [
+        { "expr": "abs(riemannSums_deltaX - (riemannSums_b - riemannSums_a) / riemannSums_n) < 0.001" }
+      ]
+    },
+    {
+      "id": "error-is-non-negative",
+      "description": "The error is always non-negative",
+      "expect": [
+        { "expr": "riemannSums_error >= 0" }
+      ]
+    },
+    {
+      "id": "n-is-positive",
+      "description": "The number of rectangles is always at least 1",
+      "expect": [
+        { "expr": "riemannSums_n >= 1" }
+      ]
+    },
+    {
+      "id": "bounds-stay-ordered",
+      "description": "The left bound is always less than the right bound",
+      "expect": [
+        { "expr": "riemannSums_a < riemannSums_b" }
+      ]
+    }
+  ]
+}

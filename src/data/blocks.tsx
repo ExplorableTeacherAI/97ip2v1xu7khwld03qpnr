@@ -5,6 +5,18 @@ import { type ReactElement } from "react";
 // Initialize variables and their colors from this file's variable definitions
 import { useVariableStore, initializeVariableColors } from "@/stores";
 import { getDefaultValues, variableDefinitions } from "./variables";
+import { areaIntuitionBlocks } from "./sections/area-intuition";
+
+import { ftcConnectionBlocks } from "./sections/ftc-connection";
+
+import { calculatingIntegralsBlocks } from "./sections/calculating-integrals";
+
+import { riemannSumsBlocks } from "./sections/riemann-sums";
+
+import { accumulationFunctionBlocks } from "./sections/accumulation-function";
+
+import { negativeAreaBlocks } from "./sections/negative-area";
+
 useVariableStore.getState().initialize(getDefaultValues());
 initializeVariableColors(variableDefinitions);
 
@@ -86,4 +98,10 @@ initializeVariableColors(variableDefinitions);
 
 export const blocks: ReactElement[] = [
     // Start adding your blocks here!
+    ...areaIntuitionBlocks,
+    ...ftcConnectionBlocks,
+    ...calculatingIntegralsBlocks,
+    ...riemannSumsBlocks,
+    ...accumulationFunctionBlocks,
+    ...negativeAreaBlocks,
 ];

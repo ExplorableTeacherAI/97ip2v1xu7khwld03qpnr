@@ -1,0 +1,4269 @@
+{
+  "section_id": "area-intuition",
+  "project_id": "97ip2v1xu7khwld03qpnr",
+  "passed": false,
+  "layout_issues": [],
+  "realization_fidelity": {
+    "faithful": false,
+    "flattened_to": "The implementation is a Riemann-sum sampling game where students click to place sample points on a curve and see an estimated area accumulate, rather than the predict-then-measure betting interaction where students first commit a numerical prediction token, then watch liquid fill to reveal the true area.",
+    "violations": [
+      "manipulated_variable: Students manipulate sample point placement (clicks on curve) and bound positions (dragging handles), NOT a numerical area prediction value typed/dialed before revelation",
+      "primary_visual_feedback: No prediction token locks in place; no liquid-fill animation from bottom-up with live counter climbing from zero to true area; instead shows Riemann-sum rectangles accumulating as samples are placed",
+      "goal_structure: No predict-then-reveal commit phase; students freely click to sample without budgeting a prediction first, then see estimated vs. true distance (not area under curve animated fill)",
+      "causal_chain_exposed: Running counter and fill dynamics show Riemann sum convergence, not the visual correlation between curve height at each position and area contribution via animated liquid displacement",
+      "trace_strategy: No mention of faint ghost tokens with error bars tracking prediction history across trials; instead focuses on sample point accumulation",
+      "aha_moment: The insight about tall-narrow vs. wide-short sections and concavity patterns is not naturally emergent from the betting-and-fill mechanic; the design invites calibration through sampling, which is a different cognitive path"
+    ]
+  },
+  "polish": {
+    "passed": true,
+    "scores": {
+      "accent_discipline": 4,
+      "ink_quality": 4,
+      "label_legibility": 3,
+      "whitespace_composition": 4,
+      "affordance_clarity": 4,
+      "junk_free": 3,
+      "question_posing_initial_state": 5
+    },
+    "failing_items": [],
+    "worst_offense": "The speedometer icon inside the teal circle violates the no-emoji/clip-art rule and adds unnecessary visual noise to an otherwise clean concept representation.",
+    "fixes": [
+      "Remove the speedometer emoji icon from the teal circle on the curve; replace with a simple dot or crosshair if a marker is needed to highlight that sampling point.",
+      "The 'Reveal true distance' button is visually quiet and could be mistaken for non-interactive; apply the accent teal color and add subtle hover affordance (scale/shadow) to signal clickability.",
+      "Reduce the visual weight of the vertical dashed lines (a and b handles) slightly\u2014they compete with the curve accent; use the lighter ink gray (#94A3B8) instead of the current darker gray."
+    ]
+  },
+  "sweep": {
+    "swept": [
+      {
+        "var": "areaIntuition_boundA",
+        "values": [
+          0.0,
+          1.8,
+          3.5,
+          5.2,
+          7.0
+        ]
+      },
+      {
+        "var": "areaIntuition_boundB",
+        "values": [
+          1.0,
+          2.8,
+          4.5,
+          6.2,
+          8.0
+        ]
+      },
+      {
+        "var": "areaIntuition_fillProgress",
+        "values": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ]
+      },
+      {
+        "var": "areaIntuition_samplesUsed",
+        "values": [
+          0.0,
+          2.0,
+          4.0,
+          6.0,
+          8.0
+        ]
+      }
+    ],
+    "issues": [
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 206px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 652px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 488px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x)\" overflows the section by 444px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"speed\" overflows the section by 454px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [shaded-area] overflows the section by 488px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [f-curve] overflows the section by 475px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 424px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"51.2\" overflows the section by 421px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 608px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"A(x)\" overflows the section by 564px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"area\" overflows the section by 574px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [a-curve] overflows the section by 608px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 601px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 573px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope:\" overflows the section by 568px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"51.2\" overflows the section by 568px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 587px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"98\" overflows the section by 583px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 650px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 650px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 650px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 650px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 650px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 650px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 646px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 626px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 2.0\" overflows the section by 624px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<circle> [x-handle] overflows the section by 640px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 504px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 695px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 401px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1023px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1244px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1222px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1690px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 1662px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 1662px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 1662px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 1662px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 1662px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1683px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1640px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1354px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1640px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1390px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1632px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1529px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1511px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Calculation\" overflows the section by 1365px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1384px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"= 25.0 miles\" overflows the section by 1403px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area = 25.0\" overflows the section by 1556px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1459px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1319px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1833px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1888px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2692px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2679px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2452px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2639px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 2639px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 2639px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 2639px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 2639px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2614px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 2473px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 2333px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 2193px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2602px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2202px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2249px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"True distance:\" overflows the section by 2303px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2304px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Error:\" overflows the section by 2335px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2336px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2084px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2198px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2231px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2231px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect height =\" overflows the section by 2263px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"30.0 mph\" overflows the section by 2263px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect area =\" overflows the section by 2296px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60.0 mi\" overflows the section by 2296px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2328px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"236.2 mi\" overflows the section by 2328px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2216px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 2205px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2085px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2085px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2751px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2108px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3697px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Snapshots\" overflows the section by 3149px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 3337px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3391px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 3339px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 3288px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 3236px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"a = 0\" overflows the section by 3409px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3401px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 3390px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 0.0\" overflows the section by 3427px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3292px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3586px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3643px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"100\" overflows the section by 3592px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"200\" overflows the section by 3540px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"300\" overflows the section by 3489px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3665px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3665px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3665px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3665px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3665px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3618px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3227px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"snap\" overflows the section by 3227px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3411px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3149px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4289px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4165px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4220px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 4220px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"time (s)\" overflows the section by 4282px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 4177px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 4263px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 4263px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 4263px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 4263px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 4263px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"+75.0\" overflows the section by 4141px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u221256.8\" overflows the section by 4201px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Net Area\" overflows the section by 4048px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4068px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4045px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4187px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4025px",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='ftc_fValue' displays 51.2 but the model value is 0",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='ftc_areaValue' displays 98 but the model value is 0",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_riemannSum' displays 236.2 but the model value is 0",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_trueArea' displays 251.9 but the model value is 0",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_error' displays 15.71 but the model value is 15.7",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='negativeArea_netArea' displays 18.2 but the model value is 0",
+        "var": "areaIntuition_boundA",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 205px",
+        "var": "areaIntuition_boundA",
+        "value": 1.8
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3412px",
+        "var": "areaIntuition_boundA",
+        "value": 1.8
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4190px",
+        "var": "areaIntuition_boundA",
+        "value": 1.8
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 696px",
+        "var": "areaIntuition_boundA",
+        "value": 3.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1889px",
+        "var": "areaIntuition_boundA",
+        "value": 3.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4163px",
+        "var": "areaIntuition_boundA",
+        "value": 3.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1024px",
+        "var": "areaIntuition_boundA",
+        "value": 5.2
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4201px",
+        "var": "areaIntuition_boundA",
+        "value": 5.2
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1022px",
+        "var": "areaIntuition_boundA",
+        "value": 7.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1461px",
+        "var": "areaIntuition_boundA",
+        "value": 7.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2753px",
+        "var": "areaIntuition_boundA",
+        "value": 7.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3413px",
+        "var": "areaIntuition_boundA",
+        "value": 7.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4184px",
+        "var": "areaIntuition_boundA",
+        "value": 7.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 206px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 652px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 488px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x)\" overflows the section by 444px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"speed\" overflows the section by 454px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [shaded-area] overflows the section by 488px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [f-curve] overflows the section by 475px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 424px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"51.2\" overflows the section by 421px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 608px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"A(x)\" overflows the section by 564px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"area\" overflows the section by 574px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [a-curve] overflows the section by 608px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 601px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 573px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope:\" overflows the section by 568px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"51.2\" overflows the section by 568px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 587px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"98\" overflows the section by 583px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 650px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 650px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 650px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 650px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 650px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 650px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 646px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 626px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 2.0\" overflows the section by 624px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<circle> [x-handle] overflows the section by 640px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 504px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 696px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 401px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1024px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1244px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1222px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1690px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 1662px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 1662px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 1662px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 1662px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 1662px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1683px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1640px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1354px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1640px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1390px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1632px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1529px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1511px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Calculation\" overflows the section by 1365px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1384px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"= 25.0 miles\" overflows the section by 1403px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area = 25.0\" overflows the section by 1556px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1459px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1319px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1833px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1888px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2692px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2679px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2452px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2639px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 2639px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 2639px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 2639px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 2639px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2614px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 2473px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 2333px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 2193px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2602px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2202px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2249px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"True distance:\" overflows the section by 2303px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2304px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Error:\" overflows the section by 2335px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2336px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2084px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2198px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2231px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2231px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect height =\" overflows the section by 2263px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"30.0 mph\" overflows the section by 2263px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect area =\" overflows the section by 2296px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60.0 mi\" overflows the section by 2296px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2328px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"236.2 mi\" overflows the section by 2328px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2216px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 2205px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2085px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2085px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2751px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2108px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3697px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Snapshots\" overflows the section by 3149px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 3337px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3391px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 3339px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 3288px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 3236px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"a = 0\" overflows the section by 3409px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3401px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 3390px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 0.0\" overflows the section by 3427px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3292px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3586px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3643px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"100\" overflows the section by 3592px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"200\" overflows the section by 3540px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"300\" overflows the section by 3489px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3665px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3665px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3665px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3665px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3665px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3618px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3227px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"snap\" overflows the section by 3227px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3412px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3149px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4289px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4165px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4220px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 4220px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"time (s)\" overflows the section by 4282px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 4177px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 4263px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 4263px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 4263px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 4263px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 4263px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"+75.0\" overflows the section by 4141px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u221256.8\" overflows the section by 4201px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Net Area\" overflows the section by 4048px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4068px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4045px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4176px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4025px",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='ftc_fValue' displays 51.2 but the model value is 0",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='ftc_areaValue' displays 98 but the model value is 0",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_riemannSum' displays 236.2 but the model value is 0",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_trueArea' displays 251.9 but the model value is 0",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_error' displays 15.71 but the model value is 15.7",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='negativeArea_netArea' displays 18.2 but the model value is 0",
+        "var": "areaIntuition_boundB",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 205px",
+        "var": "areaIntuition_boundB",
+        "value": 2.8
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1022px",
+        "var": "areaIntuition_boundB",
+        "value": 2.8
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1889px",
+        "var": "areaIntuition_boundB",
+        "value": 2.8
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4163px",
+        "var": "areaIntuition_boundB",
+        "value": 2.8
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 695px",
+        "var": "areaIntuition_boundB",
+        "value": 4.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1023px",
+        "var": "areaIntuition_boundB",
+        "value": 4.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4198px",
+        "var": "areaIntuition_boundB",
+        "value": 4.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1461px",
+        "var": "areaIntuition_boundB",
+        "value": 6.2
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2753px",
+        "var": "areaIntuition_boundB",
+        "value": 6.2
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3413px",
+        "var": "areaIntuition_boundB",
+        "value": 6.2
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4187px",
+        "var": "areaIntuition_boundB",
+        "value": 6.2
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4202px",
+        "var": "areaIntuition_boundB",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 206px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 652px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 488px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x)\" overflows the section by 444px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"speed\" overflows the section by 454px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [shaded-area] overflows the section by 488px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [f-curve] overflows the section by 475px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 424px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"51.2\" overflows the section by 421px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 608px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"A(x)\" overflows the section by 564px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"area\" overflows the section by 574px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [a-curve] overflows the section by 608px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 601px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 573px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope:\" overflows the section by 568px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"51.2\" overflows the section by 568px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 587px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"98\" overflows the section by 583px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 650px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 650px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 650px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 650px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 650px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 650px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 646px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 626px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 2.0\" overflows the section by 624px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<circle> [x-handle] overflows the section by 640px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 504px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 696px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 401px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1024px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1244px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1222px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1690px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 1662px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 1662px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 1662px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 1662px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 1662px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1683px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1640px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1354px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1640px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1390px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1632px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1529px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1511px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Calculation\" overflows the section by 1365px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1384px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"= 25.0 miles\" overflows the section by 1403px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area = 25.0\" overflows the section by 1556px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1459px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1319px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1833px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1888px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2692px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2679px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2452px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2639px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 2639px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 2639px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 2639px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 2639px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2614px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 2473px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 2333px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 2193px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2602px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2202px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2249px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"True distance:\" overflows the section by 2303px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2304px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Error:\" overflows the section by 2335px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2336px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2084px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2198px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2231px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2231px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect height =\" overflows the section by 2263px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"30.0 mph\" overflows the section by 2263px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect area =\" overflows the section by 2296px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60.0 mi\" overflows the section by 2296px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2328px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"236.2 mi\" overflows the section by 2328px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2216px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 2205px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2085px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2085px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2751px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2108px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3697px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Snapshots\" overflows the section by 3149px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 3337px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3391px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 3339px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 3288px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 3236px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"a = 0\" overflows the section by 3409px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3401px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 3390px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 0.0\" overflows the section by 3427px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3292px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3586px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3643px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"100\" overflows the section by 3592px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"200\" overflows the section by 3540px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"300\" overflows the section by 3489px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3665px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3665px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3665px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3665px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3665px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3618px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3227px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"snap\" overflows the section by 3227px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3412px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3149px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4289px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4165px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4220px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 4220px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"time (s)\" overflows the section by 4282px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 4177px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 4263px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 4263px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 4263px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 4263px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 4263px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"+75.0\" overflows the section by 4141px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u221256.8\" overflows the section by 4201px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Net Area\" overflows the section by 4048px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4068px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4045px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4163px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4025px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='ftc_fValue' displays 51.2 but the model value is 0",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='ftc_areaValue' displays 98 but the model value is 0",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_riemannSum' displays 236.2 but the model value is 0",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_trueArea' displays 251.9 but the model value is 0",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_error' displays 15.71 but the model value is 15.7",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='negativeArea_netArea' displays 18.2 but the model value is 0",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 205px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.25
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 695px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.25
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1023px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.25
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1889px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.25
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4177px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.25
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1460px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2752px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3413px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4191px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4194px",
+        "var": "areaIntuition_fillProgress",
+        "value": 0.75
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1022px",
+        "var": "areaIntuition_fillProgress",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4178px",
+        "var": "areaIntuition_fillProgress",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 206px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 652px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 488px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x)\" overflows the section by 444px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"speed\" overflows the section by 454px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [shaded-area] overflows the section by 488px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [f-curve] overflows the section by 475px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 424px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"51.2\" overflows the section by 421px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 608px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"A(x)\" overflows the section by 564px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"area\" overflows the section by 574px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [a-curve] overflows the section by 608px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 601px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 573px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope:\" overflows the section by 568px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"51.2\" overflows the section by 568px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 587px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"98\" overflows the section by 583px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 650px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 650px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 650px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 650px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 650px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 650px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 646px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 626px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 2.0\" overflows the section by 624px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<circle> [x-handle] overflows the section by 640px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 504px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 695px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 401px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1024px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1244px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1222px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1690px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 1662px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 1662px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 1662px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 1662px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 1662px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1683px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1640px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1354px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1640px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1390px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1632px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1529px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1511px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Calculation\" overflows the section by 1365px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1384px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"= 25.0 miles\" overflows the section by 1403px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area = 25.0\" overflows the section by 1556px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1459px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1319px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1833px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1888px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2692px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2679px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2452px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2639px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 2639px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 2639px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 2639px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 2639px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2614px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 2473px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 2333px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 2193px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2602px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2202px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2249px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"True distance:\" overflows the section by 2303px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2304px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Error:\" overflows the section by 2335px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2336px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2084px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2198px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2231px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2231px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect height =\" overflows the section by 2263px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"30.0 mph\" overflows the section by 2263px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect area =\" overflows the section by 2296px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60.0 mi\" overflows the section by 2296px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2328px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"236.2 mi\" overflows the section by 2328px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2216px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 2205px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2085px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2085px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2751px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2108px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3697px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Snapshots\" overflows the section by 3149px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 3337px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3391px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 3339px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 3288px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 3236px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"a = 0\" overflows the section by 3409px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3401px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 3390px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 0.0\" overflows the section by 3427px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3292px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3586px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3643px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"100\" overflows the section by 3592px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"200\" overflows the section by 3540px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"300\" overflows the section by 3489px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3665px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3665px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3665px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3665px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3665px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3618px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3227px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"snap\" overflows the section by 3227px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3412px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3149px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4289px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4165px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4220px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 4220px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"time (s)\" overflows the section by 4282px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 4177px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 4263px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 4263px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 4263px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 4263px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 4263px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"+75.0\" overflows the section by 4141px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u221256.8\" overflows the section by 4201px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Net Area\" overflows the section by 4048px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4068px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4045px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4165px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4025px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='ftc_fValue' displays 51.2 but the model value is 0",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='ftc_areaValue' displays 98 but the model value is 0",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_riemannSum' displays 236.2 but the model value is 0",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_trueArea' displays 251.9 but the model value is 0",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_error' displays 15.71 but the model value is 15.7",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='negativeArea_netArea' displays 18.2 but the model value is 0",
+        "var": "areaIntuition_samplesUsed",
+        "value": 0.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 205px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 2.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1023px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 2.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1889px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 2.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4202px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 2.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1022px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 4.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1461px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 4.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2753px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 4.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3413px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 4.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4184px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 4.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 697px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4163px",
+        "var": "areaIntuition_samplesUsed",
+        "value": 8.0
+      }
+    ]
+  },
+  "behavior_critiques": {
+    "areaIntuition_boundB": {
+      "behaves_as_designed": true,
+      "issues": []
+    },
+    "areaIntuition_fillProgress": {
+      "behaves_as_designed": true,
+      "issues": []
+    },
+    "areaIntuition_samplesUsed": {
+      "behaves_as_designed": true,
+      "issues": []
+    },
+    "areaIntuition_boundA": {
+      "behaves_as_designed": true,
+      "issues": []
+    }
+  },
+  "assertions_total": 5,
+  "assertions_failed": 0,
+  "visual_check_failures": [
+    {
+      "id": "initial-state-poses-problem",
+      "expected": "shaded region visible between bounds, no fill animation running, area value hidden or showing placeholder",
+      "observed": "The two screenshots appear identical with no visible changes in the shaded region, fill animation, or area value display."
+    }
+  ],
+  "missing_model_variables": [],
+  "annotation_coverage": {
+    "areaIntuition_boundA": 1,
+    "areaIntuition_boundB": 1,
+    "areaIntuition_trueArea": 1,
+    "areaIntuition_fillProgress": 1,
+    "areaIntuition_animatedArea": 1,
+    "areaIntuition_revealed": 1,
+    "areaIntuition_samplesUsed": 1,
+    "areaIntuition_samplePoints": 1,
+    "areaIntuition_estimatedDistance": 1
+  },
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ],
+  "prose_word_count": null,
+  "prose_budget_exceeded": false,
+  "timings": {
+    "page_ready_s": 2.1,
+    "assertions_s": 7.3,
+    "sweep_s": 11.2,
+    "vlm_wait_s": 1.7,
+    "total_s": 22.6
+  },
+  "results": [
+    {
+      "id": "initial-state-poses-problem",
+      "description": "On load, the shaded region is visible but area is not revealed - posing the challenge of estimating area under a curve",
+      "checks": [
+        {
+          "var": "areaIntuition_revealed",
+          "op": "==",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "var": "areaIntuition_fillProgress",
+          "op": "==",
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": null,
+      "visual_check": "shaded region visible between bounds, no fill animation running, area value hidden or showing placeholder",
+      "metrics": {
+        "changed_area_ratio": 0.0001,
+        "mean_change_intensity": 52.5,
+        "changed_regions": 0,
+        "region_bboxes_px": [],
+        "coupling_px": null,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "The two screenshots appear identical with no visible changes in the shaded region, fill animation, or area value display."
+      }
+    },
+    {
+      "id": "bound-a-control-exists-and-works",
+      "description": "The left bound (a) can be dragged along the x-axis",
+      "checks": [
+        {
+          "var": "areaIntuition_boundA",
+          "op": "==",
+          "expected": 2,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "var": "areaIntuition_trueArea",
+          "op": "<",
+          "expected": 260,
+          "actual": 153.7014985628216,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "areaIntuition_boundA",
+      "visual_check": "left bound handle moves to x=2, shaded region shrinks from left",
+      "metrics": {
+        "changed_area_ratio": 0.0089,
+        "mean_change_intensity": 103.1,
+        "changed_regions": 34,
+        "region_bboxes_px": [
+          [
+            212,
+            288,
+            216,
+            296
+          ],
+          [
+            212,
+            308,
+            216,
+            316
+          ],
+          [
+            212,
+            328,
+            216,
+            336
+          ],
+          [
+            212,
+            348,
+            216,
+            356
+          ],
+          [
+            436,
+            364,
+            436,
+            376
+          ],
+          [
+            212,
+            368,
+            216,
+            372
+          ],
+          [
+            212,
+            384,
+            216,
+            392
+          ],
+          [
+            212,
+            404,
+            216,
+            412
+          ],
+          [
+            212,
+            424,
+            216,
+            432
+          ],
+          [
+            212,
+            444,
+            216,
+            452
+          ]
+        ],
+        "coupling_px": 17.0,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": true,
+        "observed": "The left bound handle (a) moved from x=0 to x=2, and the shaded region between the two handles visibly shrunk from the left side."
+      }
+    },
+    {
+      "id": "bound-b-control-exists-and-works",
+      "description": "The right bound (b) can be dragged along the x-axis",
+      "checks": [
+        {
+          "var": "areaIntuition_boundB",
+          "op": "==",
+          "expected": 4,
+          "actual": 4,
+          "passed": true
+        },
+        {
+          "var": "areaIntuition_trueArea",
+          "op": "<",
+          "expected": 260,
+          "actual": 174.84737054480132,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "areaIntuition_boundB",
+      "visual_check": "right bound handle moves to x=4, shaded region shrinks from right",
+      "metrics": {
+        "changed_area_ratio": 0.0048,
+        "mean_change_intensity": 87.5,
+        "changed_regions": 12,
+        "region_bboxes_px": [
+          [
+            656,
+            364,
+            656,
+            376
+          ],
+          [
+            1100,
+            364,
+            1100,
+            376
+          ],
+          [
+            656,
+            500,
+            656,
+            512
+          ],
+          [
+            1100,
+            500,
+            1100,
+            512
+          ],
+          [
+            640,
+            540,
+            652,
+            568
+          ],
+          [
+            656,
+            552,
+            668,
+            568
+          ],
+          [
+            680,
+            552,
+            680,
+            572
+          ],
+          [
+            648,
+            584,
+            668,
+            588
+          ],
+          [
+            656,
+            636,
+            656,
+            648
+          ],
+          [
+            1100,
+            636,
+            1100,
+            648
+          ]
+        ],
+        "coupling_px": 17.1,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": true,
+        "observed": "The purple (b) handle moved leftward from x=8 to x=4, and the shaded region between the two handles correspondingly shrunk from the right side."
+      }
+    },
+    {
+      "id": "area-updates-when-bounds-change",
+      "description": "Dragging bounds causes the shaded region and area value to update in real-time",
+      "checks": [
+        {
+          "var": "areaIntuition_trueArea",
+          "op": ">",
+          "expected": 30,
+          "actual": 251.9394147221229,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "areaIntuition_boundB",
+      "visual_check": "shaded region expands to cover more area under curve, area readout increases",
+      "metrics": {
+        "changed_area_ratio": 0.0046,
+        "mean_change_intensity": 85.6,
+        "changed_regions": 10,
+        "region_bboxes_px": [
+          [
+            656,
+            364,
+            656,
+            376
+          ],
+          [
+            1100,
+            364,
+            1100,
+            376
+          ],
+          [
+            656,
+            500,
+            656,
+            512
+          ],
+          [
+            1100,
+            500,
+            1100,
+            512
+          ],
+          [
+            644,
+            540,
+            656,
+            568
+          ],
+          [
+            656,
+            552,
+            668,
+            576
+          ],
+          [
+            656,
+            636,
+            656,
+            648
+          ],
+          [
+            1100,
+            636,
+            1100,
+            648
+          ],
+          [
+            640,
+            696,
+            676,
+            744
+          ],
+          [
+            1080,
+            696,
+            1116,
+            744
+          ]
+        ],
+        "coupling_px": 17.0,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": true,
+        "observed": "The purple dashed line (point b) moved from approximately 4 seconds to 8 seconds, expanding the shaded region under the curve to cover the entire time period shown."
+      }
+    },
+    {
+      "id": "clicking-timeline-uses-fuel-token",
+      "description": "Clicking on the timeline to sample speed costs one fuel token",
+      "checks": [
+        {
+          "var": "areaIntuition_samplesUsed",
+          "op": "==",
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "areaIntuition_samplesUsed",
+      "visual_check": "a sample marker appears at the clicked x-position, fuel token counter decreases by 1",
+      "metrics": {
+        "changed_area_ratio": 0.0046,
+        "mean_change_intensity": 101.8,
+        "changed_regions": 10,
+        "region_bboxes_px": [
+          [
+            652,
+            544,
+            676,
+            564
+          ],
+          [
+            652,
+            560,
+            668,
+            572
+          ],
+          [
+            1100,
+            820,
+            1112,
+            824
+          ],
+          [
+            156,
+            824,
+            316,
+            836
+          ],
+          [
+            1052,
+            824,
+            1068,
+            824
+          ],
+          [
+            540,
+            836,
+            564,
+            844
+          ],
+          [
+            616,
+            836,
+            660,
+            840
+          ],
+          [
+            712,
+            836,
+            720,
+            840
+          ],
+          [
+            508,
+            840,
+            520,
+            840
+          ],
+          [
+            728,
+            840,
+            752,
+            844
+          ]
+        ],
+        "coupling_px": 18.2,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": true,
+        "observed": "A sample marker (airplane icon) appeared on the timeline at approximately t=4 seconds, and the fuel token counter decreased from 0/8 to 1/8 samples used."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1475 @@
+{
+  "section_id": "riemann-sums",
+  "project_id": "97ip2v1xu7khwld03qpnr",
+  "passed": false,
+  "layout_issues": [],
+  "realization_fidelity": {
+    "faithful": false,
+    "flattened_to": "A passive visualization where n is controlled by an external slider (not shown in excerpt but implied by useVar pattern), with some causal quantities displayed but no explicit goal-structure milestones, no trace history, and the aha-moment risk of being stated rather than discovered.",
+    "violations": [
+      "Manipulated variable n is read from store via useVar, implying external slider UI rather than direct gesture on the rectangles themselves",
+      "Goal structure specifies 'suggested milestones: try n=4, n=10, n=50, n=100' but no interactive milestone markers, checkpoints, or guided sequence visible in the drawing component",
+      "Trace strategy specifies 'None' but there is no explicit design choice shown to prevent or emphasize single-state rendering\u2014the implementation simply redraws without history, which is correct but unmarked",
+      "Causal chain 'width of each rectangle (\u0394x), height of sample rectangle, individual rectangle area' are computed but only \u0394x is written to store; sampleRect and sampleArea are computed but never rendered or labeled on screen",
+      "Aha moment 'error shrinks but never quite vanishes' is discoverable via interaction, but the excerpt cuts off before any text or revealed message that might state this insight directly rather than letting it emerge"
+    ]
+  },
+  "polish": {
+    "passed": true,
+    "scores": {
+      "accent_discipline": 4,
+      "ink_quality": 4,
+      "label_legibility": 4,
+      "whitespace_composition": 4,
+      "affordance_clarity": 3,
+      "junk_free": 4,
+      "question_posing_initial_state": 5
+    },
+    "failing_items": [],
+    "worst_offense": "The circular compass icon inside the draggable handle at t\u22484s violates the no-emoji/decoration rule and competes visually with the curve itself.",
+    "fixes": [
+      "Remove the compass/star icon from inside the teal handle circle; the circle alone with its accent color and shadow is sufficient affordance.",
+      "The purple dashed vertical line at t=8s (right boundary) should be lighter/more subtle (reduce opacity ~30%) so it doesn't compete with the curve as a visual anchor.",
+      "Ensure the 'Samples: 0/8' label and 'Reveal true distance' button do not shift position when the sample count updates\u2014use fixed-width tabular layout to prevent reflow."
+    ]
+  },
+  "sweep": {
+    "swept": [
+      {
+        "var": "riemannSums_n",
+        "values": [
+          1.0,
+          51.0,
+          101.0,
+          150.0,
+          200.0
+        ]
+      }
+    ],
+    "issues": [
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 206px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 985px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 635px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x)\" overflows the section by 555px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"speed\" overflows the section by 574px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [shaded-area] overflows the section by 635px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [f-curve] overflows the section by 612px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 521px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"51.2\" overflows the section by 515px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 851px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"A(x)\" overflows the section by 772px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"area\" overflows the section by 790px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [a-curve] overflows the section by 851px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 839px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 789px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope:\" overflows the section by 780px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"51.2\" overflows the section by 780px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 814px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"98\" overflows the section by 807px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 927px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 927px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 927px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 927px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 927px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 927px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 920px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 884px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 2.0\" overflows the section by 881px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<circle> [x-handle] overflows the section by 909px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 663px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 900px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 401px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1297px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1517px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1496px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1963px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 1935px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 1935px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 1935px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 1935px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 1935px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1956px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1913px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1627px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1913px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1664px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1905px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1802px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1784px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Calculation\" overflows the section by 1638px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1657px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"= 25.0 miles\" overflows the section by 1676px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area = 25.0\" overflows the section by 1829px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1733px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1592px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2106px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2161px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2965px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2952px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2725px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2912px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 2912px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 2912px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 2912px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 2912px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2887px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 2747px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 2606px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 2466px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2875px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2475px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"239.0 mi\" overflows the section by 2522px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"True distance:\" overflows the section by 2576px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2577px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Error:\" overflows the section by 2608px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"4.7%\" overflows the section by 2609px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"11.94\" overflows the section by 2357px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2471px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2504px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"8.00 hr\" overflows the section by 2504px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect height =\" overflows the section by 2536px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"30.0 mph\" overflows the section by 2536px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect area =\" overflows the section by 2569px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"240.0 mi\" overflows the section by 2569px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 1 rects =\" overflows the section by 2601px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"240.0 mi\" overflows the section by 2601px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 1 rects\" overflows the section by 2489px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 1 rects\" overflows the section by 2478px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2358px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2358px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3025px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2381px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3970px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Snapshots\" overflows the section by 3422px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 3610px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3664px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 3612px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 3561px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 3509px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"a = 0\" overflows the section by 3682px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3674px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 3663px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 0.0\" overflows the section by 3700px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3565px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3859px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3916px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"100\" overflows the section by 3865px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"200\" overflows the section by 3813px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"300\" overflows the section by 3762px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3938px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3938px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3938px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3938px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3938px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3891px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3500px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"snap\" overflows the section by 3501px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3685px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3422px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4562px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4438px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4493px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 4493px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"time (s)\" overflows the section by 4555px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 4450px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 4536px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 4536px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 4536px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 4536px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 4536px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"+75.0\" overflows the section by 4414px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u221256.8\" overflows the section by 4475px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Net Area\" overflows the section by 4321px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4341px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4318px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4447px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4298px",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='ftc_fValue' displays 51.2 but the model value is 0",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='ftc_areaValue' displays 98 but the model value is 0",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_riemannSum' displays 239.0 but the model value is 240",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='negativeArea_netArea' displays 18.2 but the model value is 0",
+        "var": "riemannSums_n",
+        "value": 1.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 205px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 901px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1296px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2162px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"249.0 mi\" overflows the section by 2522px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"0.2%\" overflows the section by 2609px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"0.54\" overflows the section by 2357px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"0.16 hr\" overflows the section by 2504px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4.7 mi\" overflows the section by 2569px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 51 rects =\" overflows the section by 2601px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"251.4 mi\" overflows the section by 2601px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 51 rects\" overflows the section by 2489px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 51 rects\" overflows the section by 2478px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3686px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4470px",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_riemannSum' displays 249.0 but the model value is 251.3983184669806",
+        "var": "riemannSums_n",
+        "value": 51.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"251.7 mi\" overflows the section by 2522px",
+        "var": "riemannSums_n",
+        "value": 101.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"0.1%\" overflows the section by 2609px",
+        "var": "riemannSums_n",
+        "value": 101.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"0.26\" overflows the section by 2357px",
+        "var": "riemannSums_n",
+        "value": 101.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"0.08 hr\" overflows the section by 2504px",
+        "var": "riemannSums_n",
+        "value": 101.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2.4 mi\" overflows the section by 2569px",
+        "var": "riemannSums_n",
+        "value": 101.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 101 rects =\" overflows the section by 2601px",
+        "var": "riemannSums_n",
+        "value": 101.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"251.7 mi\" overflows the section by 2601px",
+        "var": "riemannSums_n",
+        "value": 101.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 101 rects\" overflows the section by 2489px",
+        "var": "riemannSums_n",
+        "value": 101.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 101 rects\" overflows the section by 2478px",
+        "var": "riemannSums_n",
+        "value": 101.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4465px",
+        "var": "riemannSums_n",
+        "value": 101.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"251.8 mi\" overflows the section by 2522px",
+        "var": "riemannSums_n",
+        "value": 150.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"0.17\" overflows the section by 2357px",
+        "var": "riemannSums_n",
+        "value": 150.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"0.05 hr\" overflows the section by 2504px",
+        "var": "riemannSums_n",
+        "value": 150.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1.6 mi\" overflows the section by 2569px",
+        "var": "riemannSums_n",
+        "value": 150.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 150 rects =\" overflows the section by 2601px",
+        "var": "riemannSums_n",
+        "value": 150.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"251.8 mi\" overflows the section by 2601px",
+        "var": "riemannSums_n",
+        "value": 150.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 150 rects\" overflows the section by 2489px",
+        "var": "riemannSums_n",
+        "value": 150.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 150 rects\" overflows the section by 2478px",
+        "var": "riemannSums_n",
+        "value": 150.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4436px",
+        "var": "riemannSums_n",
+        "value": 150.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"0.13\" overflows the section by 2357px",
+        "var": "riemannSums_n",
+        "value": 200.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"0.04 hr\" overflows the section by 2504px",
+        "var": "riemannSums_n",
+        "value": 200.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1.2 mi\" overflows the section by 2569px",
+        "var": "riemannSums_n",
+        "value": 200.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 200 rects =\" overflows the section by 2601px",
+        "var": "riemannSums_n",
+        "value": 200.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 200 rects\" overflows the section by 2489px",
+        "var": "riemannSums_n",
+        "value": 200.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 200 rects\" overflows the section by 2478px",
+        "var": "riemannSums_n",
+        "value": 200.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4449px",
+        "var": "riemannSums_n",
+        "value": 200.0
+      }
+    ]
+  },
+  "behavior_critiques": {
+    "riemannSums_n": {
+      "behaves_as_designed": true,
+      "issues": []
+    }
+  },
+  "assertions_total": 5,
+  "assertions_failed": 0,
+  "visual_check_failures": [
+    {
+      "id": "initial-state-poses-problem",
+      "expected": "small number of wide rectangles visible under curve, obvious gaps between rectangle tops and the curve, error gauge shows non-trivial error",
+      "observed": "The two screenshots appear virtually identical with no visible rectangles, gaps, or error gauge changes shown between them."
+    },
+    {
+      "id": "n-control-exists-and-works",
+      "expected": "rectangles multiply from 4 to 20, each becoming narrower",
+      "observed": "No visible change occurred between the two screenshots; both show identical layouts with the same speed curve graph and sample indicator at the same position."
+    },
+    {
+      "id": "increasing-n-improves-approximation",
+      "expected": "rectangles now fit curve snugly, gaps barely visible, error gauge shows small error",
+      "observed": "The two images appear identical with no visible changes to rectangles, curve fit, or error gauge between them."
+    },
+    {
+      "id": "carried-over-bounds-stay-frozen",
+      "expected": "bounds remain fixed at a=0 and b=8, only rectangles change",
+      "observed": "The two screenshots appear identical with no visible changes to the graph, bounds, or any visual elements."
+    },
+    {
+      "id": "error-never-reaches-zero",
+      "expected": "error gauge shows tiny but non-zero error, demonstrating that perfection requires infinite rectangles",
+      "observed": "The speedometer icon moved slightly to the right (from approximately 3.5 seconds to 4 seconds on the timeline), but no error gauge or error metric became visible in either screenshot."
+    }
+  ],
+  "missing_model_variables": [],
+  "annotation_coverage": {
+    "riemannSums_n": 1,
+    "riemannSums_a": 1,
+    "riemannSums_b": 1,
+    "riemannSums_deltaX": 1,
+    "riemannSums_riemannSum": 2,
+    "riemannSums_trueArea": 1,
+    "riemannSums_error": 1,
+    "riemannSums_errorPercent": 1,
+    "riemannSums_explored": 0
+  },
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ],
+  "prose_word_count": null,
+  "prose_budget_exceeded": false,
+  "timings": {
+    "page_ready_s": 2.5,
+    "assertions_s": 7.2,
+    "sweep_s": 3.4,
+    "vlm_wait_s": 1.1,
+    "total_s": 14.6
+  },
+  "results": [
+    {
+      "id": "initial-state-poses-problem",
+      "description": "On load, the visualization shows a small number of rectangles with visible gaps between rectangle tops and curve - posing the problem of imprecise approximation",
+      "checks": [
+        {
+          "var": "riemannSums_n",
+          "op": "<=",
+          "expected": 6,
+          "actual": 4,
+          "passed": true
+        },
+        {
+          "var": "riemannSums_error",
+          "op": ">",
+          "expected": 0.5,
+          "actual": 15.7,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": null,
+      "visual_check": "small number of wide rectangles visible under curve, obvious gaps between rectangle tops and the curve, error gauge shows non-trivial error",
+      "metrics": {
+        "changed_area_ratio": 0.0002,
+        "mean_change_intensity": 58.5,
+        "changed_regions": 0,
+        "region_bboxes_px": [],
+        "coupling_px": null,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "The two screenshots appear virtually identical with no visible rectangles, gaps, or error gauge changes shown between them."
+      }
+    },
+    {
+      "id": "n-control-exists-and-works",
+      "description": "The number of rectangles (n) can be changed via the quality dial or slider",
+      "checks": [
+        {
+          "var": "riemannSums_n",
+          "op": "==",
+          "expected": 20,
+          "actual": 20,
+          "passed": true
+        },
+        {
+          "var": "riemannSums_deltaX",
+          "op": "approx",
+          "expected": 0.4,
+          "actual": 0.4,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "riemannSums_n",
+      "visual_check": "rectangles multiply from 4 to 20, each becoming narrower",
+      "metrics": {
+        "changed_area_ratio": 0.0008,
+        "mean_change_intensity": 104.0,
+        "changed_regions": 8,
+        "region_bboxes_px": [
+          [
+            644,
+            536,
+            668,
+            536
+          ],
+          [
+            672,
+            540,
+            680,
+            548
+          ],
+          [
+            632,
+            548,
+            632,
+            572
+          ],
+          [
+            656,
+            552,
+            668,
+            568
+          ],
+          [
+            680,
+            552,
+            684,
+            572
+          ],
+          [
+            644,
+            556,
+            652,
+            564
+          ],
+          [
+            636,
+            576,
+            644,
+            584
+          ],
+          [
+            648,
+            588,
+            668,
+            588
+          ]
+        ],
+        "coupling_px": 2775.8,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "No visible change occurred between the two screenshots; both show identical layouts with the same speed curve graph and sample indicator at the same position."
+      }
+    },
+    {
+      "id": "increasing-n-improves-approximation",
+      "description": "As n increases, the Riemann sum converges toward the true area",
+      "checks": [
+        {
+          "var": "riemannSums_errorPercent",
+          "op": "<",
+          "expected": 5,
+          "actual": 0.10477805392793689,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "riemannSums_n",
+      "visual_check": "rectangles now fit curve snugly, gaps barely visible, error gauge shows small error",
+      "metrics": {
+        "changed_area_ratio": 0.0003,
+        "mean_change_intensity": 88.5,
+        "changed_regions": 1,
+        "region_bboxes_px": [
+          [
+            644,
+            544,
+            668,
+            568
+          ]
+        ],
+        "coupling_px": 2805.6,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "The two images appear identical with no visible changes to rectangles, curve fit, or error gauge between them."
+      }
+    },
+    {
+      "id": "carried-over-bounds-stay-frozen",
+      "description": "The bounds a and b are carried over from the previous section and cannot be changed by the student",
+      "checks": [
+        {
+          "var": "riemannSums_a",
+          "op": "==",
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        },
+        {
+          "var": "riemannSums_b",
+          "op": "==",
+          "expected": 8,
+          "actual": 8,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "riemannSums_n",
+      "visual_check": "bounds remain fixed at a=0 and b=8, only rectangles change",
+      "metrics": {
+        "changed_area_ratio": 0.0004,
+        "mean_change_intensity": 74.0,
+        "changed_regions": 2,
+        "region_bboxes_px": [
+          [
+            644,
+            544,
+            664,
+            564
+          ],
+          [
+            656,
+            552,
+            668,
+            568
+          ]
+        ],
+        "coupling_px": 2801.5,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "The two screenshots appear identical with no visible changes to the graph, bounds, or any visual elements."
+      }
+    },
+    {
+      "id": "error-never-reaches-zero",
+      "description": "Even at high n values, the error never quite reaches zero - the aha moment",
+      "checks": [
+        {
+          "var": "riemannSums_error",
+          "op": ">",
+          "expected": 0,
+          "actual": 0.12887934573282678,
+          "passed": true
+        },
+        {
+          "var": "riemannSums_errorPercent",
+          "op": "<",
+          "expected": 2,
+          "actual": 0.05115489605902853,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "riemannSums_n",
+      "visual_check": "error gauge shows tiny but non-zero error, demonstrating that perfection requires infinite rectangles",
+      "metrics": {
+        "changed_area_ratio": 0.0006,
+        "mean_change_intensity": 106.0,
+        "changed_regions": 3,
+        "region_bboxes_px": [
+          [
+            652,
+            532,
+            664,
+            532
+          ],
+          [
+            636,
+            536,
+            644,
+            544
+          ],
+          [
+            628,
+            556,
+            628,
+            568
+          ]
+        ],
+        "coupling_px": 2801.7,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "The speedometer icon moved slightly to the right (from approximately 3.5 seconds to 4 seconds on the timeline), but no error gauge or error metric became visible in either screenshot."
+      }
+    }
+  ]
+}

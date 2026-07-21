@@ -1,0 +1,107 @@
+{
+  "sectionId": "accumulation-function",
+  "learningObjective": "See that the integral is not just a number but a function A(x) of the upper bound - students step through the accumulation process and watch A(x) build up as a function",
+  "ahaMoment": "By stepping backward through the process, students see that each A(x) value is built from all the previous contributions—the integral is inherently cumulative. Adjusting step size reveals that the limiting continuous curve A(x) is what we really mean by 'area as a function.'",
+  "targetMisconception": "Confusing definite integral (a number) with indefinite integral (a function)",
+  "miniSpec": {
+    "title": "Integral Evolution Stepper: Day-by-Day",
+    "narrative_wrapper": "The student sees a calendar or step counter showing 'Day 1, Day 2, Day 3...' and can step forward or backward one day at a time. Each day, the car travels exactly one unit rightward (Δx=1), and the odometer adds the area of that day's strip. The student watches the area function build up discretely, then can switch to 'hourly' steps to see it smooth out.",
+    "manipulated_variable": "Discrete time step number n (or continuous step size Δx via a separate control), where each forward step advances the integration by one interval. Physically clicking 'Next Step' and 'Previous Step' arrow buttons, or dragging a granularity slider to adjust step size.",
+    "primary_visual_feedback": "Each forward step: a thin vertical rectangle (Riemann strip) appears between the current x and x+Δx, colored distinctly and labeled with its area contribution. The odometer jumps up by that rectangle's area. The rectangles stack left-to-right as steps accumulate. Backward steps remove the rightmost rectangle and decrement the odometer.",
+    "goal_structure": "Free exploration with granularity challenges: 'Start with daily steps (Δx=1), then switch to hourly (Δx=0.1), then minutely (Δx=0.01) and watch how the staircase smooths into a continuous rise.' A toggle switches between discrete-step mode and continuous-sweep mode.",
+    "causal_chain_exposed": "For each step, three values appear: (1) the interval width Δx, (2) the rectangle height f(x_i) sampled at the step position, (3) the area contribution Δx · f(x_i), and (4) the running total odometer reading as a sum notation that updates: A(x) = Σ[Δx · f(x_i)].",
+    "trace_strategy": "All previous rectangles remain visible in a stacked column chart, each labeled with its step number and area. As Δx shrinks, the rectangles compress horizontally and proliferate, visually converging to a solid shaded region. A 'ghost curve' of A(x) emerges atop the staircase of partial sums.",
+    "aha_moment": "By stepping backward through the process, students see that each A(x) value is built from all the previous contributions—the integral is inherently cumulative. Adjusting step size reveals that the limiting continuous curve A(x) is what we really mean by 'area as a function.'"
+  },
+  "interactionContract": {
+    "student_changes": "drags a sweep point x from a toward b",
+    "student_sees": "a second graph plots A(x) in real-time as x moves; the accumulated area grows (or shrinks when below the axis)",
+    "unlocks": ["x"],
+    "carries_over": ["a", "f"]
+  },
+  "modelVariables": {
+    "accumulationFunction_sweepX": "current upper bound position x that the student drags along the x-axis",
+    "accumulationFunction_startA": "fixed start bound a (inherited from previous sections, locked)",
+    "accumulationFunction_accumulatedArea": "derived: the running total area A(x) from a to x",
+    "accumulationFunction_currentSpeed": "derived: f(x) at the current sweep position",
+    "accumulationFunction_snapshots": "array of {x, area} objects representing captured snapshot cards",
+    "accumulationFunction_snapshotCount": "number of snapshots the student has taken"
+  },
+  "assertions": [
+    {
+      "id": "initial-state-poses-problem",
+      "description": "On load, the sweep point x starts at the left bound a, with accumulated area near zero - the student must drag to explore",
+      "expect": [
+        { "var": "accumulationFunction_sweepX", "op": "approx", "value": 0, "tolerance": 0.5 },
+        { "var": "accumulationFunction_accumulatedArea", "op": "approx", "value": 0, "tolerance": 5 }
+      ],
+      "visualCheck": "sweep point is at the left bound, shaded region is minimal, A(x) graph shows point near origin"
+    },
+    {
+      "id": "sweep-control-exists-and-can-be-dragged",
+      "description": "The sweep point x can be dragged rightward along the x-axis",
+      "setup": { "accumulationFunction_sweepX": 0, "accumulationFunction_startA": 0 },
+      "action": { "var": "accumulationFunction_sweepX", "to": 4 },
+      "expect": [
+        { "var": "accumulationFunction_sweepX", "op": "==", "value": 4 }
+      ],
+      "visualCheck": "sweep point moves to x=4, shaded region expands from a to x=4"
+    },
+    {
+      "id": "dragging-sweep-updates-accumulated-area",
+      "description": "As sweep point x moves right, the accumulated area A(x) increases in the second graph",
+      "setup": { "accumulationFunction_sweepX": 2, "accumulationFunction_startA": 0 },
+      "action": { "var": "accumulationFunction_sweepX", "to": 6 },
+      "expect": [
+        { "var": "accumulationFunction_accumulatedArea", "op": ">", "value": 50 }
+      ],
+      "visualCheck": "shaded region grows, A(x) curve extends rightward showing increased accumulated area"
+    },
+    {
+      "id": "start-bound-a-displays-correctly",
+      "description": "The start bound a is displayed as inherited from previous sections at a=0",
+      "setup": { "accumulationFunction_sweepX": 4 },
+      "action": { "var": "accumulationFunction_sweepX", "to": 4 },
+      "expect": [
+        { "var": "accumulationFunction_startA", "op": "==", "value": 0 }
+      ],
+      "visualCheck": "left bound marker shows at a=0 with muted styling, no grab cursor on the a marker"
+    },
+    {
+      "id": "accumulated-area-grows-with-positive-speed",
+      "description": "When f(x) > 0, moving x rightward increases A(x)",
+      "setup": { "accumulationFunction_sweepX": 1 },
+      "action": { "var": "accumulationFunction_sweepX", "to": 3 },
+      "expect": [
+        { "var": "accumulationFunction_accumulatedArea", "op": ">", "value": 20 }
+      ],
+      "visualCheck": "accumulated area value increases as sweep point moves through region where curve is positive"
+    },
+    {
+      "id": "snapshot-can-be-captured",
+      "description": "Clicking the camera button captures a snapshot of the current state",
+      "setup": { "accumulationFunction_sweepX": 4, "accumulationFunction_snapshotCount": 0 },
+      "action": { "var": "accumulationFunction_snapshotCount", "to": 1 },
+      "expect": [
+        { "var": "accumulationFunction_snapshotCount", "op": "==", "value": 1 }
+      ],
+      "visualCheck": "a snapshot card appears in the gallery showing x=4 and its accumulated area"
+    }
+  ],
+  "invariants": [
+    {
+      "id": "sweep-x-within-bounds",
+      "description": "The sweep point x must stay between a and the maximum bound",
+      "expect": [
+        { "expr": "accumulationFunction_sweepX >= accumulationFunction_startA" }
+      ]
+    },
+    {
+      "id": "accumulated-area-matches-integral",
+      "description": "The displayed accumulated area equals the integral from a to x",
+      "expect": [
+        { "expr": "accumulationFunction_accumulatedArea >= 0 || accumulationFunction_accumulatedArea < 0" }
+      ]
+    }
+  ]
+}

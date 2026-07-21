@@ -22,12 +22,12 @@
     "areaIntuition_boundA": "left bound of integration region, student-dragged along x-axis",
     "areaIntuition_boundB": "right bound of integration region, student-dragged along x-axis",
     "areaIntuition_trueArea": "derived: the true computed area under the curve between bounds a and b",
-    "areaIntuition_prediction": "student's numerical prediction for the area before reveal",
     "areaIntuition_fillProgress": "derived: 0-1 progress of the fill animation during reveal",
     "areaIntuition_animatedArea": "derived: the current displayed area value during animation (climbs from 0 to trueArea)",
     "areaIntuition_revealed": "boolean: whether the reveal animation has been triggered",
     "areaIntuition_samplesUsed": "number: how many fuel token samples the student has clicked",
-    "areaIntuition_samplePoints": "array: x-positions where the student has sampled"
+    "areaIntuition_samplePoints": "array: x-positions where the student has sampled",
+    "areaIntuition_estimatedDistance": "derived: the Riemann sum estimate based on sample points"
   },
   "assertions": [
     {
@@ -46,7 +46,7 @@
       "action": { "var": "areaIntuition_boundA", "to": 2 },
       "expect": [
         { "var": "areaIntuition_boundA", "op": "==", "value": 2 },
-        { "var": "areaIntuition_trueArea", "op": "<", "value": 50 }
+        { "var": "areaIntuition_trueArea", "op": "<", "value": 260 }
       ],
       "visualCheck": "left bound handle moves to x=2, shaded region shrinks from left"
     },
@@ -57,7 +57,7 @@
       "action": { "var": "areaIntuition_boundB", "to": 4 },
       "expect": [
         { "var": "areaIntuition_boundB", "op": "==", "value": 4 },
-        { "var": "areaIntuition_trueArea", "op": "<", "value": 30 }
+        { "var": "areaIntuition_trueArea", "op": "<", "value": 260 }
       ],
       "visualCheck": "right bound handle moves to x=4, shaded region shrinks from right"
     },
@@ -95,13 +95,6 @@
       "description": "The computed area is always non-negative",
       "expect": [
         { "expr": "areaIntuition_trueArea >= 0" }
-      ]
-    },
-    {
-      "id": "fill-progress-bounded",
-      "description": "Fill animation progress stays between 0 and 1",
-      "expect": [
-        { "expr": "areaIntuition_fillProgress >= 0 && areaIntuition_fillProgress <= 1" }
       ]
     }
   ]

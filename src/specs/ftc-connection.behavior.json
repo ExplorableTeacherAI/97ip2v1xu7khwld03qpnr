@@ -1,0 +1,106 @@
+{
+  "sectionId": "ftc-connection",
+  "learningObjective": "Discover that the derivative of the accumulation function A(x) equals the original function f(x) - making the deep connection that integration and differentiation are inverse operations",
+  "ahaMoment": "The slope number of the tangent line on A(x) exactly matches the height number of f(x) at every single position, revealing they are always equal",
+  "targetMisconception": "The FTC feels like magic - students don't understand WHY differentiation and integration are inverses",
+  "miniSpec": {
+    "title": "Drag the Point, Compare Two Graphs",
+    "narrative_wrapper": "Students see two synchronized graphs stacked vertically: the original function f(x) on top and the accumulation function A(x) below. They drag a point along the x-axis and watch how the slope of A(x) at that point relates to the height of f(x) above it.",
+    "manipulated_variable": "A vertical line or point dragged horizontally along the x-axis, changing the evaluation position x",
+    "primary_visual_feedback": "A tangent line appears on the A(x) graph showing its slope at that x-value, while a horizontal line extends from f(x) to show its height; both update as the point moves",
+    "goal_structure": "Free exploration with optional prompt to 'find three different x-values where you notice the pattern'",
+    "causal_chain_exposed": "The accumulated area under f from 0 to x (shown as shaded region), the numerical value A(x), the tangent line slope on A(x) (with numerical display), and the value f(x) are all visible simultaneously",
+    "trace_strategy": "Optional toggle to leave 'ghost' tangent lines at previous positions, allowing students to see the pattern persists across multiple x-values",
+    "aha_moment": "The slope number of the tangent line on A(x) exactly matches the height number of f(x) at every single position, revealing they are always equal"
+  },
+  "interactionContract": {
+    "student_changes": "drags x and observes both A(x) and its slope (tangent line) updating",
+    "student_sees": "a tangent line on A(x) whose slope matches f(x) at that point; the derivative of the area function IS the original function",
+    "carries_over": ["a", "x", "f"]
+  },
+  "modelVariables": {
+    "ftc_xPosition": "The x-position where we evaluate everything, student-dragged horizontally",
+    "ftc_fValue": "derived: f(x) - the height of the speed curve at x",
+    "ftc_areaValue": "derived: A(x) - the accumulated area under f from a to x",
+    "ftc_slopeValue": "derived: A'(x) - the slope of the accumulation function at x (numerically approximated derivative)",
+    "ftc_showGhosts": "boolean: whether to show ghost tangent lines at previous positions (optional feature)",
+    "ftc_boundA": "frozen: left integration bound (carried over from previous section)",
+    "ftc_flowersPlanted": "array: x-positions where the student has planted flowers (clicked)"
+  },
+  "assertions": [
+    {
+      "id": "initial-state-poses-problem",
+      "description": "On load, the visualization shows the two graphs but the relationship is not yet obvious - inviting exploration",
+      "expect": [
+        { "var": "ftc_xPosition", "op": ">=", "value": 1 },
+        { "var": "ftc_xPosition", "op": "<=", "value": 3 }
+      ],
+      "visualCheck": "Two stacked graphs visible: f(x) on top showing speed curve, A(x) below showing accumulated area. A vertical line marks the current x position. The shaded region shows accumulated area. Tangent line is visible on A(x)."
+    },
+    {
+      "id": "x-position-control-exists-and-works",
+      "description": "The x-position can be dragged horizontally along the axis",
+      "setup": { "ftc_xPosition": 2 },
+      "action": { "var": "ftc_xPosition", "to": 4 },
+      "expect": [
+        { "var": "ftc_xPosition", "op": "==", "value": 4 },
+        { "var": "ftc_fValue", "op": ">", "value": 0 },
+        { "var": "ftc_areaValue", "op": ">", "value": 0 }
+      ],
+      "visualCheck": "Vertical line moves to x=4, shaded region expands, A(x) value increases, tangent line on A(x) updates"
+    },
+    {
+      "id": "slope-matches-function-value",
+      "description": "The slope of A(x) at position x approximately equals f(x) at the same position - the core FTC insight",
+      "setup": { "ftc_xPosition": 3 },
+      "action": { "var": "ftc_xPosition", "to": 5 },
+      "expect": [
+        { "var": "ftc_slopeValue", "op": "approx", "value": 15, "tolerance": 10 }
+      ],
+      "visualCheck": "The slope readout on the tangent line numerically matches the f(x) height readout above, demonstrating A'(x) = f(x)"
+    },
+    {
+      "id": "area-updates-with-position",
+      "description": "Moving x changes the accumulated area A(x)",
+      "setup": { "ftc_xPosition": 2 },
+      "action": { "var": "ftc_xPosition", "to": 6 },
+      "expect": [
+        { "var": "ftc_areaValue", "op": ">", "value": 100 }
+      ],
+      "visualCheck": "Shaded region under f(x) expands as x moves right, A(x) readout increases"
+    },
+    {
+      "id": "carries-over-bound-a-frozen",
+      "description": "The left bound a is frozen from previous section and cannot be changed",
+      "setup": { "ftc_boundA": 0 },
+      "action": { "var": "ftc_xPosition", "to": 4 },
+      "expect": [
+        { "var": "ftc_boundA", "op": "==", "value": 0 }
+      ],
+      "visualCheck": "Left bound of shaded region stays fixed at a=0, only right bound moves with x"
+    }
+  ],
+  "invariants": [
+    {
+      "id": "slope-approximately-equals-f",
+      "description": "At every x-position, the slope A'(x) approximately equals f(x) - the FTC relationship",
+      "expect": [
+        { "expr": "abs(ftc_slopeValue - ftc_fValue) < 5" }
+      ]
+    },
+    {
+      "id": "area-non-negative-when-f-positive",
+      "description": "Area under positive function is non-negative",
+      "expect": [
+        { "expr": "ftc_areaValue >= 0" }
+      ]
+    },
+    {
+      "id": "x-within-bounds",
+      "description": "The x-position stays within valid range",
+      "expect": [
+        { "expr": "ftc_xPosition >= 0.4 && ftc_xPosition <= 8.1" }
+      ]
+    }
+  ]
+}

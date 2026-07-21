@@ -1,0 +1,2288 @@
+{
+  "section_id": "ftc-connection",
+  "project_id": "97ip2v1xu7khwld03qpnr",
+  "passed": false,
+  "layout_issues": [],
+  "realization_fidelity": {
+    "faithful": false,
+    "flattened_to": "A decorative flower-animation visualization with direct point dragging that exposes the causal chain visually, but the code is incomplete, the trace strategy (ghost tangent lines) is missing, and the goal structure (finding three x-values) is not implemented\u2014reducing it to pure free exploration without guidance or reflection mechanic.",
+    "violations": [
+      "trace_strategy not implemented: no 'ghost' tangent lines or persistent visual history of previous positions; only current tangent line shown",
+      "goal_structure incomplete: the 'find three different x-values' prompt and any scaffolded discovery sequence are absent; code ends mid-implementation (truncated)",
+      "aha_moment delivery unclear: numerical displays of slope and f(x) values are written to state but no visual comparison widget or side-by-side numerical feedback is shown in the SVG to make the equality a learner discovery rather than a given",
+      "flower planting mechanic is extraneous decoration unrelated to the FTC design intent; diverts attention from core causal chain comparison",
+      "tangent line slope visualization present but no explicit numerical label or matching visual pairing with the f(x) height value on screen simultaneously"
+    ]
+  },
+  "polish": {
+    "passed": true,
+    "scores": {
+      "accent_discipline": 4,
+      "ink_quality": 4,
+      "label_legibility": 4,
+      "whitespace_composition": 4,
+      "affordance_clarity": 3,
+      "junk_free": 4,
+      "question_posing_initial_state": 5
+    },
+    "failing_items": [],
+    "worst_offense": "The speedometer icon in the draggable handle at t\u22484s reads as decorative emoji/clip-art inside the drawing surface, violating the no-decoration rule.",
+    "fixes": [
+      "Remove the speedometer icon from the teal circular handle; replace with a plain accent-colored circle (12\u201314px radius) with soft shadow to signal affordance.",
+      "Ensure the purple (b) handle at t=8s has matching visual affordance: same radius, shadow, and hover scale-up; verify both are \u226524px hit area.",
+      "Confirm label positions (\"Est: 0.0 | True: ???\" and axis labels) remain unoccluded at all slider extremes; test with the handles dragged to their limits."
+    ]
+  },
+  "sweep": {
+    "swept": [
+      {
+        "var": "ftc_xPosition",
+        "values": [
+          0.5,
+          2.4,
+          4.3,
+          6.1,
+          8.0
+        ]
+      }
+    ],
+    "issues": [
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 206px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"f(x)speed44.5A(x)areaslope:44.51902468xx\" overflows the section by 652px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [f-graph] \"f(x)speed44.5\" overflows the section by 488px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x)\" overflows the section by 444px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"speed\" overflows the section by 454px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [shaded-area] overflows the section by 488px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [f-curve] overflows the section by 475px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_fValue] \"44.5\" overflows the section by 434px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"44.5\" overflows the section by 431px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [a-graph] \"A(x)areaslope:44.519\" overflows the section by 612px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"A(x)\" overflows the section by 564px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"area\" overflows the section by 574px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [a-curve] overflows the section by 608px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 608px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [slope-readout] \"slope:44.5\" overflows the section by 590px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope:\" overflows the section by 585px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"44.5\" overflows the section by 585px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_areaValue] \"19\" overflows the section by 612px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"19\" overflows the section by 608px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [x-axis] \"02468xx = 0.5\" overflows the section by 650px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 650px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 650px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 650px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 650px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 650px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 646px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_xPosition] \"x = 0.5\" overflows the section by 626px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 0.5\" overflows the section by 624px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<circle> [x-handle] overflows the section by 640px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope = 44.5 \u2248 f(x)\" overflows the section by 504px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 900px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 401px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1297px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1517px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1496px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1963px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 1935px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 1935px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 1935px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 1935px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 1935px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1956px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1913px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1627px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1913px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1664px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1905px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1802px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1784px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Calculation\" overflows the section by 1638px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1657px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"= 25.0 miles\" overflows the section by 1676px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area = 25.0\" overflows the section by 1829px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1734px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1592px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2106px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2161px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2965px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2952px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2725px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2912px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 2912px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 2912px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 2912px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 2912px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2887px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 2747px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 2606px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 2466px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2875px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2475px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2522px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"True distance:\" overflows the section by 2576px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2577px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Error:\" overflows the section by 2608px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2609px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2357px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2471px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2504px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2504px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect height =\" overflows the section by 2536px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"30.0 mph\" overflows the section by 2536px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect area =\" overflows the section by 2569px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60.0 mi\" overflows the section by 2569px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2601px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"236.2 mi\" overflows the section by 2601px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2489px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 2478px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2358px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2358px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3026px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2381px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3970px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Snapshots\" overflows the section by 3422px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 3610px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3664px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 3612px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 3561px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 3509px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"a = 0\" overflows the section by 3682px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3674px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 3663px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 0.0\" overflows the section by 3700px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3565px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3859px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3916px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"100\" overflows the section by 3865px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"200\" overflows the section by 3813px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"300\" overflows the section by 3762px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3938px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3938px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3938px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3938px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3938px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3891px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3500px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"snap\" overflows the section by 3501px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3686px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3422px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4562px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4438px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4493px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 4493px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"time (s)\" overflows the section by 4555px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 4450px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 4536px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 4536px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 4536px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 4536px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 4536px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"+75.0\" overflows the section by 4414px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u221256.8\" overflows the section by 4475px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Net Area\" overflows the section by 4321px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4341px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4318px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4459px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4298px",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_riemannSum' displays 236.2 but the model value is 0",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_trueArea' displays 251.9 but the model value is 0",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='riemannSums_error' displays 15.71 but the model value is 15.7",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "readout_mismatch",
+        "detail": "element data-concept='negativeArea_netArea' displays 18.2 but the model value is 0",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "invariant_violation",
+        "detail": "invariant 'x-within-bounds' fails: ftc_xPosition >= 0.5 && ftc_xPosition <= 8",
+        "var": "ftc_xPosition",
+        "value": 0.5
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 205px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"f(x)speed45.5A(x)areaslope:45.511802468x\" overflows the section by 652px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [f-graph] \"f(x)speed45.5\" overflows the section by 488px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_fValue] \"45.5\" overflows the section by 433px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"45.5\" overflows the section by 430px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [a-graph] \"A(x)areaslope:45.5118\" overflows the section by 608px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 592px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [slope-readout] \"slope:45.5\" overflows the section by 567px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope:\" overflows the section by 562px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"45.5\" overflows the section by 562px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_areaValue] \"118\" overflows the section by 581px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"118\" overflows the section by 577px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [x-axis] \"02468xx = 2.4\" overflows the section by 650px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_xPosition] \"x = 2.4\" overflows the section by 626px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 2.4\" overflows the section by 624px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope = 45.5 \u2248 f(x)\" overflows the section by 504px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 901px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1296px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1733px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2162px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3025px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3685px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4475px",
+        "var": "ftc_xPosition",
+        "value": 2.4
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"f(x)speed24.6A(x)areaslope:24.618302468x\" overflows the section by 652px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [f-graph] \"f(x)speed24.6\" overflows the section by 488px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_fValue] \"24.6\" overflows the section by 462px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"24.6\" overflows the section by 459px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [a-graph] \"A(x)areaslope:24.6183\" overflows the section by 608px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 562px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [slope-readout] \"slope:24.6\" overflows the section by 546px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope:\" overflows the section by 541px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"24.6\" overflows the section by 541px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_areaValue] \"183\" overflows the section by 560px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"183\" overflows the section by 556px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [x-axis] \"02468xx = 4.3\" overflows the section by 650px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_xPosition] \"x = 4.3\" overflows the section by 626px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 4.3\" overflows the section by 624px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope = 24.6 \u2248 f(x)\" overflows the section by 504px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4436px",
+        "var": "ftc_xPosition",
+        "value": 4.3
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"f(x)speed9.6A(x)areaslope:9.620902468xx \" overflows the section by 652px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [f-graph] \"f(x)speed9.6\" overflows the section by 488px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_fValue] \"9.6\" overflows the section by 484px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"9.6\" overflows the section by 481px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [a-graph] \"A(x)areaslope:9.6209\" overflows the section by 608px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 547px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [slope-readout] \"slope:9.6\" overflows the section by 538px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope:\" overflows the section by 533px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"9.6\" overflows the section by 533px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_areaValue] \"209\" overflows the section by 552px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"209\" overflows the section by 548px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [x-axis] \"02468xx = 6.1\" overflows the section by 650px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_xPosition] \"x = 6.1\" overflows the section by 626px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 6.1\" overflows the section by 624px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope = 9.6 \u2248 f(x)\" overflows the section by 504px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 695px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1022px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1244px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1222px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1690px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 1662px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 1662px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 1662px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 1662px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 1662px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1683px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1640px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1354px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1640px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1390px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1632px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1529px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1511px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Calculation\" overflows the section by 1365px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1384px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"= 25.0 miles\" overflows the section by 1403px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area = 25.0\" overflows the section by 1556px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1319px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1833px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1889px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2692px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2679px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2452px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2639px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 2639px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 2639px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 2639px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 2639px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2614px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 2473px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 2333px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 2193px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2602px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2202px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2249px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"True distance:\" overflows the section by 2303px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2304px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Error:\" overflows the section by 2335px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2336px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2084px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2198px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2231px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2231px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect height =\" overflows the section by 2263px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"30.0 mph\" overflows the section by 2263px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect area =\" overflows the section by 2296px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60.0 mi\" overflows the section by 2296px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2328px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"236.2 mi\" overflows the section by 2328px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2216px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 2205px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2085px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2085px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2108px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3697px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Snapshots\" overflows the section by 3149px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 3337px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3391px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 3339px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 3288px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 3236px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"a = 0\" overflows the section by 3409px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3401px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 3390px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 0.0\" overflows the section by 3427px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3292px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3586px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3643px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"100\" overflows the section by 3592px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"200\" overflows the section by 3540px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"300\" overflows the section by 3489px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3665px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3665px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3665px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3665px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3665px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3618px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3227px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"snap\" overflows the section by 3227px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3149px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4289px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4165px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4220px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 4220px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"time (s)\" overflows the section by 4282px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 4177px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 4263px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 4263px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 4263px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 4263px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 4263px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"+75.0\" overflows the section by 4141px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u221256.8\" overflows the section by 4201px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Net Area\" overflows the section by 4048px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4068px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4045px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4025px",
+        "var": "ftc_xPosition",
+        "value": 6.1
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"f(x)speed36.3A(x)areaslope:36.325202468x\" overflows the section by 652px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [f-graph] \"f(x)speed36.3\" overflows the section by 488px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_fValue] \"36.3\" overflows the section by 446px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"36.3\" overflows the section by 443px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [a-graph] \"A(x)areaslope:36.3252\" overflows the section by 608px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 546px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [slope-readout] \"slope:36.3\" overflows the section by 533px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope:\" overflows the section by 528px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"36.3\" overflows the section by 528px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_areaValue] \"252\" overflows the section by 539px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"252\" overflows the section by 535px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [x-axis] \"02468xx = 8.0\" overflows the section by 650px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [ftc_xPosition] \"x = 8.0\" overflows the section by 626px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 8.0\" overflows the section by 624px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"slope = 36.3 \u2248 f(x)\" overflows the section by 504px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1023px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1458px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2750px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3410px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 4182px",
+        "var": "ftc_xPosition",
+        "value": 8.0
+      }
+    ]
+  },
+  "behavior_critiques": {
+    "ftc_xPosition": {
+      "behaves_as_designed": true,
+      "issues": []
+    }
+  },
+  "assertions_total": 5,
+  "assertions_failed": 0,
+  "visual_check_failures": [
+    {
+      "id": "initial-state-poses-problem",
+      "expected": "Two stacked graphs visible: f(x) on top showing speed curve, A(x) below showing accumulated area. A vertical line marks the current x position. The shaded region shows accumulated area. Tangent line is visible on A(x).",
+      "observed": "The interface appears virtually identical between the two screenshots with no visible changes to the graph layout, additional stacked graphs, shaded regions, or tangent lines."
+    },
+    {
+      "id": "x-position-control-exists-and-works",
+      "expected": "Vertical line moves to x=4, shaded region expands, A(x) value increases, tangent line on A(x) updates",
+      "observed": "The green circle indicator moved slightly along the curve but the vertical line remained at the same position and the shaded region did not expand visibly."
+    },
+    {
+      "id": "slope-matches-function-value",
+      "expected": "The slope readout on the tangent line numerically matches the f(x) height readout above, demonstrating A'(x) = f(x)",
+      "observed": "The two screenshots appear nearly identical with no visible changes to slope readouts, tangent lines, or numerical displays."
+    },
+    {
+      "id": "area-updates-with-position",
+      "expected": "Shaded region under f(x) expands as x moves right, A(x) readout increases",
+      "observed": "The two screenshots appear identical with no visible changes to shading, readout values, or any other visual elements."
+    },
+    {
+      "id": "carries-over-bound-a-frozen",
+      "expected": "Left bound of shaded region stays fixed at a=0, only right bound moves with x",
+      "observed": "The shaded region appears to have moved slightly to the right, with both bounds shifting rather than only the right bound moving while the left bound stays fixed at a=0."
+    }
+  ],
+  "missing_model_variables": [],
+  "annotation_coverage": {
+    "ftc_xPosition": 1,
+    "ftc_fValue": 1,
+    "ftc_areaValue": 1,
+    "ftc_slopeValue": 1,
+    "ftc_showGhosts": 0,
+    "ftc_boundA": 0,
+    "ftc_flowersPlanted": 0
+  },
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ],
+  "prose_word_count": null,
+  "prose_budget_exceeded": false,
+  "timings": {
+    "page_ready_s": 2.1,
+    "assertions_s": 7.3,
+    "sweep_s": 3.5,
+    "vlm_wait_s": 1.2,
+    "total_s": 14.3
+  },
+  "results": [
+    {
+      "id": "initial-state-poses-problem",
+      "description": "On load, the visualization shows the two graphs but the relationship is not yet obvious - inviting exploration",
+      "checks": [
+        {
+          "var": "ftc_xPosition",
+          "op": ">=",
+          "expected": 1,
+          "actual": 2,
+          "passed": true
+        },
+        {
+          "var": "ftc_xPosition",
+          "op": "<=",
+          "expected": 3,
+          "actual": 2,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": null,
+      "visual_check": "Two stacked graphs visible: f(x) on top showing speed curve, A(x) below showing accumulated area. A vertical line marks the current x position. The shaded region shows accumulated area. Tangent line is visible on A(x).",
+      "metrics": {
+        "changed_area_ratio": 0.0002,
+        "mean_change_intensity": 77.9,
+        "changed_regions": 2,
+        "region_bboxes_px": [
+          [
+            652,
+            548,
+            664,
+            548
+          ],
+          [
+            644,
+            556,
+            644,
+            568
+          ]
+        ],
+        "coupling_px": null,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "The interface appears virtually identical between the two screenshots with no visible changes to the graph layout, additional stacked graphs, shaded regions, or tangent lines."
+      }
+    },
+    {
+      "id": "x-position-control-exists-and-works",
+      "description": "The x-position can be dragged horizontally along the axis",
+      "checks": [
+        {
+          "var": "ftc_xPosition",
+          "op": "==",
+          "expected": 4,
+          "actual": 4,
+          "passed": true
+        },
+        {
+          "var": "ftc_fValue",
+          "op": ">",
+          "expected": 0,
+          "actual": 27.82003340651496,
+          "passed": true
+        },
+        {
+          "var": "ftc_areaValue",
+          "op": ">",
+          "expected": 0,
+          "actual": 174.84737054480132,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "ftc_xPosition",
+      "visual_check": "Vertical line moves to x=4, shaded region expands, A(x) value increases, tangent line on A(x) updates",
+      "metrics": {
+        "changed_area_ratio": 0.0008,
+        "mean_change_intensity": 114.9,
+        "changed_regions": 5,
+        "region_bboxes_px": [
+          [
+            652,
+            528,
+            664,
+            528
+          ],
+          [
+            668,
+            532,
+            684,
+            544
+          ],
+          [
+            628,
+            540,
+            632,
+            552
+          ],
+          [
+            624,
+            556,
+            624,
+            568
+          ],
+          [
+            632,
+            580,
+            640,
+            588
+          ]
+        ],
+        "coupling_px": 1184.5,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "The green circle indicator moved slightly along the curve but the vertical line remained at the same position and the shaded region did not expand visibly."
+      }
+    },
+    {
+      "id": "slope-matches-function-value",
+      "description": "The slope of A(x) at position x approximately equals f(x) at the same position - the core FTC insight",
+      "checks": [
+        {
+          "var": "ftc_slopeValue",
+          "op": "approx",
+          "expected": 15,
+          "actual": 15.527551205239831,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "ftc_xPosition",
+      "visual_check": "The slope readout on the tangent line numerically matches the f(x) height readout above, demonstrating A'(x) = f(x)",
+      "metrics": {
+        "changed_area_ratio": 0.0007,
+        "mean_change_intensity": 104.6,
+        "changed_regions": 4,
+        "region_bboxes_px": [
+          [
+            652,
+            532,
+            664,
+            532
+          ],
+          [
+            628,
+            556,
+            628,
+            568
+          ],
+          [
+            656,
+            560,
+            664,
+            568
+          ],
+          [
+            680,
+            564,
+            684,
+            572
+          ]
+        ],
+        "coupling_px": 1202.7,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "The two screenshots appear nearly identical with no visible changes to slope readouts, tangent lines, or numerical displays."
+      }
+    },
+    {
+      "id": "area-updates-with-position",
+      "description": "Moving x changes the accumulated area A(x)",
+      "checks": [
+        {
+          "var": "ftc_areaValue",
+          "op": ">",
+          "expected": 100,
+          "actual": 207.76198143802932,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "ftc_xPosition",
+      "visual_check": "Shaded region under f(x) expands as x moves right, A(x) readout increases",
+      "metrics": {
+        "changed_area_ratio": 0.0,
+        "mean_change_intensity": 0.0,
+        "changed_regions": 0,
+        "region_bboxes_px": [],
+        "coupling_px": null,
+        "no_visible_change": true
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "The two screenshots appear identical with no visible changes to shading, readout values, or any other visual elements."
+      }
+    },
+    {
+      "id": "carries-over-bound-a-frozen",
+      "description": "The left bound a is frozen from previous section and cannot be changed",
+      "checks": [
+        {
+          "var": "ftc_boundA",
+          "op": "==",
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "action_var": "ftc_xPosition",
+      "visual_check": "Left bound of shaded region stays fixed at a=0, only right bound moves with x",
+      "metrics": {
+        "changed_area_ratio": 0.0006,
+        "mean_change_intensity": 101.2,
+        "changed_regions": 5,
+        "region_bboxes_px": [
+          [
+            648,
+            536,
+            668,
+            536
+          ],
+          [
+            632,
+            552,
+            632,
+            568
+          ],
+          [
+            680,
+            556,
+            684,
+            576
+          ],
+          [
+            656,
+            560,
+            664,
+            568
+          ],
+          [
+            652,
+            588,
+            664,
+            588
+          ]
+        ],
+        "coupling_px": 929.9,
+        "no_visible_change": false
+      },
+      "visual_verdict": {
+        "happened": false,
+        "observed": "The shaded region appears to have moved slightly to the right, with both bounds shifting rather than only the right bound moving while the left bound stays fixed at a=0."
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "sectionId": "calculating-integrals",
+  "learningObjective": "Apply the FTC to calculate definite integrals using F(b) - F(a) - connecting the symbolic calculation to the geometric meaning students have built",
+  "ahaMoment": "Discovering that the vertical measurement F(b)-F(a) on one curve mysteriously equals the horizontal area measurement under a completely different curve",
+  "targetMisconception": "Students struggle to connect symbolic calculation to the geometric meaning",
+  "miniSpec": {
+    "title": "Split-Screen Symbolic and Geometric Comparison",
+    "narrative_wrapper": "The screen divides into symbolic work on the left and graph on the right. Students drag terms in the symbolic calculation (writing out ∫f(x)dx = F(x)|ᵇₐ = F(b) - F(a)) and watch corresponding visual elements highlight on the graph. Rearranging the algebra animates the geometry.",
+    "manipulated_variable": "Draggable mathematical expression tiles that students arrange in proper order: integral symbol, function, antiderivative, evaluation bars, substituted values, subtraction",
+    "primary_visual_feedback": "As each symbolic piece is placed correctly, the corresponding geometric feature pulses or highlights on the graph: placing F(x) shows the antiderivative curve, placing evaluation notation highlights points (a,F(a)) and (b,F(b)), placing subtraction shows the difference",
+    "goal_structure": "Correct sequencing task: student arranges symbolic steps in correct order to complete the calculation, with the final arrangement unlocking an animation showing why the symbolic result equals the geometric area",
+    "causal_chain_exposed": "Connection lines dynamically link: the integral symbol to the shaded area, F(x) to the antiderivative curve, evaluation notation to specific points, and the subtraction F(b)-F(a) to both the vertical distance on F(x) and the shaded area under f(x)",
+    "trace_strategy": "Persistent bidirectional links: colored lines remain visible connecting each symbolic element to its geometric counterpart, creating a web of correspondences that remains throughout interaction",
+    "aha_moment": "Discovering that the vertical measurement F(b)-F(a) on one curve mysteriously equals the horizontal area measurement under a completely different curve"
+  },
+  "interactionContract": {
+    "student_changes": "scrubs values of a and b in the formula and sees the calculation update",
+    "student_sees": "the formula F(b) - F(a) updates alongside the visual shaded area, confirming the symbolic and geometric answers match",
+    "carries_over": ["a", "b", "f"]
+  },
+  "modelVariables": {
+    "calcIntegrals_a": "left bound of integration (frozen/locked from previous section), inherited",
+    "calcIntegrals_b": "right bound of integration, student-scrubbable in formula",
+    "calcIntegrals_f": "the speed function type (frozen from previous section), inherited",
+    "calcIntegrals_Fa": "derived: F(a) = antiderivative evaluated at a",
+    "calcIntegrals_Fb": "derived: F(b) = antiderivative evaluated at b",
+    "calcIntegrals_difference": "derived: F(b) - F(a), the definite integral result",
+    "calcIntegrals_area": "derived: the shaded area under f(x) from a to b, equals calcIntegrals_difference",
+    "calcIntegrals_activeHighlight": "string: which element is currently highlighted (integral, antiderivative, eval-a, eval-b, difference)"
+  },
+  "assertions": [
+    {
+      "id": "initial-state-poses-problem",
+      "description": "On load, the formula shows the integral with bounds, the graph shows both curves and the shaded area, but the connection between symbolic and geometric is not yet fully animated - posing the challenge of understanding why F(b)-F(a) gives the area",
+      "expect": [
+        { "var": "calcIntegrals_a", "op": ">=", "value": 0 },
+        { "var": "calcIntegrals_b", "op": ">", "value": 0 },
+        { "var": "calcIntegrals_difference", "op": "!=", "value": 0 }
+      ],
+      "visualCheck": "both f(x) and F(x) curves visible, shaded area under f(x), formula displays integral with scrubbable bounds"
+    },
+    {
+      "id": "bound-b-control-exists-and-works",
+      "description": "The upper bound (b) can be scrubbed and updates the calculation",
+      "setup": { "calcIntegrals_a": 0, "calcIntegrals_b": 3 },
+      "action": { "var": "calcIntegrals_b", "to": 5 },
+      "expect": [
+        { "var": "calcIntegrals_b", "op": "==", "value": 5 },
+        { "var": "calcIntegrals_Fb", "op": "approx", "value": 25, "tolerance": 0.1 },
+        { "var": "calcIntegrals_difference", "op": "approx", "value": 25, "tolerance": 0.1 }
+      ],
+      "visualCheck": "upper bound marker moves to x=5, shaded area expands, F(b) value updates, difference calculation updates"
+    },
+    {
+      "id": "formula-and-area-match",
+      "description": "The F(b)-F(a) calculation matches the geometric area under the curve",
+      "setup": { "calcIntegrals_a": 0, "calcIntegrals_b": 4 },
+      "action": { "var": "calcIntegrals_b", "to": 4 },
+      "expect": [
+        { "var": "calcIntegrals_difference", "op": "approx", "value": 16, "tolerance": 0.1 },
+        { "var": "calcIntegrals_area", "op": "approx", "value": 16, "tolerance": 0.1 }
+      ],
+      "visualCheck": "the formula result matches the displayed area value - symbolic and geometric answers are the same"
+    },
+    {
+      "id": "carried-over-a-is-frozen",
+      "description": "The lower bound (a) is carried over from previous section and cannot be changed by the student (frozen at 0)",
+      "setup": { "calcIntegrals_a": 0 },
+      "expect": [
+        { "var": "calcIntegrals_a", "op": "==", "value": 0 }
+      ],
+      "visualCheck": "lower bound a is displayed but not interactive - shown as a fixed value"
+    },
+    {
+      "id": "aha-moment-vertical-equals-horizontal",
+      "description": "The vertical distance F(b)-F(a) on the antiderivative curve equals the horizontal area under the original curve",
+      "setup": { "calcIntegrals_a": 0, "calcIntegrals_b": 5 },
+      "action": { "var": "calcIntegrals_b", "to": 5 },
+      "expect": [
+        { "var": "calcIntegrals_Fb", "op": "approx", "value": 25, "tolerance": 0.1 },
+        { "var": "calcIntegrals_Fa", "op": "==", "value": 0 },
+        { "var": "calcIntegrals_difference", "op": "approx", "value": 25, "tolerance": 0.1 },
+        { "var": "calcIntegrals_area", "op": "approx", "value": 25, "tolerance": 0.1 }
+      ],
+      "visualCheck": "vertical bar showing F(b)-F(a) on antiderivative curve has same length as the accumulated area under original curve"
+    }
+  ],
+  "invariants": [
+    {
+      "id": "bounds-stay-ordered",
+      "description": "The lower bound a is always less than the upper bound b",
+      "expect": [
+        { "expr": "calcIntegrals_a < calcIntegrals_b" }
+      ]
+    },
+    {
+      "id": "difference-equals-area",
+      "description": "The symbolic F(b)-F(a) always equals the geometric area",
+      "expect": [
+        { "expr": "abs(calcIntegrals_difference - calcIntegrals_area) < 0.5" }
+      ]
+    },
+    {
+      "id": "antiderivative-consistency",
+      "description": "F(b) - F(a) equals the difference variable",
+      "expect": [
+        { "expr": "abs((calcIntegrals_Fb - calcIntegrals_Fa) - calcIntegrals_difference) < 0.01" }
+      ]
+    }
+  ]
+}
