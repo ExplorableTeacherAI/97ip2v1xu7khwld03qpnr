@@ -28,17 +28,18 @@ import {
     getVariableInfo,
 } from "../variables";
 import { speedAtTime, computeAreaUnderCurve } from "../model";
-import { Camera } from "lucide-react";
 
 // ── View constants ────────────────────────────────────────────────────────────
-// Compact layout to fit within section bounds (~340px max figure height)
+// Layout sized to fit all content: snapshot row + two stacked graphs + axes
 
 const VIEW_WIDTH = 560;
-const VIEW_HEIGHT = 320; // Reduced from 440 to fit section bounds
-const PADDING = { top: 44, right: 24, bottom: 50, left: 56 };
+const PADDING = { top: 28, right: 24, bottom: 24, left: 56 };
 const GRAPH_WIDTH = VIEW_WIDTH - PADDING.left - PADDING.right;
-const GRAPH_HEIGHT = 100; // Reduced from 140 to fit compactly
-const LOWER_GRAPH_TOP = PADDING.top + GRAPH_HEIGHT + 40; // Reduced gap
+const GRAPH_HEIGHT = 90; // Compact graph height
+const GAP_BETWEEN_GRAPHS = 32;
+const LOWER_GRAPH_TOP = PADDING.top + GRAPH_HEIGHT + GAP_BETWEEN_GRAPHS;
+// Total height: PADDING.top (28) + GRAPH_HEIGHT (90) + GAP (32) + GRAPH_HEIGHT (90) + PADDING.bottom (24) = 264
+const VIEW_HEIGHT = PADDING.top + GRAPH_HEIGHT + GAP_BETWEEN_GRAPHS + GRAPH_HEIGHT + PADDING.bottom;
 
 const X_MIN = 0;
 const X_MAX = 8;
@@ -128,21 +129,12 @@ function generateAccumulationCurvePath(a: number, currentX: number): string {
     return points.join(" ");
 }
 
-// ── Snapshot card type ────────────────────────────────────────────────────────
-
-interface Snapshot {
-    x: number;
-    area: number;
-    id: number;
-}
-
 // ── The bespoke figure drawing ────────────────────────────────────────────────
 
 function AccumulationFunctionDrawing() {
     const setVar = useSetVar();
     const sweepX = useVar<number>("accumulationFunction_sweepX", 0);
     const startA = useVar<number>("accumulationFunction_startA", 0);
-    const snapshots = useVar<Snapshot[]>("accumulationFunction_snapshots", []);
 
     const [dragging, setDragging] = useState(false);
     const [hovered, setHovered] = useState(false);
@@ -182,17 +174,6 @@ function AccumulationFunctionDrawing() {
         setVar("accumulationFunction_sweepX", newX);
     };
 
-    const handleCaptureSnapshot = () => {
-        const newSnapshot: Snapshot = {
-            x: sweepX,
-            area: accumulatedArea,
-            id: Date.now(),
-        };
-        const newSnapshots = [...snapshots, newSnapshot].slice(-5); // Keep last 5
-        setVar("accumulationFunction_snapshots", newSnapshots);
-        setVar("accumulationFunction_snapshotCount", newSnapshots.length);
-    };
-
     // Screen positions
     const sweepScreenX = xToScreen(sweepX);
     const startScreenX = xToScreen(startA);
@@ -209,7 +190,7 @@ function AccumulationFunctionDrawing() {
         <svg
             ref={svgRef}
             viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
-            className="block w-full"
+            className="block w-full h-auto"
             role="img"
             aria-label="Speed curve with draggable sweep point showing accumulated area as a function"
         >
@@ -218,28 +199,6 @@ function AccumulationFunctionDrawing() {
                     <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodColor="#0F172A" floodOpacity="0.25" />
                 </filter>
             </defs>
-
-            {/* Snapshot gallery at top - compact row */}
-            <g>
-                <text x={PADDING.left} y="14" fill={INK} fontSize="10" fontWeight="500">
-                    Snapshots
-                </text>
-                {snapshots.map((snap, i) => (
-                    <g key={snap.id} transform={`translate(${PADDING.left + i * 80 + 60}, 6)`}>
-                        <rect
-                            width="72"
-                            height="18"
-                            rx="3"
-                            fill="#F8FAFC"
-                            stroke={INK_QUIET}
-                            strokeWidth="1"
-                        />
-                        <text x="6" y="13" fill={INK} fontSize="9" style={{ fontVariantNumeric: "tabular-nums" }}>
-                            x={snap.x.toFixed(1)} → {snap.area.toFixed(0)}
-                        </text>
-                    </g>
-                ))}
-            </g>
 
             {/* Upper graph: f(x) speed curve */}
             <g>
@@ -375,15 +334,11 @@ function AccumulationFunctionDrawing() {
                         onPointerLeave={() => setHovered(false)}
                     />
 
-                    {/* x label */}
-                    <text x={sweepScreenX} y={baseY + 24} fill={ACCENT} fontSize="10" textAnchor="middle" fontWeight="500">
-                        x = {sweepX.toFixed(1)}
-                    </text>
                 </g>
 
-                {/* Current speed readout */}
-                <text x={sweepScreenX + 10} y={sweepSpeedY - 8} fill={INK} fontSize="10">
-                    f(x) = {currentSpeed.toFixed(1)}
+                {/* Current speed readout - positioned to right of point */}
+                <text x={sweepScreenX + 12} y={sweepSpeedY - 6} fill={INK} fontSize="10">
+                    f({sweepX.toFixed(1)}) = {currentSpeed.toFixed(1)}
                 </text>
             </g>
 
@@ -485,48 +440,26 @@ function AccumulationFunctionDrawing() {
                 {/* Vertical dashed line connecting both graphs */}
                 <line
                     x1={sweepScreenX}
-                    y1={baseY + 30}
+                    y1={baseY + 4}
                     x2={sweepScreenX}
-                    y2={sweepAreaY}
+                    y2={LOWER_GRAPH_TOP}
                     stroke={ACCENT}
                     strokeWidth="1.5"
                     strokeDasharray="4 3"
-                    opacity="0.5"
+                    opacity="0.4"
                 />
 
                 {/* A(x) value readout */}
                 <text
                     x={sweepScreenX + 10}
-                    y={sweepAreaY - 10}
+                    y={sweepAreaY - 8}
                     fill={COVARIATION}
-                    fontSize="11"
+                    fontSize="10"
                     fontWeight="500"
                     style={{ fontVariantNumeric: "tabular-nums" }}
                     data-concept="accumulationFunction_accumulatedArea"
                 >
                     A({sweepX.toFixed(1)}) = {accumulatedArea.toFixed(1)}
-                </text>
-            </g>
-
-            {/* Camera capture button */}
-            <g
-                transform={`translate(${VIEW_WIDTH - 60}, ${PADDING.top + 10})`}
-                style={{ cursor: "pointer" }}
-                onClick={handleCaptureSnapshot}
-            >
-                <rect
-                    x="-16"
-                    y="-16"
-                    width="50"
-                    height="32"
-                    rx="6"
-                    fill="#F8FAFC"
-                    stroke={INK_QUIET}
-                    strokeWidth="1"
-                />
-                <Camera x={-8} y={-8} size={16} color={INK} />
-                <text x="18" y="4" fill={INK} fontSize="9">
-                    snap
                 </text>
             </g>
         </svg>
@@ -541,11 +474,9 @@ function AccumulationFunctionFigure() {
     return (
         <Figure
             id="accumulation-function-figure"
-            aspectRatio="560 / 320"
+            aspectRatio={`${VIEW_WIDTH} / ${VIEW_HEIGHT}`}
             onReset={() => {
                 setVar("accumulationFunction_sweepX", 0);
-                setVar("accumulationFunction_snapshots", []);
-                setVar("accumulationFunction_snapshotCount", 0);
             }}
             caption="Drag the teal x marker to explore how A(x) traces out a function."
         >
@@ -564,7 +495,7 @@ function AccumulationFunctionFigure() {
                     {
                         gesture: "drag-horizontal",
                         label: "Drag x along the axis to explore",
-                        position: { x: "15%", y: "44%" },
+                        position: { x: "15%", y: "42%" },
                         dragPath: {
                             type: "line",
                             startOffset: { x: -20, y: 0 },
@@ -609,7 +540,11 @@ export const accumulationFunctionBlocks: ReactElement[] = [
                 <InlineSpotColor varName="accumulationFunction_sweepX" color="#62D0AD">
                     teal x marker
                 </InlineSpotColor>
-                {" "}and press the camera button to capture snapshots. Compare your cards: how does A(x) change at different positions?
+                {" "}along the x-axis. Watch how the{" "}
+                <InlineSpotColor varName="accumulationFunction_accumulatedArea" color="#8E90F5">
+                    indigo A(x) curve
+                </InlineSpotColor>
+                {" "}traces out in the lower graph as x moves.
             </EditableParagraph>
         </Block>
     </StackLayout>,

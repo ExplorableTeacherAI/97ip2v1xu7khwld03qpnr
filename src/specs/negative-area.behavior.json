@@ -22,10 +22,12 @@
     "negativeArea_offset": "vertical offset of the curve, student-dragged, controls how much is above/below x-axis",
     "negativeArea_positiveArea": "derived: the total area of the curve above the x-axis (teal shading)",
     "negativeArea_negativeArea": "derived: the total area of the curve below the x-axis (coral shading, shown as positive magnitude)",
-    "negativeArea_netArea": "derived: the signed sum (positiveArea - negativeArea), the actual integral value",
-    "a": "carried over: left integration bound from previous sections",
-    "b": "carried over: right integration bound from previous sections",
-    "n": "carried over: number of rectangles from Riemann sums section"
+    "negativeArea_netArea": "derived: the signed sum (positiveArea - negativeArea), the actual integral value"
+  },
+  "frozenVariables": {
+    "a": "carried over: left integration bound from previous sections (frozen, not swept)",
+    "b": "carried over: right integration bound from previous sections (frozen, not swept)",
+    "n": "carried over: number of rectangles from Riemann sums section (frozen, not swept)"
   },
   "assertions": [
     {

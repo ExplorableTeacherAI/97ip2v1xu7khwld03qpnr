@@ -2,7 +2,7 @@
   "section_id": "negative-area",
   "title": "Draggable Function Graph with Signed Area Shading",
   "status": "verifying",
-  "detail": "repairing issues (round 1/2)",
+  "detail": "repairing issues (round 2/2)",
   "summary": "",
   "verify_passed": false,
   "is_revision": false,
@@ -11,7 +11,7 @@
   "skip_verification": false,
   "sdk_session_id": "92858748-00e4-4f0f-9345-1a2c65cf6610",
   "created_at": 1784600052.216238,
-  "updated_at": 1784601304.131725,
+  "updated_at": 1784601495.8829298,
   "payload": {
     "section_id": "negative-area",
     "learning_objective": "Understand that regions below the x-axis contribute negative area and can cancel positive area - the integral measures net signed area, not just total magnitude",

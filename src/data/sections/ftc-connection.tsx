@@ -743,7 +743,7 @@ function FTCFigure() {
             }}
             caption="The speed curve f(x) sits above its accumulation A(x). Drag the teal handle along the x-axis and watch the tangent line's slope match the height of f(x) at every position."
         >
-            <div className="w-full" style={{ aspectRatio: "560 / 340", maxHeight: "340px", overflow: "hidden" }}>
+            <div className="w-full" style={{ maxHeight: "280px", overflow: "hidden" }}>
                 <FTCVisualization />
             </div>
             <div className="px-6 pb-4 pt-2">

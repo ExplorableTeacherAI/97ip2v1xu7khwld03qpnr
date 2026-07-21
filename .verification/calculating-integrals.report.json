@@ -5,33 +5,35 @@
   "layout_issues": [],
   "realization_fidelity": {
     "faithful": false,
-    "flattened_to": "A parametric visualization where dragging a handle on one curve animates both curves passively, rather than a manipulative sequencing task where students arrange symbolic expression tiles and watch geometry respond to each correct placement.",
+    "flattened_to": "A passive dual-curve visualization with a draggable upper bound slider that animates shaded area and point highlights, but lacks the core drag-and-arrange symbolic tiles mechanic, bidirectional causal linking, and the structured reveal of the aha moment.",
     "violations": [
-      "manipulated_variable: Students drag a geometric point (upper bound b) on the graph itself, not draggable symbolic expression tiles (integral symbol, F(x), evaluation bars, subtraction) that they must sequence in correct order",
-      "goal_structure: No sequencing/correctness-checking task present; no 'arranging in proper order' mechanic; no locked final animation that unlocks only when sequence is complete. Instead pure free exploration via continuous dragging",
-      "primary_visual_feedback: Feedback is passive and continuous (curves animate as b moves), not event-driven responses to each correctly-placed symbolic tile",
-      "causal_chain_exposed: No persistent colored connection lines linking symbolic elements to geometric counterparts visible on screen; no web of correspondences maintained throughout",
-      "trace_strategy: No bidirectional symbolic\u2194geometric links rendered; no visual correspondence web; traces are implicit in the dual-curve design but not explicitly drawn as specified",
-      "aha_moment: The insight 'F(b)-F(a) equals the area' is not discovered through interaction but passively observed as an animation side-effect; students do not perform the symbolic arrangement that would make the equivalence discovery feel earned"
+      "Manipulated variable is NOT draggable expression tiles in correct sequence; instead it's a single continuous slider for parameter b",
+      "No goal_structure mechanic: there is no correctness-checking task, no sequencing requirement, no unlock condition tied to proper arrangement",
+      "Causal_chain_exposed is partially present (area and points highlight) but NOT via persistent bidirectional connection lines linking symbolic elements to geometric features as specified",
+      "Trace_strategy not implemented: no colored connecting lines remain visible; no web of correspondences linking symbolic pieces to their geometric counterparts",
+      "No symbolic representation visible at all: the design calls for left-side draggable tiles displaying \u222bf(x)dx = F(x)|\u2090\u1d47 = F(b) - F(a); code shows only graphs",
+      "Aha moment not gated: the mystery that 'vertical measurement F(b)\u2212F(a) equals horizontal area' is never framed as a discovery; geometric equality is pre-computed and drawn without pedagogical reveal"
     ]
   },
   "polish": {
-    "passed": true,
+    "passed": false,
     "scores": {
       "accent_discipline": 4,
       "ink_quality": 4,
-      "label_legibility": 4,
-      "whitespace_composition": 4,
-      "affordance_clarity": 3,
-      "junk_free": 4,
-      "question_posing_initial_state": 5
+      "label_legibility": 3,
+      "whitespace_composition": 3,
+      "affordance_clarity": 4,
+      "junk_free": 2,
+      "question_posing_initial_state": 4
     },
-    "failing_items": [],
-    "worst_offense": "The draggable handle at point 'a' (teal circle) lacks clear visual affordance signals\u2014no scale-up hover state visible, shadow is subtle to the point of near-invisibility, and the cursor behavior is not evident from the static screenshot.",
+    "failing_items": [
+      "junk_free"
+    ],
+    "worst_offense": "The teal compass/star icon at (4, 20) is chart-junk emoji that violates \u00a73 'no emoji inside the drawing surface' and adds noise without concept value.",
     "fixes": [
-      "Increase the shadow contrast on draggable handles (a and b): use `0 2px 6px rgba(15, 23, 42, 0.20)` or equivalent, making depth legible at a glance and signaling 'grab me' without ambiguity.",
-      "Ensure both handle circles (teal and indigo) scale to ~1.15\u00d7 on hover/press and maintain visible \u226524px hit areas; confirm the scale-up animation runs spring-eased and is perceptible in interaction.",
-      "Verify label positioning remains non-overlapping at extreme slider states (when handles reach axis endpoints); the 'Time (seconds)' axis label at x=8 and 'Speed (mph)' label should have \u22658px clearance from geometry."
+      "Remove the teal compass icon entirely; it decorates rather than clarifies the sampling concept.",
+      "Reduce the 'Step 1: Click timeline to sample speed' label and 'Samples: 0/8' readout from the drawing surface into the caption or controls area to recover whitespace and declutter.",
+      "Adjust the left margin and axis positioning so axis labels ('Speed (mph)', 'Time (seconds)') have \u226524px clear space from the frame edge\u2014currently the y-axis label sits too close to the left boundary."
     ]
   },
   "sweep": {
@@ -50,823 +52,793 @@
     "issues": [
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 206px",
+        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 369px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 985px",
+        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 205px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 635px",
+        "detail": "<text> \"f(x)\" overflows the section by 161px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x)\" overflows the section by 555px",
+        "detail": "<text> \"speed\" overflows the section by 171px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"speed\" overflows the section by 574px",
+        "detail": "<path> [shaded-area] overflows the section by 205px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [shaded-area] overflows the section by 635px",
+        "detail": "<path> [f-curve] overflows the section by 192px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [f-curve] overflows the section by 612px",
+        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 142px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 521px",
+        "detail": "<text> \"51.2\" overflows the section by 139px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 515px",
+        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 325px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 851px",
+        "detail": "<text> \"A(x)\" overflows the section by 281px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"A(x)\" overflows the section by 772px",
+        "detail": "<text> \"area\" overflows the section by 291px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"area\" overflows the section by 790px",
+        "detail": "<path> [a-curve] overflows the section by 325px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [a-curve] overflows the section by 851px",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 318px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<line> [ftc_slopeValue] overflows the section by 839px",
+        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 290px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 774px",
+        "detail": "<text> \"slope:\" overflows the section by 285px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"slope:\" overflows the section by 764px",
+        "detail": "<text> \"51.2\" overflows the section by 285px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 764px",
+        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 304px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 814px",
+        "detail": "<text> \"98\" overflows the section by 300px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"98\" overflows the section by 807px",
+        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 367px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 927px",
+        "detail": "<text> \"0\" overflows the section by 367px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 927px",
+        "detail": "<text> \"2\" overflows the section by 367px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 927px",
+        "detail": "<text> \"4\" overflows the section by 367px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 927px",
+        "detail": "<text> \"6\" overflows the section by 367px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 927px",
+        "detail": "<text> \"8\" overflows the section by 367px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 927px",
+        "detail": "<text> \"x\" overflows the section by 363px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 920px",
+        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 343px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 884px",
+        "detail": "<text> \"x = 2.0\" overflows the section by 341px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 2.0\" overflows the section by 881px",
+        "detail": "<circle> [x-handle] overflows the section by 357px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<circle> [x-handle] overflows the section by 909px",
+        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 221px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 663px",
+        "detail": "<svg> overflows the section by 368px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 900px",
+        "detail": "<svg> overflows the section by 118px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 401px",
+        "detail": "<svg> overflows the section by 680px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1296px",
+        "detail": "<svg> overflows the section by 901px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1517px",
+        "detail": "<svg> overflows the section by 880px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1496px",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1347px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1963px",
+        "detail": "<text> \"0\" overflows the section by 1319px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 1935px",
+        "detail": "<text> \"2\" overflows the section by 1319px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 1935px",
+        "detail": "<text> \"4\" overflows the section by 1319px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 1935px",
+        "detail": "<text> \"6\" overflows the section by 1319px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 1935px",
+        "detail": "<text> \"8\" overflows the section by 1319px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 1935px",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1340px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"t (minutes)\" overflows the section by 1956px",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1297px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_area] overflows the section by 1913px",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1011px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"v(t) = 2t\" overflows the section by 1627px",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1297px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1913px",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1048px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1664px",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1289px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(0) = 0\" overflows the section by 1905px",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1302px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1918px",
+        "detail": "<text> \"D(1.0) = 1.0\" overflows the section by 1284px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(1.0) = 1.0\" overflows the section by 1900px",
+        "detail": "<text> \"Calculation\" overflows the section by 1022px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Calculation\" overflows the section by 1638px",
+        "detail": "<text> \"D(1.0) - D(0) = 1.0 - 0\" overflows the section by 1041px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(1.0) - D(0) = 1.0 - 0\" overflows the section by 1657px",
+        "detail": "<text> \"= 1.0 miles\" overflows the section by 1060px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"= 1.0 miles\" overflows the section by 1676px",
+        "detail": "<text> \"Area = 1.0\" overflows the section by 1285px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area = 1.0\" overflows the section by 1901px",
+        "detail": "<svg> overflows the section by 1117px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1733px",
+        "detail": "<svg> overflows the section by 976px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1592px",
+        "detail": "<svg> overflows the section by 1490px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2106px",
+        "detail": "<svg> overflows the section by 1546px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2161px",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2076px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 3021px",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2069px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Time (hours)\" overflows the section by 3008px",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 1943px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Speed (mph)\" overflows the section by 2781px",
+        "detail": "<text> \"0\" overflows the section by 2047px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2968px",
+        "detail": "<text> \"2\" overflows the section by 2047px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 2968px",
+        "detail": "<text> \"4\" overflows the section by 2047px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 2968px",
+        "detail": "<text> \"6\" overflows the section by 2047px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 2968px",
+        "detail": "<text> \"8\" overflows the section by 2047px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 2968px",
+        "detail": "<text> \"0\" overflows the section by 2033px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2943px",
+        "detail": "<text> \"20\" overflows the section by 1955px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 2803px",
+        "detail": "<text> \"40\" overflows the section by 1877px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 2662px",
+        "detail": "<text> \"60\" overflows the section by 1799px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 2522px",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2026px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2931px",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 1804px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2531px",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 1830px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2578px",
+        "detail": "<text> \"True distance:\" overflows the section by 1860px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"True distance:\" overflows the section by 2632px",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 1861px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2633px",
+        "detail": "<text> \"Error:\" overflows the section by 1878px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Error:\" overflows the section by 2664px",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 1879px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2665px",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 1739px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2413px",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 1802px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2527px",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 1820px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2560px",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 1820px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2560px",
+        "detail": "<text> \"1st rect height =\" overflows the section by 1838px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"1st rect height =\" overflows the section by 2592px",
+        "detail": "<text> \"30.0 mph\" overflows the section by 1838px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"30.0 mph\" overflows the section by 2592px",
+        "detail": "<text> \"1st rect area =\" overflows the section by 1856px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"1st rect area =\" overflows the section by 2625px",
+        "detail": "<text> \"60.0 mi\" overflows the section by 1856px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60.0 mi\" overflows the section by 2625px",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 1874px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2657px",
+        "detail": "<text> \"236.2 mi\" overflows the section by 1874px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"236.2 mi\" overflows the section by 2657px",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 1812px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2545px",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 1806px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"n = 4 rects\" overflows the section by 2534px",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 1739px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2414px",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 1739px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2414px",
+        "detail": "<svg> overflows the section by 2157px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3081px",
+        "detail": "<svg> overflows the section by 1765px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2437px",
+        "detail": "<svg> \"Speed f(t)0204060a = 0xf(0.0) = 30.0Area\" overflows the section by 2980px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 4202px",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 2683px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Snapshots\" overflows the section by 3654px",
+        "detail": "<text> \"0\" overflows the section by 2728px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Speed f(t)\" overflows the section by 3842px",
+        "detail": "<text> \"20\" overflows the section by 2682px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3896px",
+        "detail": "<text> \"40\" overflows the section by 2635px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 3844px",
+        "detail": "<text> \"60\" overflows the section by 2589px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 3793px",
+        "detail": "<text> \"a = 0\" overflows the section by 2746px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 3741px",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 2738px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"a = 0\" overflows the section by 3914px",
+        "detail": "<text> \"x\" overflows the section by 2727px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3906px",
+        "detail": "<text> \"f(0.0) = 30.0\" overflows the section by 2640px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 3895px",
+        "detail": "<text> \"Area A(x)\" overflows the section by 2900px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 0.0\" overflows the section by 3932px",
+        "detail": "<text> \"0\" overflows the section by 2948px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3797px",
+        "detail": "<text> \"100\" overflows the section by 2902px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area A(x)\" overflows the section by 4091px",
+        "detail": "<text> \"200\" overflows the section by 2855px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4148px",
+        "detail": "<text> \"300\" overflows the section by 2809px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"100\" overflows the section by 4097px",
+        "detail": "<text> \"0\" overflows the section by 2970px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"200\" overflows the section by 4045px",
+        "detail": "<text> \"2\" overflows the section by 2970px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"300\" overflows the section by 3994px",
+        "detail": "<text> \"4\" overflows the section by 2970px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4170px",
+        "detail": "<text> \"6\" overflows the section by 2970px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 4170px",
+        "detail": "<text> \"8\" overflows the section by 2970px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 4170px",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 2926px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 4170px",
+        "detail": "<svg> overflows the section by 2742px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 4170px",
+        "detail": "<svg> overflows the section by 2533px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 4123px",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 3543px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3732px",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 3420px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"snap\" overflows the section by 3733px",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 3475px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3917px",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 3475px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3654px",
+        "detail": "<text> \"time (s)\" overflows the section by 3537px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4802px",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 3432px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4678px",
+        "detail": "<text> \"0\" overflows the section by 3518px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4733px",
+        "detail": "<text> \"2\" overflows the section by 3518px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4733px",
+        "detail": "<text> \"4\" overflows the section by 3518px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"time (s)\" overflows the section by 4795px",
+        "detail": "<text> \"6\" overflows the section by 3518px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"velocity (mph)\" overflows the section by 4690px",
+        "detail": "<text> \"8\" overflows the section by 3518px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4776px",
+        "detail": "<text> \"+75.0\" overflows the section by 3396px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 4776px",
+        "detail": "<text> \"\u221256.8\" overflows the section by 3456px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 4776px",
+        "detail": "<text> \"Net Area\" overflows the section by 3303px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 4776px",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 3323px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 4776px",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 3300px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"+75.0\" overflows the section by 4654px",
+        "detail": "<svg> overflows the section by 3436px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u221256.8\" overflows the section by 4715px",
-        "var": "calcIntegrals_b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Net Area\" overflows the section by 4561px",
-        "var": "calcIntegrals_b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4581px",
-        "var": "calcIntegrals_b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4558px",
-        "var": "calcIntegrals_b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4715px",
-        "var": "calcIntegrals_b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4538px",
+        "detail": "<svg> overflows the section by 3280px",
         "var": "calcIntegrals_b",
         "value": 1.0
       },
@@ -908,157 +880,163 @@
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 205px",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1264px",
         "var": "calcIntegrals_b",
         "value": 3.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1880px",
+        "detail": "<text> \"D(3.0) = 9.0\" overflows the section by 1246px",
         "var": "calcIntegrals_b",
         "value": 3.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(3.0) = 9.0\" overflows the section by 1862px",
+        "detail": "<text> \"D(3.0) - D(0) = 9.0 - 0\" overflows the section by 1041px",
         "var": "calcIntegrals_b",
         "value": 3.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(3.0) - D(0) = 9.0 - 0\" overflows the section by 1657px",
+        "detail": "<text> \"= 9.0 miles\" overflows the section by 1060px",
         "var": "calcIntegrals_b",
         "value": 3.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"= 9.0 miles\" overflows the section by 1676px",
+        "detail": "<text> \"Area = 9.0\" overflows the section by 1254px",
         "var": "calcIntegrals_b",
         "value": 3.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area = 9.0\" overflows the section by 1896px",
+        "detail": "<svg> overflows the section by 3417px",
         "var": "calcIntegrals_b",
         "value": 3.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2162px",
-        "var": "calcIntegrals_b",
-        "value": 3.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4676px",
-        "var": "calcIntegrals_b",
-        "value": 3.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1297px",
+        "detail": "<svg> overflows the section by 681px",
         "var": "calcIntegrals_b",
         "value": 4.5
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1825px",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1209px",
         "var": "calcIntegrals_b",
         "value": 4.5
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(4.5) = 20.3\" overflows the section by 1807px",
+        "detail": "<text> \"D(4.5) = 20.3\" overflows the section by 1191px",
         "var": "calcIntegrals_b",
         "value": 4.5
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(4.5) - D(0) = 20.3 - 0\" overflows the section by 1657px",
+        "detail": "<text> \"D(4.5) - D(0) = 20.3 - 0\" overflows the section by 1041px",
         "var": "calcIntegrals_b",
         "value": 4.5
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"= 20.3 miles\" overflows the section by 1676px",
+        "detail": "<text> \"= 20.3 miles\" overflows the section by 1060px",
         "var": "calcIntegrals_b",
         "value": 4.5
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area = 20.3\" overflows the section by 1850px",
+        "detail": "<text> \"Area = 20.3\" overflows the section by 1224px",
         "var": "calcIntegrals_b",
         "value": 4.5
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4713px",
+        "detail": "<svg> overflows the section by 1545px",
         "var": "calcIntegrals_b",
         "value": 4.5
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1749px",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1133px",
         "var": "calcIntegrals_b",
         "value": 6.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(6.0) = 36.0\" overflows the section by 1731px",
+        "detail": "<text> \"D(6.0) = 36.0\" overflows the section by 1115px",
         "var": "calcIntegrals_b",
         "value": 6.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(6.0) - D(0) = 36.0 - 0\" overflows the section by 1657px",
+        "detail": "<text> \"D(6.0) - D(0) = 36.0 - 0\" overflows the section by 1041px",
         "var": "calcIntegrals_b",
         "value": 6.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"= 36.0 miles\" overflows the section by 1676px",
+        "detail": "<text> \"= 36.0 miles\" overflows the section by 1060px",
         "var": "calcIntegrals_b",
         "value": 6.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area = 36.0\" overflows the section by 1821px",
+        "detail": "<text> \"Area = 36.0\" overflows the section by 1195px",
         "var": "calcIntegrals_b",
         "value": 6.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4714px",
+        "detail": "<svg> overflows the section by 2158px",
         "var": "calcIntegrals_b",
         "value": 6.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1613px",
+        "detail": "<svg> overflows the section by 2743px",
+        "var": "calcIntegrals_b",
+        "value": 6.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3449px",
+        "var": "calcIntegrals_b",
+        "value": 6.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 997px",
         "var": "calcIntegrals_b",
         "value": 8.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(8.0) = 64.0\" overflows the section by 1595px",
+        "detail": "<text> \"D(8.0) = 64.0\" overflows the section by 979px",
         "var": "calcIntegrals_b",
         "value": 8.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(8.0) - D(0) = 64.0 - 0\" overflows the section by 1657px",
+        "detail": "<text> \"D(8.0) - D(0) = 64.0 - 0\" overflows the section by 1041px",
         "var": "calcIntegrals_b",
         "value": 8.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"= 64.0 miles\" overflows the section by 1676px",
+        "detail": "<text> \"= 64.0 miles\" overflows the section by 1060px",
         "var": "calcIntegrals_b",
         "value": 8.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area = 64.0\" overflows the section by 1786px",
+        "detail": "<text> \"Area = 64.0\" overflows the section by 1156px",
+        "var": "calcIntegrals_b",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3451px",
         "var": "calcIntegrals_b",
         "value": 8.0
       }
@@ -1068,10 +1046,10 @@
     "calcIntegrals_b": {
       "behaves_as_designed": false,
       "issues": [
-        "The manipulated variable appears to be the upper limit `b` on the x-axis (moving from left to right across frames), not draggable expression tiles as designed. The intended split-screen symbolic/geometric comparison with draggable terms is not present.",
-        "No symbolic calculation panel is visible on the left side of any frame. The design specifies a left-right split with symbolic work (\u222bf(x)dx = F(x)|\u1d43\u1d47 = F(b) - F(a)) on the left, but only a single graph appears.",
-        "No visual feedback mechanism (pulsing, highlighting, or connection lines) is shown linking symbolic elements to geometric features. The design requires persistent bidirectional colored lines connecting each symbolic component to its counterpart.",
-        "The interactive element appears to be a continuous slider or animation of parameter `b` rather than a discrete sequencing task where students arrange expression tiles in correct order to unlock geometric animation."
+        "The manipulated variable is not draggable expression tiles as designed, but rather a continuous slider controlling `calcIntegrals_b` parameter\u2014fundamental departure from intended interaction model",
+        "No split-screen symbolic/geometric comparison visible; symbolic algebraic work area (left side) is either absent or non-interactive, contrary to core design narrative",
+        "Connection lines dynamically linking symbolic elements to geometric features are not visible across any frame; the persistent bidirectional trace strategy is not implemented",
+        "The parameter `calcIntegrals_b` appears to control the upper bound of integration or similar endpoint, but no visual feedback mechanism shows which symbolic step (F(x), evaluation notation, subtraction) is being highlighted at each value"
       ]
     }
   },
@@ -1081,27 +1059,27 @@
     {
       "id": "initial-state-poses-problem",
       "expected": "both f(x) and F(x) curves visible, shaded area under f(x), formula displays integral with scrubbable bounds",
-      "observed": "The speedometer reading point moved slightly to the right and gained a circular highlight around it, but no calculus curves, shaded areas, integrals, or formulas appeared."
+      "observed": "The BEFORE and AFTER screenshots appear identical with no visible changes to the graph, shaded areas, curves, or formulas displayed."
     },
     {
       "id": "bound-b-control-exists-and-works",
       "expected": "upper bound marker moves to x=5, shaded area expands, F(b) value updates, difference calculation updates",
-      "observed": "The speedometer icon moved slightly to the right (from approximately x=4 to x=4.2), but the upper bound marker (b) remained at x=8 and the shaded area did not expand as described."
+      "observed": "The circular marker icon moved slightly to the right (from around x=4 to approximately x=4.5) but remained within the same general area, with no visible shading expansion, no F(b) value update visible, and no obvious difference calculation update displayed."
     },
     {
       "id": "formula-and-area-match",
       "expected": "the formula result matches the displayed area value - symbolic and geometric answers are the same",
-      "observed": "The speedometer marker icon moved slightly to the left on the curve, but the formula result and displayed area value remain unchanged with 'Est: 0.0' still showing."
+      "observed": "The circular selection indicator moved slightly to the right on the timeline, but no visible change occurred in any formula result or area value display."
     },
     {
       "id": "carried-over-a-is-frozen",
       "expected": "lower bound a is displayed but not interactive - shown as a fixed value",
-      "observed": "The 'a' handle appears to remain in the same interactive state in both screenshots with no visible change to its appearance or interactivity status."
+      "observed": "The lower bound handle (a) appears visually identical in both screenshots with no apparent change in its interactivity or display state."
     },
     {
       "id": "aha-moment-vertical-equals-horizontal",
       "expected": "vertical bar showing F(b)-F(a) on antiderivative curve has same length as the accumulated area under original curve",
-      "observed": "The speedometer icon moved slightly on the curve, but no vertical bar comparing F(b)-F(a) to the accumulated area appeared in either screenshot."
+      "observed": "The compass/crosshair icon moved slightly to the right on the curve, but no vertical bar or antiderivative visualization appeared to demonstrate the relationship between F(b)-F(a) and the accumulated area."
     }
   ],
   "missing_model_variables": [],
@@ -1129,11 +1107,11 @@
   "prose_word_count": null,
   "prose_budget_exceeded": false,
   "timings": {
-    "page_ready_s": 2.1,
-    "assertions_s": 8.3,
-    "sweep_s": 4.0,
-    "vlm_wait_s": 3.7,
-    "total_s": 18.6
+    "page_ready_s": 2.7,
+    "assertions_s": 6.3,
+    "sweep_s": 2.8,
+    "vlm_wait_s": 4.2,
+    "total_s": 16.4
   },
   "results": [
     {
@@ -1166,45 +1144,21 @@
       "action_var": null,
       "visual_check": "both f(x) and F(x) curves visible, shaded area under f(x), formula displays integral with scrubbable bounds",
       "metrics": {
-        "changed_area_ratio": 0.0006,
-        "mean_change_intensity": 115.5,
-        "changed_regions": 6,
+        "changed_area_ratio": 0.0002,
+        "mean_change_intensity": 40.0,
+        "changed_regions": 2,
         "region_bboxes_px": [
           [
+            656,
+            412,
+            660,
+            420
+          ],
+          [
             648,
-            532,
-            668,
-            532
-          ],
-          [
-            672,
-            536,
-            684,
-            548
-          ],
-          [
-            628,
-            552,
-            628,
-            572
-          ],
-          [
-            688,
-            556,
-            688,
-            568
-          ],
-          [
-            632,
-            576,
-            644,
-            588
-          ],
-          [
+            416,
             652,
-            592,
-            664,
-            592
+            424
           ]
         ],
         "coupling_px": null,
@@ -1212,7 +1166,7 @@
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The speedometer reading point moved slightly to the right and gained a circular highlight around it, but no calculus curves, shaded areas, integrals, or formulas appeared."
+        "observed": "The BEFORE and AFTER screenshots appear identical with no visible changes to the graph, shaded areas, curves, or formulas displayed."
       }
     },
     {
@@ -1245,35 +1199,35 @@
       "action_var": "calcIntegrals_b",
       "visual_check": "upper bound marker moves to x=5, shaded area expands, F(b) value updates, difference calculation updates",
       "metrics": {
-        "changed_area_ratio": 0.0005,
-        "mean_change_intensity": 99.6,
+        "changed_area_ratio": 0.0007,
+        "mean_change_intensity": 121.6,
         "changed_regions": 3,
         "region_bboxes_px": [
           [
-            644,
-            544,
-            664,
-            548
-          ],
-          [
-            656,
-            552,
+            648,
+            388,
             668,
-            568
+            388
           ],
           [
-            636,
-            556,
-            652,
-            568
+            624,
+            412,
+            624,
+            428
+          ],
+          [
+            644,
+            452,
+            668,
+            452
           ]
         ],
-        "coupling_px": 2130.1,
+        "coupling_px": 1624.8,
         "no_visible_change": false
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The speedometer icon moved slightly to the right (from approximately x=4 to x=4.2), but the upper bound marker (b) remained at x=8 and the shaded area did not expand as described."
+        "observed": "The circular marker icon moved slightly to the right (from around x=4 to approximately x=4.5) but remained within the same general area, with no visible shading expansion, no F(b) value update visible, and no obvious difference calculation update displayed."
       }
     },
     {
@@ -1299,47 +1253,53 @@
       "action_var": "calcIntegrals_b",
       "visual_check": "the formula result matches the displayed area value - symbolic and geometric answers are the same",
       "metrics": {
-        "changed_area_ratio": 0.0009,
-        "mean_change_intensity": 112.0,
-        "changed_regions": 5,
+        "changed_area_ratio": 0.0008,
+        "mean_change_intensity": 106.6,
+        "changed_regions": 6,
         "region_bboxes_px": [
           [
-            644,
-            532,
-            676,
-            536
-          ],
-          [
-            628,
-            548,
-            628,
-            576
-          ],
-          [
-            656,
-            552,
-            668,
-            568
-          ],
-          [
-            688,
-            552,
-            688,
-            572
-          ],
-          [
             648,
-            592,
+            388,
             668,
-            592
+            388
+          ],
+          [
+            672,
+            392,
+            680,
+            396
+          ],
+          [
+            624,
+            416,
+            624,
+            428
+          ],
+          [
+            644,
+            416,
+            648,
+            424
+          ],
+          [
+            684,
+            424,
+            688,
+            440
+          ],
+          [
+            644,
+            452,
+            668,
+            452
           ]
         ],
-        "coupling_px": 2143.7,
+        "coupling_px": 1667.8,
         "no_visible_change": false
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The speedometer marker icon moved slightly to the left on the curve, but the formula result and displayed area value remain unchanged with 'Est: 0.0' still showing."
+        "observed": "The circular selection indicator moved slightly to the right on the timeline, but no visible change occurred in any formula result or area value display."
       }
     },
     {
@@ -1358,21 +1318,21 @@
       "action_var": null,
       "visual_check": "lower bound a is displayed but not interactive - shown as a fixed value",
       "metrics": {
-        "changed_area_ratio": 0.0003,
-        "mean_change_intensity": 90.7,
+        "changed_area_ratio": 0.0004,
+        "mean_change_intensity": 104.6,
         "changed_regions": 2,
         "region_bboxes_px": [
           [
-            644,
-            544,
-            652,
-            564
+            680,
+            412,
+            680,
+            428
           ],
           [
-            656,
-            552,
-            668,
-            568
+            652,
+            444,
+            664,
+            444
           ]
         ],
         "coupling_px": null,
@@ -1380,7 +1340,7 @@
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The 'a' handle appears to remain in the same interactive state in both screenshots with no visible change to its appearance or interactivity status."
+        "observed": "The lower bound handle (a) appears visually identical in both screenshots with no apparent change in its interactivity or display state."
       }
     },
     {
@@ -1420,47 +1380,47 @@
       "action_var": "calcIntegrals_b",
       "visual_check": "vertical bar showing F(b)-F(a) on antiderivative curve has same length as the accumulated area under original curve",
       "metrics": {
-        "changed_area_ratio": 0.0006,
-        "mean_change_intensity": 96.3,
+        "changed_area_ratio": 0.0007,
+        "mean_change_intensity": 101.3,
         "changed_regions": 5,
         "region_bboxes_px": [
           [
-            644,
-            540,
+            648,
+            392,
             668,
-            544
+            392
           ],
           [
-            636,
-            552,
-            636,
-            572
+            628,
+            416,
+            628,
+            428
           ],
           [
-            680,
-            556,
-            680,
-            568
+            644,
+            416,
+            648,
+            424
           ],
           [
             656,
-            560,
-            668,
-            568
+            416,
+            664,
+            424
           ],
           [
-            652,
-            584,
-            664,
-            584
+            644,
+            448,
+            668,
+            448
           ]
         ],
-        "coupling_px": 2108.5,
+        "coupling_px": 1628.8,
         "no_visible_change": false
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The speedometer icon moved slightly on the curve, but no vertical bar comparing F(b)-F(a) to the accumulated area appeared in either screenshot."
+        "observed": "The compass/crosshair icon moved slightly to the right on the curve, but no vertical bar or antiderivative visualization appeared to demonstrate the relationship between F(b)-F(a) and the accumulated area."
       }
     }
   ]

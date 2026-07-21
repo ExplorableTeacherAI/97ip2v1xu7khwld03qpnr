@@ -9,22 +9,24 @@
     "violations": []
   },
   "polish": {
-    "passed": true,
+    "passed": false,
     "scores": {
       "accent_discipline": 4,
       "ink_quality": 4,
-      "label_legibility": 4,
+      "label_legibility": 3,
       "whitespace_composition": 4,
-      "affordance_clarity": 3,
-      "junk_free": 4,
+      "affordance_clarity": 4,
+      "junk_free": 2,
       "question_posing_initial_state": 5
     },
-    "failing_items": [],
-    "worst_offense": "The speedometer icon inside the green circle at time ~4s reads as decorative clip-art, violating the no-emoji/icon-in-drawing-surface rule and creating salience noise.",
+    "failing_items": [
+      "junk_free"
+    ],
+    "worst_offense": "The teal circular icon with sparkle/star emoji inside the speed curve violates the no-emoji-in-drawing-surface rule and introduces unexplained chart-junk that competes with the concept.",
     "fixes": [
-      "Remove the compass/speedometer icon from inside the teal circle marker; replace with a simple dot or small crosshair if a check-point is needed, or leave the circle unfilled to mark the sampled point by outline alone.",
-      "Verify the purple 'b' handle at t=8s has a 24px+ hit area and exhibits hover scale-up (~1.15\u00d7, spring-eased) with subtle shadow; the current affordance is borderline and should be more inviting to signal draggability.",
-      "Confirm the 'Est: 0.0' readout uses tabular numerals so it doesn't reflow width as the estimate changes during interaction\u2014currently it may jitter horizontally as the user adjusts the drag window."
+      "Remove the emoji-containing circular badge from inside the graph; if it indicates a notable sampling point, use a simple accent-colored dot or a subtle annotation label instead.",
+      "The 'Samples: 0/8' readout in the upper right sits outside the figure frame but appears disconnected\u2014integrate it into the figure's caption or footer for clearer hierarchy.",
+      "The instruction text below the graph is dense and lengthy; break it into a single bulleted step-by-step sequence to reduce cognitive load and improve scannability."
     ]
   },
   "sweep": {
@@ -38,852 +40,666 @@
           20.0,
           40.0
         ]
-      },
-      {
-        "var": "a",
-        "values": [
-          0.0,
-          1.8,
-          3.5,
-          5.2,
-          7.0
-        ]
-      },
-      {
-        "var": "b",
-        "values": [
-          1.0,
-          2.8,
-          4.5,
-          6.2,
-          8.0
-        ]
-      },
-      {
-        "var": "n",
-        "values": [
-          1.0,
-          51.0,
-          101.0,
-          150.0,
-          200.0
-        ]
       }
     ],
     "issues": [
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 205px",
+        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 369px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 985px",
+        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 205px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 635px",
+        "detail": "<text> \"f(x)\" overflows the section by 161px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x)\" overflows the section by 555px",
+        "detail": "<text> \"speed\" overflows the section by 171px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"speed\" overflows the section by 574px",
+        "detail": "<path> [shaded-area] overflows the section by 205px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [shaded-area] overflows the section by 635px",
+        "detail": "<path> [f-curve] overflows the section by 192px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [f-curve] overflows the section by 612px",
+        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 142px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 521px",
+        "detail": "<text> \"51.2\" overflows the section by 139px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 515px",
+        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 325px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 851px",
+        "detail": "<text> \"A(x)\" overflows the section by 281px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"A(x)\" overflows the section by 772px",
+        "detail": "<text> \"area\" overflows the section by 291px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"area\" overflows the section by 790px",
+        "detail": "<path> [a-curve] overflows the section by 325px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [a-curve] overflows the section by 851px",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 318px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<line> [ftc_slopeValue] overflows the section by 839px",
+        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 290px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 789px",
+        "detail": "<text> \"slope:\" overflows the section by 285px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"slope:\" overflows the section by 780px",
+        "detail": "<text> \"51.2\" overflows the section by 285px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 780px",
+        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 304px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 814px",
+        "detail": "<text> \"98\" overflows the section by 300px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"98\" overflows the section by 807px",
+        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 367px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 927px",
+        "detail": "<text> \"0\" overflows the section by 367px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 927px",
+        "detail": "<text> \"2\" overflows the section by 367px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 927px",
+        "detail": "<text> \"4\" overflows the section by 367px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 927px",
+        "detail": "<text> \"6\" overflows the section by 367px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 927px",
+        "detail": "<text> \"8\" overflows the section by 367px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 927px",
+        "detail": "<text> \"x\" overflows the section by 363px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 920px",
+        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 343px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 884px",
+        "detail": "<text> \"x = 2.0\" overflows the section by 341px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 2.0\" overflows the section by 881px",
+        "detail": "<circle> [x-handle] overflows the section by 357px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<circle> [x-handle] overflows the section by 909px",
+        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 221px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 663px",
+        "detail": "<svg> overflows the section by 413px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 900px",
+        "detail": "<svg> overflows the section by 118px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 401px",
+        "detail": "<svg> overflows the section by 741px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1296px",
+        "detail": "<svg> overflows the section by 961px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1517px",
+        "detail": "<svg> overflows the section by 940px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1496px",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1407px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1963px",
+        "detail": "<text> \"0\" overflows the section by 1379px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 1935px",
+        "detail": "<text> \"2\" overflows the section by 1379px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 1935px",
+        "detail": "<text> \"4\" overflows the section by 1379px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 1935px",
+        "detail": "<text> \"6\" overflows the section by 1379px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 1935px",
+        "detail": "<text> \"8\" overflows the section by 1379px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 1935px",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1400px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"t (minutes)\" overflows the section by 1956px",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1357px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_area] overflows the section by 1913px",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1071px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"v(t) = 2t\" overflows the section by 1627px",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1357px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1913px",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1108px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1664px",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1349px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(0) = 0\" overflows the section by 1905px",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1246px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1802px",
+        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1228px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1784px",
+        "detail": "<text> \"Calculation\" overflows the section by 1082px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Calculation\" overflows the section by 1638px",
+        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1101px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1657px",
+        "detail": "<text> \"= 25.0 miles\" overflows the section by 1120px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"= 25.0 miles\" overflows the section by 1676px",
+        "detail": "<text> \"Area = 25.0\" overflows the section by 1273px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area = 25.0\" overflows the section by 1829px",
+        "detail": "<svg> overflows the section by 1178px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1733px",
+        "detail": "<svg> overflows the section by 1036px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1592px",
+        "detail": "<svg> overflows the section by 1550px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2106px",
+        "detail": "<svg> overflows the section by 1605px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2161px",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2136px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2965px",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2129px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Time (hours)\" overflows the section by 2952px",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2003px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Speed (mph)\" overflows the section by 2725px",
+        "detail": "<text> \"0\" overflows the section by 2107px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2912px",
+        "detail": "<text> \"2\" overflows the section by 2107px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 2912px",
+        "detail": "<text> \"4\" overflows the section by 2107px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 2912px",
+        "detail": "<text> \"6\" overflows the section by 2107px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 2912px",
+        "detail": "<text> \"8\" overflows the section by 2107px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 2912px",
+        "detail": "<text> \"0\" overflows the section by 2093px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2887px",
+        "detail": "<text> \"20\" overflows the section by 2015px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 2747px",
+        "detail": "<text> \"40\" overflows the section by 1937px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 2606px",
+        "detail": "<text> \"60\" overflows the section by 1859px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 2466px",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2086px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2875px",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 1864px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2475px",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 1890px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2522px",
+        "detail": "<text> \"True distance:\" overflows the section by 1920px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"True distance:\" overflows the section by 2576px",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 1921px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2577px",
+        "detail": "<text> \"Error:\" overflows the section by 1938px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Error:\" overflows the section by 2608px",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 1939px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2609px",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 1799px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2357px",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 1862px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2471px",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 1880px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2504px",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 1880px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2504px",
+        "detail": "<text> \"1st rect height =\" overflows the section by 1898px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"1st rect height =\" overflows the section by 2536px",
+        "detail": "<text> \"30.0 mph\" overflows the section by 1898px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"30.0 mph\" overflows the section by 2536px",
+        "detail": "<text> \"1st rect area =\" overflows the section by 1916px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"1st rect area =\" overflows the section by 2569px",
+        "detail": "<text> \"60.0 mi\" overflows the section by 1916px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60.0 mi\" overflows the section by 2569px",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 1934px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2601px",
+        "detail": "<text> \"236.2 mi\" overflows the section by 1934px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"236.2 mi\" overflows the section by 2601px",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 1872px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2489px",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 1866px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"n = 4 rects\" overflows the section by 2478px",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 1799px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2358px",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 1799px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2358px",
+        "detail": "<svg> overflows the section by 2217px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3025px",
+        "detail": "<svg> overflows the section by 1825px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2381px",
+        "detail": "<svg> overflows the section by 2602px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3970px",
+        "detail": "<svg> overflows the section by 2603px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Snapshots\" overflows the section by 3422px",
+        "detail": "<svg> \"time (s)velocity (mph)02468+0.0\u2212301.8Net\" overflows the section by 3232px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Speed f(t)\" overflows the section by 3610px",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 3158px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3664px",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 3158px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 3612px",
+        "detail": "<text> \"time (s)\" overflows the section by 3225px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 3561px",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 3121px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 3509px",
+        "detail": "<text> \"0\" overflows the section by 3206px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"a = 0\" overflows the section by 3682px",
+        "detail": "<text> \"2\" overflows the section by 3206px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3674px",
+        "detail": "<text> \"4\" overflows the section by 3206px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 3663px",
+        "detail": "<text> \"6\" overflows the section by 3206px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 0.0\" overflows the section by 3700px",
+        "detail": "<text> \"8\" overflows the section by 3206px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3565px",
+        "detail": "<text> \"+0.0\" overflows the section by 2984px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area A(x)\" overflows the section by 3859px",
+        "detail": "<text> \"\u2212301.8\" overflows the section by 3031px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3916px",
+        "detail": "<text> \"Net Area\" overflows the section by 2991px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"100\" overflows the section by 3865px",
+        "detail": "<text> [negativeArea_netArea] \"-301.8\" overflows the section by 3011px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"200\" overflows the section by 3813px",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 2988px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"300\" overflows the section by 3762px",
+        "detail": "<svg> overflows the section by 3106px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3938px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 3938px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 3938px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 3938px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 3938px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3891px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3500px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"snap\" overflows the section by 3501px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3685px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3422px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+0.0\u2212301.8Net\" overflows the section by 4562px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4487px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4487px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"time (s)\" overflows the section by 4555px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"velocity (mph)\" overflows the section by 4450px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4536px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 4536px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 4536px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 4536px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 4536px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"+0.0\" overflows the section by 4314px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u2212301.8\" overflows the section by 4361px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Net Area\" overflows the section by 4321px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"-301.8\" overflows the section by 4341px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4318px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4436px",
-        "var": "negativeArea_offset",
-        "value": -40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4298px",
+        "detail": "<svg> overflows the section by 2968px",
         "var": "negativeArea_offset",
         "value": -40.0
       },
@@ -919,3225 +735,207 @@
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 206px",
+        "detail": "<svg> overflows the section by 1177px",
         "var": "negativeArea_offset",
         "value": -20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1297px",
+        "detail": "<svg> \"time (s)velocity (mph)02468+22.5\u2212164.3Ne\" overflows the section by 3232px",
         "var": "negativeArea_offset",
         "value": -20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+22.5\u2212164.3Ne\" overflows the section by 4562px",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 3045px",
         "var": "negativeArea_offset",
         "value": -20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4375px",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 3115px",
         "var": "negativeArea_offset",
         "value": -20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4445px",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 3170px",
         "var": "negativeArea_offset",
         "value": -20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4500px",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 3170px",
         "var": "negativeArea_offset",
         "value": -20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4500px",
+        "detail": "<text> \"+22.5\" overflows the section by 3022px",
         "var": "negativeArea_offset",
         "value": -20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"+22.5\" overflows the section by 4351px",
+        "detail": "<text> \"\u2212164.3\" overflows the section by 3082px",
         "var": "negativeArea_offset",
         "value": -20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u2212164.3\" overflows the section by 4412px",
+        "detail": "<text> [negativeArea_netArea] \"-141.8\" overflows the section by 3011px",
         "var": "negativeArea_offset",
         "value": -20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"-141.8\" overflows the section by 4341px",
-        "var": "negativeArea_offset",
-        "value": -20.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4466px",
-        "var": "negativeArea_offset",
-        "value": -20.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 901px",
+        "detail": "<svg> overflows the section by 740px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2162px",
+        "detail": "<svg> overflows the section by 1606px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3026px",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 3232px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3686px",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 3108px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4562px",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 3111px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4438px",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 3165px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4442px",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 3165px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4497px",
+        "detail": "<text> \"+75.0\" overflows the section by 3085px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4497px",
+        "detail": "<text> \"\u221256.8\" overflows the section by 3145px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"+75.0\" overflows the section by 4414px",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 3011px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u221256.8\" overflows the section by 4475px",
+        "detail": "<svg> overflows the section by 3146px",
         "var": "negativeArea_offset",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4341px",
-        "var": "negativeArea_offset",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4464px",
-        "var": "negativeArea_offset",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+178.2\u22120.0Net\" overflows the section by 4562px",
+        "detail": "<svg> overflows the section by 414px",
         "var": "negativeArea_offset",
         "value": 20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4489px",
+        "detail": "<svg> overflows the section by 2219px",
         "var": "negativeArea_offset",
         "value": 20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4484px",
+        "detail": "<svg> \"time (s)velocity (mph)02468+178.2\u22120.0Net\" overflows the section by 3232px",
         "var": "negativeArea_offset",
         "value": 20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"+178.2\" overflows the section by 4465px",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 3159px",
         "var": "negativeArea_offset",
         "value": 20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u22120.0\" overflows the section by 4512px",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 3156px",
         "var": "negativeArea_offset",
         "value": 20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"178.2\" overflows the section by 4341px",
+        "detail": "<text> \"+178.2\" overflows the section by 3136px",
         "var": "negativeArea_offset",
         "value": 20.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+338.2\u22120.0Net\" overflows the section by 4562px",
+        "detail": "<text> \"\u22120.0\" overflows the section by 3182px",
+        "var": "negativeArea_offset",
+        "value": 20.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [negativeArea_netArea] \"178.2\" overflows the section by 3011px",
+        "var": "negativeArea_offset",
+        "value": 20.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3128px",
+        "var": "negativeArea_offset",
+        "value": 20.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"time (s)velocity (mph)02468+338.2\u22120.0Net\" overflows the section by 3232px",
         "var": "negativeArea_offset",
         "value": 40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4495px",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 3166px",
         "var": "negativeArea_offset",
         "value": 40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4445px",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 3117px",
         "var": "negativeArea_offset",
         "value": 40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"+338.2\" overflows the section by 4471px",
+        "detail": "<text> \"+338.2\" overflows the section by 3142px",
         "var": "negativeArea_offset",
         "value": 40.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"338.2\" overflows the section by 4341px",
+        "detail": "<text> [negativeArea_netArea] \"338.2\" overflows the section by 3011px",
         "var": "negativeArea_offset",
         "value": 40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4473px",
-        "var": "negativeArea_offset",
-        "value": 40.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 205px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 985px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 635px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"f(x)\" overflows the section by 555px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"speed\" overflows the section by 574px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [shaded-area] overflows the section by 635px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [f-curve] overflows the section by 612px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 521px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 515px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 851px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"A(x)\" overflows the section by 772px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"area\" overflows the section by 790px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [a-curve] overflows the section by 851px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<line> [ftc_slopeValue] overflows the section by 839px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 789px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"slope:\" overflows the section by 780px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 780px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 814px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"98\" overflows the section by 807px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 927px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 927px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 927px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 927px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 927px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 927px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 920px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 884px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x = 2.0\" overflows the section by 881px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<circle> [x-handle] overflows the section by 909px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 663px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 900px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 401px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1296px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1517px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1496px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1963px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 1935px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 1935px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 1935px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 1935px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 1935px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"t (minutes)\" overflows the section by 1956px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_area] overflows the section by 1913px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"v(t) = 2t\" overflows the section by 1627px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1913px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1664px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(0) = 0\" overflows the section by 1905px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1802px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1784px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Calculation\" overflows the section by 1638px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1657px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"= 25.0 miles\" overflows the section by 1676px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Area = 25.0\" overflows the section by 1829px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1733px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1592px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2106px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2162px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2965px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Time (hours)\" overflows the section by 2952px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Speed (mph)\" overflows the section by 2725px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2912px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 2912px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 2912px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 2912px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 2912px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2887px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 2747px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 2606px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 2466px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2875px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2475px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2522px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"True distance:\" overflows the section by 2576px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2577px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Error:\" overflows the section by 2608px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2609px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2357px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2471px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2504px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2504px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"1st rect height =\" overflows the section by 2536px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"30.0 mph\" overflows the section by 2536px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"1st rect area =\" overflows the section by 2569px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"60.0 mi\" overflows the section by 2569px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2601px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"236.2 mi\" overflows the section by 2601px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2489px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"n = 4 rects\" overflows the section by 2478px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2358px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2358px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3025px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2381px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3970px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Snapshots\" overflows the section by 3422px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Speed f(t)\" overflows the section by 3610px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3664px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 3612px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 3561px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 3509px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"a = 0\" overflows the section by 3682px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3674px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 3663px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x = 0.0\" overflows the section by 3700px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3565px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Area A(x)\" overflows the section by 3859px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3916px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"100\" overflows the section by 3865px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"200\" overflows the section by 3813px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"300\" overflows the section by 3762px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3938px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 3938px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 3938px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 3938px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 3938px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3891px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3500px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"snap\" overflows the section by 3501px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3685px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3422px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4562px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4438px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4438px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4493px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4493px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"time (s)\" overflows the section by 4555px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"velocity (mph)\" overflows the section by 4450px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4536px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 4536px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 4536px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 4536px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 4536px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"+75.0\" overflows the section by 4414px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u221256.8\" overflows the section by 4475px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Net Area\" overflows the section by 4321px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4341px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4318px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4436px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4298px",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='ftc_fValue' displays 51.2 but the model value is 0",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='ftc_areaValue' displays 98 but the model value is 0",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='riemannSums_riemannSum' displays 236.2 but the model value is 0",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='riemannSums_trueArea' displays 251.9 but the model value is 0",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='riemannSums_error' displays 15.71 but the model value is 15.7",
-        "var": "a",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+28.2\u221256.7Net\" overflows the section by 4562px",
-        "var": "a",
-        "value": 1.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4436px",
-        "var": "a",
-        "value": 1.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"+28.2\" overflows the section by 4413px",
-        "var": "a",
-        "value": 1.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u221256.7\" overflows the section by 4473px",
-        "var": "a",
-        "value": 1.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"-28.5\" overflows the section by 4341px",
-        "var": "a",
-        "value": 1.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4449px",
-        "var": "a",
-        "value": 1.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 206px",
-        "var": "a",
-        "value": 3.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1297px",
-        "var": "a",
-        "value": 3.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2161px",
-        "var": "a",
-        "value": 3.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+0.0\u221255.9Net \" overflows the section by 4562px",
-        "var": "a",
-        "value": 3.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4506px",
-        "var": "a",
-        "value": 3.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4506px",
-        "var": "a",
-        "value": 3.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"+0.0\" overflows the section by 4348px",
-        "var": "a",
-        "value": 3.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u221255.9\" overflows the section by 4409px",
-        "var": "a",
-        "value": 3.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"-55.9\" overflows the section by 4341px",
-        "var": "a",
-        "value": 3.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4474px",
-        "var": "a",
-        "value": 3.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 901px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1734px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3026px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3687px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+0.0\u221230.7Net \" overflows the section by 4562px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4512px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4512px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"+0.0\" overflows the section by 4360px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u221230.7\" overflows the section by 4420px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"-30.7\" overflows the section by 4341px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4458px",
-        "var": "a",
-        "value": 5.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+0.0\u221211.3Net \" overflows the section by 4562px",
-        "var": "a",
-        "value": 7.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4515px",
-        "var": "a",
-        "value": 7.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4515px",
-        "var": "a",
-        "value": 7.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"+0.0\" overflows the section by 4372px",
-        "var": "a",
-        "value": 7.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u221211.3\" overflows the section by 4432px",
-        "var": "a",
-        "value": 7.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"-11.3\" overflows the section by 4341px",
-        "var": "a",
-        "value": 7.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4476px",
-        "var": "a",
-        "value": 7.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 206px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 985px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 635px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"f(x)\" overflows the section by 555px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"speed\" overflows the section by 574px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [shaded-area] overflows the section by 635px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [f-curve] overflows the section by 612px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 521px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 515px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 851px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"A(x)\" overflows the section by 772px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"area\" overflows the section by 790px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [a-curve] overflows the section by 851px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<line> [ftc_slopeValue] overflows the section by 839px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 789px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"slope:\" overflows the section by 780px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 780px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 814px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"98\" overflows the section by 807px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 927px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 927px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 927px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 927px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 927px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 927px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 920px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 884px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x = 2.0\" overflows the section by 881px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<circle> [x-handle] overflows the section by 909px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 663px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 900px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 401px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1297px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1517px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1496px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1963px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 1935px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 1935px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 1935px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 1935px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 1935px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"t (minutes)\" overflows the section by 1956px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_area] overflows the section by 1913px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"v(t) = 2t\" overflows the section by 1627px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1913px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1664px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(0) = 0\" overflows the section by 1905px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1802px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1784px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Calculation\" overflows the section by 1638px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1657px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"= 25.0 miles\" overflows the section by 1676px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Area = 25.0\" overflows the section by 1829px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1733px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1592px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2106px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2161px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2965px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Time (hours)\" overflows the section by 2952px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Speed (mph)\" overflows the section by 2725px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2912px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 2912px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 2912px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 2912px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 2912px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2887px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 2747px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 2606px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 2466px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2875px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2475px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2522px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"True distance:\" overflows the section by 2576px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2577px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Error:\" overflows the section by 2608px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2609px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2357px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2471px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2504px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2504px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"1st rect height =\" overflows the section by 2536px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"30.0 mph\" overflows the section by 2536px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"1st rect area =\" overflows the section by 2569px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"60.0 mi\" overflows the section by 2569px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2601px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"236.2 mi\" overflows the section by 2601px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2489px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"n = 4 rects\" overflows the section by 2478px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2358px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2358px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3025px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2381px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3970px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Snapshots\" overflows the section by 3422px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Speed f(t)\" overflows the section by 3610px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3664px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 3612px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 3561px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 3509px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"a = 0\" overflows the section by 3682px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3674px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 3663px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x = 0.0\" overflows the section by 3700px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3565px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Area A(x)\" overflows the section by 3859px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3916px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"100\" overflows the section by 3865px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"200\" overflows the section by 3813px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"300\" overflows the section by 3762px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3938px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 3938px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 3938px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 3938px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 3938px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3891px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3500px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"snap\" overflows the section by 3501px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3685px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3422px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+17.9\u22120.0Net \" overflows the section by 4562px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4471px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4471px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"time (s)\" overflows the section by 4555px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"velocity (mph)\" overflows the section by 4450px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4536px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 4536px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 4536px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 4536px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 4536px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"+17.9\" overflows the section by 4448px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u22120.0\" overflows the section by 4508px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Net Area\" overflows the section by 4321px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"17.9\" overflows the section by 4341px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4318px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4436px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4298px",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='ftc_fValue' displays 51.2 but the model value is 0",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='ftc_areaValue' displays 98 but the model value is 0",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='riemannSums_riemannSum' displays 236.2 but the model value is 0",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='riemannSums_trueArea' displays 251.9 but the model value is 0",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='riemannSums_error' displays 15.71 but the model value is 15.7",
-        "var": "b",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 205px",
-        "var": "b",
-        "value": 2.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1296px",
-        "var": "b",
-        "value": 2.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2162px",
-        "var": "b",
-        "value": 2.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+72.3\u22120.0Net \" overflows the section by 4562px",
-        "var": "b",
-        "value": 2.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4476px",
-        "var": "b",
-        "value": 2.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4476px",
-        "var": "b",
-        "value": 2.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"+72.3\" overflows the section by 4453px",
-        "var": "b",
-        "value": 2.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u22120.0\" overflows the section by 4512px",
-        "var": "b",
-        "value": 2.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"72.3\" overflows the section by 4341px",
-        "var": "b",
-        "value": 2.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4444px",
-        "var": "b",
-        "value": 2.8
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221214.6Net\" overflows the section by 4562px",
-        "var": "b",
-        "value": 4.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4438px",
-        "var": "b",
-        "value": 4.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4493px",
-        "var": "b",
-        "value": 4.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4493px",
-        "var": "b",
-        "value": 4.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"+75.0\" overflows the section by 4414px",
-        "var": "b",
-        "value": 4.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u221214.6\" overflows the section by 4475px",
-        "var": "b",
-        "value": 4.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"60.3\" overflows the section by 4341px",
-        "var": "b",
-        "value": 4.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4474px",
-        "var": "b",
-        "value": 4.5
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 901px",
-        "var": "b",
-        "value": 6.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1734px",
-        "var": "b",
-        "value": 6.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3026px",
-        "var": "b",
-        "value": 6.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3686px",
-        "var": "b",
-        "value": 6.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221237.5Net\" overflows the section by 4562px",
-        "var": "b",
-        "value": 6.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u221237.5\" overflows the section by 4475px",
-        "var": "b",
-        "value": 6.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"37.5\" overflows the section by 4341px",
-        "var": "b",
-        "value": 6.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4459px",
-        "var": "b",
-        "value": 6.2
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4562px",
-        "var": "b",
-        "value": 8.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u221256.8\" overflows the section by 4475px",
-        "var": "b",
-        "value": 8.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4341px",
-        "var": "b",
-        "value": 8.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4461px",
-        "var": "b",
-        "value": 8.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 206px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 985px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 635px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"f(x)\" overflows the section by 555px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"speed\" overflows the section by 574px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [shaded-area] overflows the section by 635px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [f-curve] overflows the section by 612px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 521px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 515px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 851px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"A(x)\" overflows the section by 772px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"area\" overflows the section by 790px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [a-curve] overflows the section by 851px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<line> [ftc_slopeValue] overflows the section by 839px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 789px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"slope:\" overflows the section by 780px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 780px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 814px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"98\" overflows the section by 807px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 927px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 927px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 927px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 927px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 927px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 927px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 920px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 884px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x = 2.0\" overflows the section by 881px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<circle> [x-handle] overflows the section by 909px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 663px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 900px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 401px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1297px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1517px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1496px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1963px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 1935px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 1935px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 1935px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 1935px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 1935px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"t (minutes)\" overflows the section by 1956px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_area] overflows the section by 1913px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"v(t) = 2t\" overflows the section by 1627px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1913px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1664px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(0) = 0\" overflows the section by 1905px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1802px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1784px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Calculation\" overflows the section by 1638px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1657px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"= 25.0 miles\" overflows the section by 1676px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Area = 25.0\" overflows the section by 1829px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1733px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1592px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2106px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2161px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2965px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Time (hours)\" overflows the section by 2952px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Speed (mph)\" overflows the section by 2725px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2912px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 2912px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 2912px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 2912px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 2912px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2887px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 2747px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 2606px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 2466px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2875px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2475px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2522px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"True distance:\" overflows the section by 2576px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2577px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Error:\" overflows the section by 2608px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2609px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2357px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2471px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2504px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2504px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"1st rect height =\" overflows the section by 2536px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"30.0 mph\" overflows the section by 2536px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"1st rect area =\" overflows the section by 2569px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"60.0 mi\" overflows the section by 2569px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2601px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"236.2 mi\" overflows the section by 2601px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2489px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"n = 4 rects\" overflows the section by 2478px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2358px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2358px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3025px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2381px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3970px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Snapshots\" overflows the section by 3422px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Speed f(t)\" overflows the section by 3610px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3664px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 3612px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 3561px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 3509px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"a = 0\" overflows the section by 3682px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3674px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 3663px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"x = 0.0\" overflows the section by 3700px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3565px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Area A(x)\" overflows the section by 3859px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3916px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"100\" overflows the section by 3865px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"200\" overflows the section by 3813px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"300\" overflows the section by 3762px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3938px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 3938px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 3938px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 3938px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 3938px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3891px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3500px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"snap\" overflows the section by 3501px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3685px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3422px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4562px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4438px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4493px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4493px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"time (s)\" overflows the section by 4555px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"velocity (mph)\" overflows the section by 4450px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4536px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 4536px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 4536px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 4536px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 4536px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"+75.0\" overflows the section by 4414px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u221256.8\" overflows the section by 4475px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"Net Area\" overflows the section by 4321px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4341px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4318px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4436px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4298px",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='ftc_fValue' displays 51.2 but the model value is 0",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='ftc_areaValue' displays 98 but the model value is 0",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='riemannSums_riemannSum' displays 236.2 but the model value is 0",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='riemannSums_trueArea' displays 251.9 but the model value is 0",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='riemannSums_error' displays 15.71 but the model value is 15.7",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "readout_mismatch",
-        "detail": "element data-concept='negativeArea_netArea' displays 18.2 but the model value is 0",
-        "var": "n",
-        "value": 1.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 205px",
-        "var": "n",
-        "value": 51.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1296px",
-        "var": "n",
-        "value": 51.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2162px",
-        "var": "n",
-        "value": 51.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4475px",
-        "var": "n",
-        "value": 51.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 901px",
-        "var": "n",
-        "value": 101.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1734px",
-        "var": "n",
-        "value": 101.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3026px",
-        "var": "n",
-        "value": 101.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3686px",
-        "var": "n",
-        "value": 101.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4458px",
-        "var": "n",
-        "value": 101.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4466px",
-        "var": "n",
-        "value": 150.0
       }
     ]
   },
@@ -4145,28 +943,6 @@
     "negativeArea_offset": {
       "behaves_as_designed": true,
       "issues": []
-    },
-    "a": {
-      "behaves_as_designed": true,
-      "issues": []
-    },
-    "b": {
-      "behaves_as_designed": false,
-      "issues": [
-        "The variable `b` appears to control vertical position/offset of the curve rather than student-initiated dragging; the design specifies student manipulation via drag interaction, not parameter animation",
-        "No color change in shaded regions is visible across frames to distinguish positive vs. negative area contributions\u2014all shading appears uniform, contradicting the core visual feedback mechanism",
-        "The integral value label and axis markers remain static across frames despite the curve shifting, suggesting annotations are not properly tracking the curve's position",
-        "The interactive dragging mechanism shown in the design is absent; the filmstrip shows automated parameter variation rather than interactive student control with real-time feedback"
-      ]
-    },
-    "n": {
-      "behaves_as_designed": false,
-      "issues": [
-        "The variable `n` appears to control the amplitude or shape of the curve rather than a vertical offset/dragging position; the curve oscillates differently across frames instead of maintaining consistent shape while shifting vertically",
-        "The green and blue endpoint markers remain fixed on the x-axis across all frames while the curve changes shape, breaking the expected geometric relationship where dragging should move the entire curve together",
-        "The integral value displayed changes across frames due to curve shape variation, not due to signed area behavior from vertical repositioning; this obscures the intended causal chain between position and signed area",
-        "No interactive dragging mechanic is visible in the filmstrip; the frames show automatic parametric variation rather than student-controlled vertical offset as specified in the design intent"
-      ]
     }
   },
   "assertions_total": 5,
@@ -4175,27 +951,27 @@
     {
       "id": "initial-state-poses-problem",
       "expected": "curve crosses x-axis, showing both teal (above) and coral (below) shaded regions; net area readout visible",
-      "observed": "No visible changes between the before and after screenshots; both appear identical with the same speed curve, timeline, and interface elements."
+      "observed": "The circular icon moved slightly on the curve, but no shaded regions (teal above or coral below) appeared, and no net area readout became visible."
     },
     {
       "id": "offset-control-exists-and-works",
       "expected": "curve shifts upward, coral region shrinks significantly, more of the curve is above x-axis",
-      "observed": "The curve and all visual elements remain identical between the two screenshots; no visible shift or change occurred."
+      "observed": "The curve position and the coral/teal circle location remain virtually identical between the before and after images; no visible upward shift or shrinkage of any region occurred."
     },
     {
       "id": "negative-area-subtracts-from-total",
       "expected": "more coral shading below x-axis, net area readout shows negative value",
-      "observed": "The airplane icon moved slightly to the right along the curve and is now circled with a teal outline, but no coral shading appeared below the x-axis and no negative value is visible in the readout."
+      "observed": "A tooltip/help indicator appeared on the graph saying 'Step 1: Click timeline to sample speed', but no coral shading below the x-axis or negative area readout is visible in either screenshot."
     },
     {
       "id": "balanced-position-creates-zero-integral",
       "expected": "both teal and coral regions visible with similar magnitudes",
-      "observed": "The cursor/sampling point moved slightly to the right on the timeline (from approximately 4.0 to 4.2 seconds), but no teal and coral regions are visible in either screenshot."
+      "observed": "The screenshots appear nearly identical with no visible change in the teal and coral regions between the before and after states."
     },
     {
       "id": "carries-over-a-b-n-frozen",
       "expected": "integration bounds a and b shown as fixed markers on the x-axis",
-      "observed": "The speedometer icon moved slightly along the curve, but the integration bounds markers (a and b) remain in the same positions on the x-axis in both images."
+      "observed": "The circular cursor/selector moved slightly along the timeline curve, but the integration bounds markers (a and b) remain in the same position on the x-axis in both screenshots."
     }
   ],
   "missing_model_variables": [],
@@ -4203,13 +979,11 @@
     "negativeArea_offset": 1,
     "negativeArea_positiveArea": 1,
     "negativeArea_negativeArea": 1,
-    "negativeArea_netArea": 1,
-    "a": 0,
-    "b": 0,
-    "n": 0
+    "negativeArea_netArea": 1
   },
   "console_errors": [
-    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Camera is not defined",
+    "Camera is not defined",
     "Failed to load resource: the server responded with a status of 403 (Forbidden)",
     "Failed to load resource: the server responded with a status of 403 (Forbidden)",
     "Failed to load resource: the server responded with a status of 403 (Forbidden)",
@@ -4222,11 +996,11 @@
   "prose_word_count": null,
   "prose_budget_exceeded": false,
   "timings": {
-    "page_ready_s": 2.3,
-    "assertions_s": 7.0,
-    "sweep_s": 10.3,
-    "vlm_wait_s": 3.7,
-    "total_s": 23.7
+    "page_ready_s": 2.5,
+    "assertions_s": 5.8,
+    "sweep_s": 2.7,
+    "vlm_wait_s": 1.1,
+    "total_s": 12.3
   },
   "results": [
     {
@@ -4245,16 +1019,23 @@
       "action_var": null,
       "visual_check": "curve crosses x-axis, showing both teal (above) and coral (below) shaded regions; net area readout visible",
       "metrics": {
-        "changed_area_ratio": 0.0002,
-        "mean_change_intensity": 63.4,
-        "changed_regions": 0,
-        "region_bboxes_px": [],
+        "changed_area_ratio": 0.0003,
+        "mean_change_intensity": 101.9,
+        "changed_regions": 1,
+        "region_bboxes_px": [
+          [
+            640,
+            412,
+            640,
+            428
+          ]
+        ],
         "coupling_px": null,
         "no_visible_change": false
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "No visible changes between the before and after screenshots; both appear identical with the same speed curve, timeline, and interface elements."
+        "observed": "The circular icon moved slightly on the curve, but no shaded regions (teal above or coral below) appeared, and no net area readout became visible."
       }
     },
     {
@@ -4280,59 +1061,53 @@
       "action_var": "negativeArea_offset",
       "visual_check": "curve shifts upward, coral region shrinks significantly, more of the curve is above x-axis",
       "metrics": {
-        "changed_area_ratio": 0.0009,
-        "mean_change_intensity": 109.7,
-        "changed_regions": 7,
+        "changed_area_ratio": 0.0007,
+        "mean_change_intensity": 100.8,
+        "changed_regions": 6,
         "region_bboxes_px": [
           [
             648,
-            532,
-            668,
-            532
+            392,
+            664,
+            392
           ],
           [
-            632,
-            540,
             636,
-            548
-          ],
-          [
-            628,
-            552,
-            628,
-            572
-          ],
-          [
-            656,
-            552,
-            668,
-            568
+            396,
+            644,
+            404
           ],
           [
             644,
-            556,
-            652,
-            564
+            416,
+            648,
+            424
           ],
           [
-            688,
-            556,
-            688,
-            568
-          ],
-          [
-            652,
-            592,
+            656,
+            416,
             664,
-            592
+            424
+          ],
+          [
+            672,
+            436,
+            680,
+            444
+          ],
+          [
+            648,
+            448,
+            668,
+            448
           ]
         ],
-        "coupling_px": 4714.8,
+        "coupling_px": 3531.2,
         "no_visible_change": false
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The curve and all visual elements remain identical between the two screenshots; no visible shift or change occurred."
+        "observed": "The curve position and the coral/teal circle location remain virtually identical between the before and after images; no visible upward shift or shrinkage of any region occurred."
       }
     },
     {
@@ -4358,65 +1133,77 @@
       "action_var": "negativeArea_offset",
       "visual_check": "more coral shading below x-axis, net area readout shows negative value",
       "metrics": {
-        "changed_area_ratio": 0.0009,
-        "mean_change_intensity": 111.4,
-        "changed_regions": 8,
+        "changed_area_ratio": 0.0044,
+        "mean_change_intensity": 103.0,
+        "changed_regions": 11,
         "region_bboxes_px": [
           [
-            648,
-            528,
-            668,
-            528
-          ],
-          [
-            672,
-            532,
-            680,
-            536
-          ],
-          [
-            684,
-            540,
-            688,
-            552
-          ],
-          [
-            624,
-            552,
-            624,
-            572
-          ],
-          [
-            692,
-            556,
-            692,
-            568
-          ],
-          [
-            668,
-            580,
-            684,
-            592
-          ],
-          [
-            636,
-            588,
-            648,
-            592
-          ],
-          [
             652,
+            412,
+            668,
+            432
+          ],
+          [
+            132,
+            540,
+            1072,
+            556
+          ],
+          [
+            1080,
+            540,
+            1136,
+            544
+          ],
+          [
+            540,
+            552,
+            564,
+            560
+          ],
+          [
+            572,
+            552,
+            576,
+            560
+          ],
+          [
             596,
-            664,
-            596
+            552,
+            608,
+            560
+          ],
+          [
+            616,
+            552,
+            660,
+            560
+          ],
+          [
+            704,
+            552,
+            720,
+            560
+          ],
+          [
+            508,
+            556,
+            520,
+            556
+          ],
+          [
+            680,
+            556,
+            688,
+            560
           ]
         ],
-        "coupling_px": 4717.2,
+        "coupling_px": 3423.3,
         "no_visible_change": false
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The airplane icon moved slightly to the right along the curve and is now circled with a teal outline, but no coral shading appeared below the x-axis and no negative value is visible in the readout."
+        "observed": "A tooltip/help indicator appeared on the graph saying 'Step 1: Click timeline to sample speed', but no coral shading below the x-axis or negative area readout is visible in either screenshot."
       }
     },
     {
@@ -4442,77 +1229,23 @@
       "action_var": "negativeArea_offset",
       "visual_check": "both teal and coral regions visible with similar magnitudes",
       "metrics": {
-        "changed_area_ratio": 0.0011,
-        "mean_change_intensity": 113.6,
-        "changed_regions": 10,
+        "changed_area_ratio": 0.0005,
+        "mean_change_intensity": 87.2,
+        "changed_regions": 1,
         "region_bboxes_px": [
           [
             648,
-            528,
+            412,
             668,
-            528
-          ],
-          [
-            672,
-            532,
-            680,
-            536
-          ],
-          [
-            684,
-            540,
-            688,
-            552
-          ],
-          [
-            644,
-            544,
-            652,
-            564
-          ],
-          [
-            624,
-            552,
-            624,
-            572
-          ],
-          [
-            656,
-            552,
-            668,
-            568
-          ],
-          [
-            692,
-            556,
-            692,
-            568
-          ],
-          [
-            668,
-            580,
-            684,
-            592
-          ],
-          [
-            636,
-            588,
-            648,
-            592
-          ],
-          [
-            652,
-            596,
-            664,
-            596
+            428
           ]
         ],
-        "coupling_px": 4717.4,
+        "coupling_px": 3565.6,
         "no_visible_change": false
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The cursor/sampling point moved slightly to the right on the timeline (from approximately 4.0 to 4.2 seconds), but no teal and coral regions are visible in either screenshot."
+        "observed": "The screenshots appear nearly identical with no visible change in the teal and coral regions between the before and after states."
       }
     },
     {
@@ -4545,33 +1278,27 @@
       "action_var": null,
       "visual_check": "integration bounds a and b shown as fixed markers on the x-axis",
       "metrics": {
-        "changed_area_ratio": 0.0006,
-        "mean_change_intensity": 104.4,
-        "changed_regions": 4,
+        "changed_area_ratio": 0.0009,
+        "mean_change_intensity": 111.8,
+        "changed_regions": 3,
         "region_bboxes_px": [
           [
             648,
-            536,
+            388,
             668,
-            536
+            388
           ],
           [
-            632,
-            552,
-            632,
-            572
+            624,
+            412,
+            624,
+            428
           ],
           [
-            680,
-            556,
-            684,
-            568
-          ],
-          [
-            648,
-            588,
-            664,
-            588
+            644,
+            448,
+            676,
+            452
           ]
         ],
         "coupling_px": null,
@@ -4579,7 +1306,7 @@
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The speedometer icon moved slightly along the curve, but the integration bounds markers (a and b) remain in the same positions on the x-axis in both images."
+        "observed": "The circular cursor/selector moved slightly along the timeline curve, but the integration bounds markers (a and b) remain in the same position on the x-axis in both screenshots."
       }
     }
   ]

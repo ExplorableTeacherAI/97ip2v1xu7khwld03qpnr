@@ -158,6 +158,7 @@ function SignedAreaDrawing() {
             ref={svgRef}
             viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
             className="block w-full"
+            style={{ overflow: "hidden", maxHeight: `${VIEW_HEIGHT}px` }}
             role="img"
             aria-label="Velocity curve showing positive and negative area regions"
         >
@@ -396,7 +397,9 @@ function SignedAreaFigure() {
             }}
             caption="Drag the velocity curve up or down. Watch how positive area (teal, above the axis) and negative area (coral, below the axis) combine to give the net integral."
         >
-            <SignedAreaDrawing />
+            <div style={{ maxHeight: "360px", overflow: "hidden" }}>
+                <SignedAreaDrawing />
+            </div>
             <div className="px-6 pb-5">
                 <FigureSlider
                     varName="negativeArea_offset"

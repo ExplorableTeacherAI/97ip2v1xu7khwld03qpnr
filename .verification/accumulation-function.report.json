@@ -20,11 +20,11 @@
       "question_posing_initial_state": 5
     },
     "failing_items": [],
-    "worst_offense": "The compass icon inside the draggable circle at time ~4s is decorative emoji/clip-art inside the drawing surface, violating \u00a73 no-chart-junk and \u00a78 anti-pattern #9.",
+    "worst_offense": "The speedometer readout icon (compass-like symbol in the teal circle) reads as decorative clip-art inside the drawing surface, violating the no-emoji/icon rule.",
     "fixes": [
-      "Remove the compass icon from inside the green circle handle; the circular affordance and teal color alone signal interactivity without decoration.",
-      "Add a subtle soft shadow (0 1px 3px rgba(15, 23, 42, 0.15)) to both draggable handles (points a and b) to earn depth as per \u00a73 depth rule and improve affordance clarity to a 4.",
-      "Ensure the purple dashed vertical line at time 8s (the end handle) has a matching visual weight and shadow treatment as the start handle for symmetry and discoverability."
+      "Remove the compass/speedometer icon from inside the teal sample indicator circle; the circle itself with its accent color and position on the curve suffices to signal 'you can click here'.",
+      "Increase the hit area and visual radius of the draggable handles (teal 'a' and indigo 'b') to \u226524px hit zone with a subtle scale-up on hover to strengthen affordance clarity from 3\u21925.",
+      "Add a faint soft shadow (0 1px 3px rgba(15, 23, 42, 0.15)) to the draggable circle handles only, to signal 'pick me up' and lift them visually from the static curve and axis."
     ]
   },
   "sweep": {
@@ -53,823 +53,817 @@
     "issues": [
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 206px",
+        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 369px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 985px",
+        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 205px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 635px",
+        "detail": "<text> \"f(x)\" overflows the section by 161px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x)\" overflows the section by 555px",
+        "detail": "<text> \"speed\" overflows the section by 171px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"speed\" overflows the section by 574px",
+        "detail": "<path> [shaded-area] overflows the section by 205px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [shaded-area] overflows the section by 635px",
+        "detail": "<path> [f-curve] overflows the section by 192px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [f-curve] overflows the section by 612px",
+        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 142px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 521px",
+        "detail": "<text> \"51.2\" overflows the section by 139px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 515px",
+        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 325px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 851px",
+        "detail": "<text> \"A(x)\" overflows the section by 281px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"A(x)\" overflows the section by 772px",
+        "detail": "<text> \"area\" overflows the section by 291px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"area\" overflows the section by 790px",
+        "detail": "<path> [a-curve] overflows the section by 325px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [a-curve] overflows the section by 851px",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 318px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<line> [ftc_slopeValue] overflows the section by 839px",
+        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 290px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 774px",
+        "detail": "<text> \"slope:\" overflows the section by 285px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"slope:\" overflows the section by 764px",
+        "detail": "<text> \"51.2\" overflows the section by 285px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 764px",
+        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 304px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 814px",
+        "detail": "<text> \"98\" overflows the section by 300px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"98\" overflows the section by 807px",
+        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 367px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 927px",
+        "detail": "<text> \"0\" overflows the section by 367px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 927px",
+        "detail": "<text> \"2\" overflows the section by 367px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 927px",
+        "detail": "<text> \"4\" overflows the section by 367px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 927px",
+        "detail": "<text> \"6\" overflows the section by 367px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 927px",
+        "detail": "<text> \"8\" overflows the section by 367px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 927px",
+        "detail": "<text> \"x\" overflows the section by 363px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 920px",
+        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 343px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 884px",
+        "detail": "<text> \"x = 2.0\" overflows the section by 341px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 2.0\" overflows the section by 881px",
+        "detail": "<circle> [x-handle] overflows the section by 357px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<circle> [x-handle] overflows the section by 909px",
+        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 221px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 663px",
+        "detail": "<svg> overflows the section by 414px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 900px",
+        "detail": "<svg> overflows the section by 118px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 401px",
+        "detail": "<svg> overflows the section by 741px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1297px",
+        "detail": "<svg> overflows the section by 961px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1517px",
+        "detail": "<svg> overflows the section by 940px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1496px",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1407px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1963px",
+        "detail": "<text> \"0\" overflows the section by 1379px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 1935px",
+        "detail": "<text> \"2\" overflows the section by 1379px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 1935px",
+        "detail": "<text> \"4\" overflows the section by 1379px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 1935px",
+        "detail": "<text> \"6\" overflows the section by 1379px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 1935px",
+        "detail": "<text> \"8\" overflows the section by 1379px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 1935px",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1400px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"t (minutes)\" overflows the section by 1956px",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1357px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_area] overflows the section by 1913px",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1071px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"v(t) = 2t\" overflows the section by 1627px",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1357px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1913px",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1108px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1664px",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1349px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(0) = 0\" overflows the section by 1905px",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1246px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1802px",
+        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1228px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1784px",
+        "detail": "<text> \"Calculation\" overflows the section by 1082px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Calculation\" overflows the section by 1638px",
+        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1101px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1657px",
+        "detail": "<text> \"= 25.0 miles\" overflows the section by 1120px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"= 25.0 miles\" overflows the section by 1676px",
+        "detail": "<text> \"Area = 25.0\" overflows the section by 1273px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area = 25.0\" overflows the section by 1829px",
+        "detail": "<svg> overflows the section by 1178px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1733px",
+        "detail": "<svg> overflows the section by 1036px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1592px",
+        "detail": "<svg> overflows the section by 1550px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2106px",
+        "detail": "<svg> overflows the section by 1605px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2161px",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2409px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 3021px",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2396px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Time (hours)\" overflows the section by 3008px",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2169px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Speed (mph)\" overflows the section by 2781px",
+        "detail": "<text> \"0\" overflows the section by 2357px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2968px",
+        "detail": "<text> \"2\" overflows the section by 2357px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 2968px",
+        "detail": "<text> \"4\" overflows the section by 2357px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 2968px",
+        "detail": "<text> \"6\" overflows the section by 2357px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 2968px",
+        "detail": "<text> \"8\" overflows the section by 2357px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 2968px",
+        "detail": "<text> \"0\" overflows the section by 2331px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2943px",
+        "detail": "<text> \"20\" overflows the section by 2191px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 2803px",
+        "detail": "<text> \"40\" overflows the section by 2050px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 2662px",
+        "detail": "<text> \"60\" overflows the section by 1910px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 2522px",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2319px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2931px",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 1919px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2531px",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 1966px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2578px",
+        "detail": "<text> \"True distance:\" overflows the section by 2020px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"True distance:\" overflows the section by 2632px",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2021px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2633px",
+        "detail": "<text> \"Error:\" overflows the section by 2053px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Error:\" overflows the section by 2664px",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2054px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2665px",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 1801px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2413px",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 1915px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2527px",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 1948px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2560px",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 1948px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2560px",
+        "detail": "<text> \"1st rect height =\" overflows the section by 1980px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"1st rect height =\" overflows the section by 2592px",
+        "detail": "<text> \"30.0 mph\" overflows the section by 1980px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"30.0 mph\" overflows the section by 2592px",
+        "detail": "<text> \"1st rect area =\" overflows the section by 2013px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"1st rect area =\" overflows the section by 2625px",
+        "detail": "<text> \"60.0 mi\" overflows the section by 2013px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60.0 mi\" overflows the section by 2625px",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2045px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2657px",
+        "detail": "<text> \"236.2 mi\" overflows the section by 2045px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"236.2 mi\" overflows the section by 2657px",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 1933px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2545px",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 1922px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"n = 4 rects\" overflows the section by 2534px",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 1802px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2414px",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 1802px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2414px",
+        "detail": "<svg> overflows the section by 2470px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3081px",
+        "detail": "<svg> overflows the section by 1825px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2437px",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3414px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 4202px",
+        "detail": "<text> \"Snapshots\" overflows the section by 2866px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Snapshots\" overflows the section by 3654px",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 3055px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Speed f(t)\" overflows the section by 3842px",
+        "detail": "<text> \"0\" overflows the section by 3108px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3896px",
+        "detail": "<text> \"20\" overflows the section by 3056px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 3844px",
+        "detail": "<text> \"40\" overflows the section by 3005px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 3793px",
+        "detail": "<text> \"60\" overflows the section by 2953px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 3741px",
+        "detail": "<text> \"a = 0\" overflows the section by 3126px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"a = 0\" overflows the section by 3914px",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3118px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3906px",
+        "detail": "<text> \"x\" overflows the section by 3107px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 3895px",
+        "detail": "<text> \"x = 0.0\" overflows the section by 3144px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 0.0\" overflows the section by 3932px",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3009px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3797px",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3303px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area A(x)\" overflows the section by 4091px",
+        "detail": "<text> \"0\" overflows the section by 3361px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4148px",
+        "detail": "<text> \"100\" overflows the section by 3309px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"100\" overflows the section by 4097px",
+        "detail": "<text> \"200\" overflows the section by 3257px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"200\" overflows the section by 4045px",
+        "detail": "<text> \"300\" overflows the section by 3206px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"300\" overflows the section by 3994px",
+        "detail": "<text> \"0\" overflows the section by 3382px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4170px",
+        "detail": "<text> \"2\" overflows the section by 3382px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 4170px",
+        "detail": "<text> \"4\" overflows the section by 3382px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 4170px",
+        "detail": "<text> \"6\" overflows the section by 3382px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 4170px",
+        "detail": "<text> \"8\" overflows the section by 3382px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 4170px",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3335px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 4123px",
+        "detail": "<svg> overflows the section by 2944px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3732px",
+        "detail": "<text> \"snap\" overflows the section by 2945px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"snap\" overflows the section by 3733px",
+        "detail": "<svg> overflows the section by 3131px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3917px",
+        "detail": "<svg> overflows the section by 2866px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3654px",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4006px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4802px",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 3882px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4678px",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 3937px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4733px",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 3937px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4733px",
+        "detail": "<text> \"time (s)\" overflows the section by 3999px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"time (s)\" overflows the section by 4795px",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 3894px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"velocity (mph)\" overflows the section by 4690px",
+        "detail": "<text> \"0\" overflows the section by 3980px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4776px",
+        "detail": "<text> \"2\" overflows the section by 3980px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 4776px",
+        "detail": "<text> \"4\" overflows the section by 3980px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 4776px",
+        "detail": "<text> \"6\" overflows the section by 3980px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 4776px",
+        "detail": "<text> \"8\" overflows the section by 3980px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 4776px",
+        "detail": "<text> \"+75.0\" overflows the section by 3858px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"+75.0\" overflows the section by 4654px",
+        "detail": "<text> \"\u221256.8\" overflows the section by 3919px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u221256.8\" overflows the section by 4715px",
+        "detail": "<text> \"Net Area\" overflows the section by 3765px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Net Area\" overflows the section by 4561px",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 3785px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4581px",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 3762px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4558px",
+        "detail": "<svg> overflows the section by 3902px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4715px",
-        "var": "accumulationFunction_sweepX",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4538px",
+        "detail": "<svg> overflows the section by 3742px",
         "var": "accumulationFunction_sweepX",
         "value": 0.0
       },
@@ -917,85 +911,79 @@
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 205px",
+        "detail": "<svg> overflows the section by 413px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 901px",
+        "detail": "<svg> overflows the section by 740px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1296px",
+        "detail": "<svg> overflows the section by 1177px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1734px",
+        "detail": "<svg> overflows the section by 1606px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2162px",
+        "detail": "<svg> overflows the section by 2469px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3082px",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 2.0f\" overflows the section by 3414px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 2.0f\" overflows the section by 4202px",
+        "detail": "<path> [accumulationFunction_accumulatedArea] overflows the section by 3097px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [accumulationFunction_accumulatedArea] overflows the section by 3885px",
+        "detail": "<text> \"x = 2.0\" overflows the section by 3144px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 2.0\" overflows the section by 3932px",
+        "detail": "<text> \"f(x) = 51.2\" overflows the section by 2955px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x) = 51.2\" overflows the section by 3742px",
+        "detail": "<path> [accumulationFunction_accumulatedArea] overflows the section by 3349px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [accumulationFunction_accumulatedArea] overflows the section by 4137px",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(2.0) = 98.2\" overflows the section by 3285px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(2.0) = 98.2\" overflows the section by 4073px",
+        "detail": "<svg> overflows the section by 3129px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3918px",
-        "var": "accumulationFunction_sweepX",
-        "value": 2.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4700px",
+        "detail": "<svg> overflows the section by 3920px",
         "var": "accumulationFunction_sweepX",
         "value": 2.0
       },
@@ -1007,31 +995,31 @@
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 4.0f\" overflows the section by 4202px",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 4.0f\" overflows the section by 3414px",
         "var": "accumulationFunction_sweepX",
         "value": 4.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 4.0\" overflows the section by 3932px",
+        "detail": "<text> \"x = 4.0\" overflows the section by 3144px",
         "var": "accumulationFunction_sweepX",
         "value": 4.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x) = 27.8\" overflows the section by 3803px",
+        "detail": "<text> \"f(x) = 27.8\" overflows the section by 3015px",
         "var": "accumulationFunction_sweepX",
         "value": 4.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(4.0) = 174.8\" overflows the section by 4033px",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(4.0) = 174.8\" overflows the section by 3245px",
         "var": "accumulationFunction_sweepX",
         "value": 4.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4711px",
+        "detail": "<svg> overflows the section by 3880px",
         "var": "accumulationFunction_sweepX",
         "value": 4.0
       },
@@ -1043,31 +1031,25 @@
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 6.0f\" overflows the section by 4202px",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 6.0f\" overflows the section by 3414px",
         "var": "accumulationFunction_sweepX",
         "value": 6.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 6.0\" overflows the section by 3932px",
+        "detail": "<text> \"x = 6.0\" overflows the section by 3144px",
         "var": "accumulationFunction_sweepX",
         "value": 6.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x) = 9.1\" overflows the section by 3851px",
+        "detail": "<text> \"f(x) = 9.1\" overflows the section by 3063px",
         "var": "accumulationFunction_sweepX",
         "value": 6.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(6.0) = 207.8\" overflows the section by 4016px",
-        "var": "accumulationFunction_sweepX",
-        "value": 6.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4701px",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(6.0) = 207.8\" overflows the section by 3228px",
         "var": "accumulationFunction_sweepX",
         "value": 6.0
       },
@@ -1079,31 +1061,25 @@
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 8.0f\" overflows the section by 4202px",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 8.0f\" overflows the section by 3414px",
         "var": "accumulationFunction_sweepX",
         "value": 8.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 8.0\" overflows the section by 3932px",
+        "detail": "<text> \"x = 8.0\" overflows the section by 3144px",
         "var": "accumulationFunction_sweepX",
         "value": 8.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x) = 36.3\" overflows the section by 3781px",
+        "detail": "<text> \"f(x) = 36.3\" overflows the section by 2993px",
         "var": "accumulationFunction_sweepX",
         "value": 8.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(8.0) = 251.9\" overflows the section by 3993px",
-        "var": "accumulationFunction_sweepX",
-        "value": 8.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4676px",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(8.0) = 251.9\" overflows the section by 3205px",
         "var": "accumulationFunction_sweepX",
         "value": 8.0
       },
@@ -1115,823 +1091,817 @@
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 205px",
+        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 369px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"f(x)speed51.2A(x)areaslope:51.29802468xx\" overflows the section by 985px",
+        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 205px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [f-graph] \"f(x)speed51.2\" overflows the section by 635px",
+        "detail": "<text> \"f(x)\" overflows the section by 161px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x)\" overflows the section by 555px",
+        "detail": "<text> \"speed\" overflows the section by 171px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"speed\" overflows the section by 574px",
+        "detail": "<path> [shaded-area] overflows the section by 205px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [shaded-area] overflows the section by 635px",
+        "detail": "<path> [f-curve] overflows the section by 192px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [f-curve] overflows the section by 612px",
+        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 142px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_fValue] \"51.2\" overflows the section by 521px",
+        "detail": "<text> \"51.2\" overflows the section by 139px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 515px",
+        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 325px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [a-graph] \"A(x)areaslope:51.298\" overflows the section by 851px",
+        "detail": "<text> \"A(x)\" overflows the section by 281px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"A(x)\" overflows the section by 772px",
+        "detail": "<text> \"area\" overflows the section by 291px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"area\" overflows the section by 790px",
+        "detail": "<path> [a-curve] overflows the section by 325px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [a-curve] overflows the section by 851px",
+        "detail": "<line> [ftc_slopeValue] overflows the section by 318px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<line> [ftc_slopeValue] overflows the section by 839px",
+        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 290px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [slope-readout] \"slope:51.2\" overflows the section by 774px",
+        "detail": "<text> \"slope:\" overflows the section by 285px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"slope:\" overflows the section by 764px",
+        "detail": "<text> \"51.2\" overflows the section by 285px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"51.2\" overflows the section by 764px",
+        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 304px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_areaValue] \"98\" overflows the section by 814px",
+        "detail": "<text> \"98\" overflows the section by 300px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"98\" overflows the section by 807px",
+        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 367px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [x-axis] \"02468xx = 2.0\" overflows the section by 927px",
+        "detail": "<text> \"0\" overflows the section by 367px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 927px",
+        "detail": "<text> \"2\" overflows the section by 367px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 927px",
+        "detail": "<text> \"4\" overflows the section by 367px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 927px",
+        "detail": "<text> \"6\" overflows the section by 367px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 927px",
+        "detail": "<text> \"8\" overflows the section by 367px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 927px",
+        "detail": "<text> \"x\" overflows the section by 363px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 920px",
+        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 343px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [ftc_xPosition] \"x = 2.0\" overflows the section by 884px",
+        "detail": "<text> \"x = 2.0\" overflows the section by 341px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 2.0\" overflows the section by 881px",
+        "detail": "<circle> [x-handle] overflows the section by 357px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<circle> [x-handle] overflows the section by 909px",
+        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 221px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"slope = 51.2 \u2248 f(x)\" overflows the section by 663px",
+        "detail": "<svg> overflows the section by 413px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 900px",
+        "detail": "<svg> overflows the section by 118px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 401px",
+        "detail": "<svg> overflows the section by 741px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1296px",
+        "detail": "<svg> overflows the section by 961px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1517px",
+        "detail": "<svg> overflows the section by 940px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1496px",
+        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1407px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"02468t (minutes)v(t) = 2tD(t) = t\u00b2D(0) =\" overflows the section by 1963px",
+        "detail": "<text> \"0\" overflows the section by 1379px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 1935px",
+        "detail": "<text> \"2\" overflows the section by 1379px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 1935px",
+        "detail": "<text> \"4\" overflows the section by 1379px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 1935px",
+        "detail": "<text> \"6\" overflows the section by 1379px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 1935px",
+        "detail": "<text> \"8\" overflows the section by 1379px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 1935px",
+        "detail": "<text> \"t (minutes)\" overflows the section by 1400px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"t (minutes)\" overflows the section by 1956px",
+        "detail": "<path> [calcIntegrals_area] overflows the section by 1357px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_area] overflows the section by 1913px",
+        "detail": "<text> \"v(t) = 2t\" overflows the section by 1071px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"v(t) = 2t\" overflows the section by 1627px",
+        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1357px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [calcIntegrals_Fb] overflows the section by 1913px",
+        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1108px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(t) = t\u00b2\" overflows the section by 1664px",
+        "detail": "<text> \"D(0) = 0\" overflows the section by 1349px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(0) = 0\" overflows the section by 1905px",
+        "detail": "<g> [calcIntegrals_b] overflows the section by 1246px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [calcIntegrals_b] overflows the section by 1802px",
+        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1228px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(5.0) = 25.0\" overflows the section by 1784px",
+        "detail": "<text> \"Calculation\" overflows the section by 1082px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Calculation\" overflows the section by 1638px",
+        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1101px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"D(5.0) - D(0) = 25.0 - 0\" overflows the section by 1657px",
+        "detail": "<text> \"= 25.0 miles\" overflows the section by 1120px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"= 25.0 miles\" overflows the section by 1676px",
+        "detail": "<text> \"Area = 25.0\" overflows the section by 1273px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area = 25.0\" overflows the section by 1829px",
+        "detail": "<svg> overflows the section by 1177px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1733px",
+        "detail": "<svg> overflows the section by 1036px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1592px",
+        "detail": "<svg> overflows the section by 1550px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2106px",
+        "detail": "<svg> overflows the section by 1605px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2161px",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2409px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 3021px",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2396px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Time (hours)\" overflows the section by 3008px",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2169px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Speed (mph)\" overflows the section by 2781px",
+        "detail": "<text> \"0\" overflows the section by 2357px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2968px",
+        "detail": "<text> \"2\" overflows the section by 2357px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 2968px",
+        "detail": "<text> \"4\" overflows the section by 2357px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 2968px",
+        "detail": "<text> \"6\" overflows the section by 2357px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 2968px",
+        "detail": "<text> \"8\" overflows the section by 2357px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 2968px",
+        "detail": "<text> \"0\" overflows the section by 2331px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 2943px",
+        "detail": "<text> \"20\" overflows the section by 2191px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 2803px",
+        "detail": "<text> \"40\" overflows the section by 2050px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 2662px",
+        "detail": "<text> \"60\" overflows the section by 1910px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 2522px",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2319px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2931px",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 1919px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 2531px",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 1966px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 2578px",
+        "detail": "<text> \"True distance:\" overflows the section by 2020px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"True distance:\" overflows the section by 2632px",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2021px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 2633px",
+        "detail": "<text> \"Error:\" overflows the section by 2053px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Error:\" overflows the section by 2664px",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2054px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2665px",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 1801px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 2413px",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 1915px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 2527px",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 1948px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 2560px",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 1948px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 2560px",
+        "detail": "<text> \"1st rect height =\" overflows the section by 1980px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"1st rect height =\" overflows the section by 2592px",
+        "detail": "<text> \"30.0 mph\" overflows the section by 1980px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"30.0 mph\" overflows the section by 2592px",
+        "detail": "<text> \"1st rect area =\" overflows the section by 2013px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"1st rect area =\" overflows the section by 2625px",
+        "detail": "<text> \"60.0 mi\" overflows the section by 2013px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60.0 mi\" overflows the section by 2625px",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2045px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2657px",
+        "detail": "<text> \"236.2 mi\" overflows the section by 2045px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"236.2 mi\" overflows the section by 2657px",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 1933px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 2545px",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 1922px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"n = 4 rects\" overflows the section by 2534px",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 1802px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 2414px",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 1802px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 2414px",
+        "detail": "<svg> overflows the section by 2469px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3081px",
+        "detail": "<svg> overflows the section by 1825px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2437px",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3414px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 4202px",
+        "detail": "<text> \"Snapshots\" overflows the section by 2866px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Snapshots\" overflows the section by 3654px",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 3055px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Speed f(t)\" overflows the section by 3842px",
+        "detail": "<text> \"0\" overflows the section by 3108px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 3896px",
+        "detail": "<text> \"20\" overflows the section by 3056px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"20\" overflows the section by 3844px",
+        "detail": "<text> \"40\" overflows the section by 3005px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"40\" overflows the section by 3793px",
+        "detail": "<text> \"60\" overflows the section by 2953px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"60\" overflows the section by 3741px",
+        "detail": "<text> \"a = 0\" overflows the section by 3126px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"a = 0\" overflows the section by 3914px",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3118px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3906px",
+        "detail": "<text> \"x\" overflows the section by 3107px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x\" overflows the section by 3895px",
+        "detail": "<text> \"x = 0.0\" overflows the section by 3144px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"x = 0.0\" overflows the section by 3932px",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3009px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3797px",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3303px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Area A(x)\" overflows the section by 4091px",
+        "detail": "<text> \"0\" overflows the section by 3361px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4148px",
+        "detail": "<text> \"100\" overflows the section by 3309px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"100\" overflows the section by 4097px",
+        "detail": "<text> \"200\" overflows the section by 3257px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"200\" overflows the section by 4045px",
+        "detail": "<text> \"300\" overflows the section by 3206px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"300\" overflows the section by 3994px",
+        "detail": "<text> \"0\" overflows the section by 3382px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4170px",
+        "detail": "<text> \"2\" overflows the section by 3382px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 4170px",
+        "detail": "<text> \"4\" overflows the section by 3382px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 4170px",
+        "detail": "<text> \"6\" overflows the section by 3382px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 4170px",
+        "detail": "<text> \"8\" overflows the section by 3382px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 4170px",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3335px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 4123px",
+        "detail": "<svg> overflows the section by 2944px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3732px",
+        "detail": "<text> \"snap\" overflows the section by 2945px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"snap\" overflows the section by 3733px",
+        "detail": "<svg> overflows the section by 3130px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3917px",
+        "detail": "<svg> overflows the section by 2866px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3654px",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4006px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 4802px",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 3882px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_positiveArea] overflows the section by 4678px",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 3937px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<path> [negativeArea_negativeArea] overflows the section by 4733px",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 3937px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<polyline> [negativeArea_offset] overflows the section by 4733px",
+        "detail": "<text> \"time (s)\" overflows the section by 3999px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"time (s)\" overflows the section by 4795px",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 3894px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"velocity (mph)\" overflows the section by 4690px",
+        "detail": "<text> \"0\" overflows the section by 3980px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"0\" overflows the section by 4776px",
+        "detail": "<text> \"2\" overflows the section by 3980px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"2\" overflows the section by 4776px",
+        "detail": "<text> \"4\" overflows the section by 3980px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"4\" overflows the section by 4776px",
+        "detail": "<text> \"6\" overflows the section by 3980px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"6\" overflows the section by 4776px",
+        "detail": "<text> \"8\" overflows the section by 3980px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"8\" overflows the section by 4776px",
+        "detail": "<text> \"+75.0\" overflows the section by 3858px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"+75.0\" overflows the section by 4654px",
+        "detail": "<text> \"\u221256.8\" overflows the section by 3919px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u221256.8\" overflows the section by 4715px",
+        "detail": "<text> \"Net Area\" overflows the section by 3765px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"Net Area\" overflows the section by 4561px",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 3785px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 4581px",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 3762px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 4558px",
+        "detail": "<svg> overflows the section by 3915px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4702px",
-        "var": "accumulationFunction_snapshotCount",
-        "value": 0.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4538px",
+        "detail": "<svg> overflows the section by 3742px",
         "var": "accumulationFunction_snapshotCount",
         "value": 0.0
       },
@@ -1979,67 +1949,961 @@
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 206px",
+        "detail": "<svg> overflows the section by 740px",
         "var": "accumulationFunction_snapshotCount",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 901px",
+        "detail": "<svg> overflows the section by 1606px",
         "var": "accumulationFunction_snapshotCount",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1297px",
+        "detail": "<svg> overflows the section by 3129px",
         "var": "accumulationFunction_snapshotCount",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3918px",
+        "detail": "<svg> overflows the section by 3888px",
         "var": "accumulationFunction_snapshotCount",
         "value": 2.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4710px",
-        "var": "accumulationFunction_snapshotCount",
-        "value": 2.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 1734px",
+        "detail": "<svg> overflows the section by 3880px",
         "var": "accumulationFunction_snapshotCount",
         "value": 5.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 2162px",
-        "var": "accumulationFunction_snapshotCount",
-        "value": 5.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 3082px",
-        "var": "accumulationFunction_snapshotCount",
-        "value": 5.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4700px",
-        "var": "accumulationFunction_snapshotCount",
-        "value": 5.0
-      },
-      {
-        "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4714px",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2338px",
         "var": "accumulationFunction_snapshotCount",
         "value": 8.0
       },
       {
         "type": "clipped_content",
-        "detail": "<svg> overflows the section by 4676px",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2326px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2128px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2291px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 2291px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 2291px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 2291px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 2291px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2269px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 2146px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 2023px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 1900px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2259px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 1909px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 1950px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"True distance:\" overflows the section by 1997px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 1997px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Error:\" overflows the section by 2026px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 2026px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 1805px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 1906px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 1934px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 1934px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect height =\" overflows the section by 1963px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"30.0 mph\" overflows the section by 1963px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect area =\" overflows the section by 1991px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60.0 mi\" overflows the section by 1991px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 2019px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"236.2 mi\" overflows the section by 2019px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 1921px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 1912px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 1806px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 1806px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 1847px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3407px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Snapshots\" overflows the section by 2859px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 3047px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3101px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 3049px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 2998px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 2946px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"a = 0\" overflows the section by 3119px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 3111px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 3100px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 0.0\" overflows the section by 3137px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 3002px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3296px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3353px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"100\" overflows the section by 3302px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"200\" overflows the section by 3250px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"300\" overflows the section by 3199px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3375px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3375px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3375px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3375px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3375px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3328px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2937px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"snap\" overflows the section by 2938px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2859px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 3999px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 3875px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 3930px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 3930px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"time (s)\" overflows the section by 3992px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 3887px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3973px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3973px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3973px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3973px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3973px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"+75.0\" overflows the section by 3851px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u221256.8\" overflows the section by 3912px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Net Area\" overflows the section by 3758px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 3778px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 3755px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3912px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3735px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 8.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"Time (hours)Speed (mph)024680204060ODOME\" overflows the section by 2136px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Time (hours)\" overflows the section by 2129px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed (mph)\" overflows the section by 2003px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2107px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 2107px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 2107px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 2107px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 2107px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2093px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 2015px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 1937px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 1859px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_riemannSum] overflows the section by 2086px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"ODOMETER ESTIMATE\" overflows the section by 1864px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_riemannSum] \"236.2 mi\" overflows the section by 1890px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"True distance:\" overflows the section by 1920px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_trueArea] \"251.9 mi\" overflows the section by 1921px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Error:\" overflows the section by 1938px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_errorPercent] \"6.2%\" overflows the section by 1939px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_error] \"15.71\" overflows the section by 1799px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"CAUSAL CHAIN\" overflows the section by 1862px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u0394x = (b\u2212a)/n =\" overflows the section by 1880px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_deltaX] \"2.00 hr\" overflows the section by 1880px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect height =\" overflows the section by 1898px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"30.0 mph\" overflows the section by 1898px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"1st rect area =\" overflows the section by 1916px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60.0 mi\" overflows the section by 1916px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Sum of 4 rects =\" overflows the section by 1934px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"236.2 mi\" overflows the section by 1934px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [riemannSums_n] \"n = 4 rects\" overflows the section by 1872px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"n = 4 rects\" overflows the section by 1866px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_a] \"0\" overflows the section by 1799px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [riemannSums_b] \"8\" overflows the section by 1799px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"SnapshotsSpeed f(t)0204060a = 0xx = 0.0f\" overflows the section by 3141px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Snapshots\" overflows the section by 2593px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Speed f(t)\" overflows the section by 2781px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 2835px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"20\" overflows the section by 2783px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"40\" overflows the section by 2732px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"60\" overflows the section by 2680px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"a = 0\" overflows the section by 2853px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<g> [accumulationFunction_sweepX] \"x\" overflows the section by 2845px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x\" overflows the section by 2834px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"x = 0.0\" overflows the section by 2871px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"f(x) = 30.0\" overflows the section by 2736px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Area A(x)\" overflows the section by 3030px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3087px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"100\" overflows the section by 3036px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"200\" overflows the section by 2984px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"300\" overflows the section by 2933px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3109px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3109px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3109px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3109px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3109px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [accumulationFunction_accumulatedArea] \"A(0.0) = 0.0\" overflows the section by 3062px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2671px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"snap\" overflows the section by 2671px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 2593px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> \"time (s)velocity (mph)02468+75.0\u221256.8Net\" overflows the section by 3733px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_positiveArea] overflows the section by 3609px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<path> [negativeArea_negativeArea] overflows the section by 3664px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<polyline> [negativeArea_offset] overflows the section by 3664px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"time (s)\" overflows the section by 3726px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"velocity (mph)\" overflows the section by 3621px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"0\" overflows the section by 3707px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"2\" overflows the section by 3707px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"4\" overflows the section by 3707px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"6\" overflows the section by 3707px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"8\" overflows the section by 3707px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"+75.0\" overflows the section by 3585px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u221256.8\" overflows the section by 3646px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"Net Area\" overflows the section by 3492px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> [negativeArea_netArea] \"18.2\" overflows the section by 3512px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<text> \"\u2195 Drag curve up/down\" overflows the section by 3489px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3629px",
+        "var": "accumulationFunction_snapshotCount",
+        "value": 10.0
+      },
+      {
+        "type": "clipped_content",
+        "detail": "<svg> overflows the section by 3469px",
         "var": "accumulationFunction_snapshotCount",
         "value": 10.0
       }
@@ -2047,22 +2911,12 @@
   },
   "behavior_critiques": {
     "accumulationFunction_sweepX": {
-      "behaves_as_designed": false,
-      "issues": [
-        "The manipulated variable appears to be a continuous sweep parameter (accumulationFunction_sweepX) rather than discrete step-by-step navigation as designed. The intended design calls for explicit 'Next Step' and 'Previous Step' buttons with discrete day/hour/minute granularity control, not a continuous slider.",
-        "The visual feedback does not show accumulating stacked Riemann rectangles with individual labels and area contributions. Instead, a continuous curve is swept smoothly across the domain, which obscures the discrete cumulative-sum structure central to the pedagogical goal.",
-        "No odometer or running total sum notation (A(x) = \u03a3[\u0394x\u00b7f(x_i)]) is visible in any frame. The design requires explicit causal-chain feedback showing interval width, function height, area contribution, and running total\u2014none of which appear.",
-        "The trace strategy of retaining all previous rectangles in a stacked column to show convergence as step size shrinks is absent. Instead, the figure appears to show only the current sweep state, losing the cumulative visual history needed for the 'aha moment' of integral construction."
-      ]
+      "behaves_as_designed": true,
+      "issues": []
     },
     "accumulationFunction_snapshotCount": {
-      "behaves_as_designed": false,
-      "issues": [
-        "The variable `accumulationFunction_snapshotCount` controls a continuous visual property (likely curve position or opacity) rather than the discrete step-count intended by the design. The design calls for discrete Riemann rectangles to appear/disappear as steps accumulate; instead, a single smooth curve shifts smoothly across frames.",
-        "No Riemann rectangles (vertical strips) are visible in any frame. The design explicitly requires 'thin vertical rectangles' to appear and stack as the snapshot count increases; the current behavior shows only a smooth curve evolution.",
-        "The odometer/sum annotation does not update discretely with each step. The design specifies 'the odometer jumps up by that rectangle's area' and displays running total as \u03a3 notation; no such discrete labeled jumps or sum expressions appear.",
-        "The trace strategy of 'all previous rectangles remain visible in a stacked column chart' is absent. Instead of accumulated labeled strips persisting left-to-right, a single continuous curve morphs, violating the core visual feedback mechanism for showing cumulative integration."
-      ]
+      "behaves_as_designed": true,
+      "issues": []
     }
   },
   "assertions_total": 6,
@@ -2071,17 +2925,27 @@
     {
       "id": "initial-state-poses-problem",
       "expected": "sweep point is at the left bound, shaded region is minimal, A(x) graph shows point near origin",
-      "observed": "The two screenshots appear identical with no visible changes in the sweep point position, shaded region, or any other visual elements."
+      "observed": "The images appear identical with no visible changes between the before and after states."
+    },
+    {
+      "id": "sweep-control-exists-and-can-be-dragged",
+      "expected": "sweep point moves to x=4, shaded region expands from a to x=4",
+      "observed": "The speedometer icon moved slightly but the shaded region under the curve did not visibly expand; the overall layout and shaded areas appear nearly identical between the two screenshots."
     },
     {
       "id": "dragging-sweep-updates-accumulated-area",
       "expected": "shaded region grows, A(x) curve extends rightward showing increased accumulated area",
-      "observed": "The two screenshots appear virtually identical with no visible changes to the shaded region, curve, or any other visual elements."
+      "observed": "The circular cursor position moved slightly, but no shaded region growth or A(x) curve extension is visible between the two screenshots."
+    },
+    {
+      "id": "start-bound-a-displays-correctly",
+      "expected": "left bound marker shows at a=0 with muted styling, no grab cursor on the a marker",
+      "observed": "The left bound marker (a) appears identical in both screenshots with the same styling and no visible change in cursor behavior or muting."
     },
     {
       "id": "accumulated-area-grows-with-positive-speed",
       "expected": "accumulated area value increases as sweep point moves through region where curve is positive",
-      "observed": "The two screenshots appear identical with no visible changes to the accumulated area value, sweep point position, or any other visual elements."
+      "observed": "The sweep point icon moved slightly to the left, but the estimated distance value remained at 0.0 in both screenshots."
     },
     {
       "id": "snapshot-can-be-captured",
@@ -2112,11 +2976,11 @@
   "prose_word_count": null,
   "prose_budget_exceeded": false,
   "timings": {
-    "page_ready_s": 2.0,
-    "assertions_s": 41.1,
-    "sweep_s": 4.7,
-    "vlm_wait_s": 4.2,
-    "total_s": 52.5
+    "page_ready_s": 2.1,
+    "assertions_s": 38.0,
+    "sweep_s": 5.8,
+    "vlm_wait_s": 1.6,
+    "total_s": 47.8
   },
   "results": [
     {
@@ -2142,29 +3006,16 @@
       "action_var": null,
       "visual_check": "sweep point is at the left bound, shaded region is minimal, A(x) graph shows point near origin",
       "metrics": {
-        "changed_area_ratio": 0.0003,
-        "mean_change_intensity": 92.9,
-        "changed_regions": 2,
-        "region_bboxes_px": [
-          [
-            644,
-            544,
-            652,
-            568
-          ],
-          [
-            656,
-            552,
-            668,
-            568
-          ]
-        ],
+        "changed_area_ratio": 0.0,
+        "mean_change_intensity": 0.0,
+        "changed_regions": 0,
+        "region_bboxes_px": [],
         "coupling_px": null,
-        "no_visible_change": false
+        "no_visible_change": true
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The two screenshots appear identical with no visible changes in the sweep point position, shaded region, or any other visual elements."
+        "observed": "The images appear identical with no visible changes between the before and after states."
       }
     },
     {
@@ -2184,7 +3035,7 @@
       "visual_check": "sweep point moves to x=4, shaded region expands from a to x=4",
       "metrics": {
         "changed_area_ratio": 0.0006,
-        "mean_change_intensity": 99.6,
+        "mean_change_intensity": 101.6,
         "changed_regions": 3,
         "region_bboxes_px": [
           [
@@ -2194,24 +3045,24 @@
             544
           ],
           [
-            648,
-            552,
-            668,
-            568
-          ],
-          [
             680,
             552,
             680,
             572
+          ],
+          [
+            656,
+            560,
+            664,
+            568
           ]
         ],
-        "coupling_px": 4222.7,
+        "coupling_px": 3717.1,
         "no_visible_change": false
       },
       "visual_verdict": {
-        "happened": true,
-        "observed": "The sweep point (speedometer icon) moved from approximately x=3 to x=4 on the timeline, and the shaded region expanded accordingly from point a to include the area up to x=4."
+        "happened": false,
+        "observed": "The speedometer icon moved slightly but the shaded region under the curve did not visibly expand; the overall layout and shaded areas appear nearly identical between the two screenshots."
       }
     },
     {
@@ -2230,29 +3081,47 @@
       "action_var": "accumulationFunction_sweepX",
       "visual_check": "shaded region grows, A(x) curve extends rightward showing increased accumulated area",
       "metrics": {
-        "changed_area_ratio": 0.0005,
-        "mean_change_intensity": 78.2,
-        "changed_regions": 2,
+        "changed_area_ratio": 0.0007,
+        "mean_change_intensity": 110.0,
+        "changed_regions": 5,
         "region_bboxes_px": [
           [
-            656,
-            552,
+            640,
+            532,
             668,
-            568
+            536
           ],
           [
-            644,
-            556,
-            652,
-            564
+            628,
+            548,
+            628,
+            572
+          ],
+          [
+            688,
+            552,
+            688,
+            572
+          ],
+          [
+            672,
+            576,
+            684,
+            588
+          ],
+          [
+            648,
+            592,
+            668,
+            592
           ]
         ],
-        "coupling_px": 4228.1,
+        "coupling_px": 3694.1,
         "no_visible_change": false
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The two screenshots appear virtually identical with no visible changes to the shaded region, curve, or any other visual elements."
+        "observed": "The circular cursor position moved slightly, but no shaded region growth or A(x) curve extension is visible between the two screenshots."
       }
     },
     {
@@ -2272,21 +3141,9 @@
       "visual_check": "left bound marker shows at a=0 with muted styling, no grab cursor on the a marker",
       "metrics": {
         "changed_area_ratio": 0.0007,
-        "mean_change_intensity": 103.2,
-        "changed_regions": 3,
+        "mean_change_intensity": 103.6,
+        "changed_regions": 1,
         "region_bboxes_px": [
-          [
-            652,
-            532,
-            664,
-            532
-          ],
-          [
-            636,
-            536,
-            644,
-            544
-          ],
           [
             628,
             556,
@@ -2294,12 +3151,12 @@
             568
           ]
         ],
-        "coupling_px": 4222.8,
+        "coupling_px": 3717.7,
         "no_visible_change": false
       },
       "visual_verdict": {
-        "happened": true,
-        "observed": "The left bound marker (a) at position 0 now displays with muted/desaturated styling and appears to have lost its interactive grab cursor affordance."
+        "happened": false,
+        "observed": "The left bound marker (a) appears identical in both screenshots with the same styling and no visible change in cursor behavior or muting."
       }
     },
     {
@@ -2318,29 +3175,47 @@
       "action_var": "accumulationFunction_sweepX",
       "visual_check": "accumulated area value increases as sweep point moves through region where curve is positive",
       "metrics": {
-        "changed_area_ratio": 0.0003,
-        "mean_change_intensity": 92.3,
-        "changed_regions": 2,
+        "changed_area_ratio": 0.0007,
+        "mean_change_intensity": 99.6,
+        "changed_regions": 5,
         "region_bboxes_px": [
           [
-            644,
-            544,
-            652,
-            564
+            648,
+            536,
+            668,
+            536
+          ],
+          [
+            632,
+            552,
+            632,
+            572
+          ],
+          [
+            680,
+            556,
+            684,
+            568
           ],
           [
             656,
-            552,
-            668,
+            560,
+            664,
             568
+          ],
+          [
+            652,
+            588,
+            664,
+            588
           ]
         ],
-        "coupling_px": 4223.7,
+        "coupling_px": 3692.9,
         "no_visible_change": false
       },
       "visual_verdict": {
         "happened": false,
-        "observed": "The two screenshots appear identical with no visible changes to the accumulated area value, sweep point position, or any other visual elements."
+        "observed": "The sweep point icon moved slightly to the left, but the estimated distance value remained at 0.0 in both screenshots."
       }
     },
     {
@@ -2359,27 +3234,21 @@
       "action_var": "accumulationFunction_snapshotCount",
       "visual_check": "a snapshot card appears in the gallery showing x=4 and its accumulated area",
       "metrics": {
-        "changed_area_ratio": 0.0005,
-        "mean_change_intensity": 92.3,
-        "changed_regions": 3,
+        "changed_area_ratio": 0.0006,
+        "mean_change_intensity": 99.7,
+        "changed_regions": 2,
         "region_bboxes_px": [
           [
-            644,
-            544,
-            652,
+            680,
+            552,
+            680,
             572
           ],
           [
             656,
-            552,
-            672,
-            572
-          ],
-          [
-            652,
-            572,
-            664,
-            576
+            560,
+            668,
+            568
           ]
         ],
         "coupling_px": null,

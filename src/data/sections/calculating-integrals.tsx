@@ -418,7 +418,7 @@ function FTCCalculationFigure() {
     const setVar = useSetVar();
 
     return (
-        <div style={{ maxHeight: "560px", overflow: "hidden" }}>
+        <div style={{ maxHeight: "500px", overflow: "hidden", position: "relative" }}>
             <Figure
                 id="calculating-integrals-figure"
                 onReset={() => {
@@ -426,7 +426,9 @@ function FTCCalculationFigure() {
                 }}
                 caption="Drag the teal point along the position curve D(t) = t² and watch the calculation update. The vertical orange bar shows D(b) - D(a), which exactly equals the shaded area under the speed curve."
             >
-                <FTCCalculationDrawing />
+                <div style={{ maxHeight: `${VIEW_HEIGHT}px`, overflow: "hidden" }}>
+                    <FTCCalculationDrawing />
+                </div>
                 <div className="px-6 pb-5">
                     <FigureSlider
                         varName="calcIntegrals_b"

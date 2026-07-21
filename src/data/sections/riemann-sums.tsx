@@ -128,6 +128,7 @@ function RiemannSumsDrawing() {
             ref={svgRef}
             viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
             className="block w-full"
+            style={{ overflow: "hidden", maxHeight: `${VIEW_HEIGHT}px` }}
             role="img"
             aria-label="Riemann sum visualization with adjustable rectangle count"
         >
@@ -419,7 +420,9 @@ function RiemannSumsFigure() {
             }}
             caption="The odometer approximates distance using rectangles. Drag the slider to add more rectangles and watch the estimate converge toward the true distance."
         >
-            <RiemannSumsDrawing />
+            <div style={{ maxHeight: "360px", overflow: "hidden" }}>
+                <RiemannSumsDrawing />
+            </div>
             <div className="px-6 pb-5 space-y-3">
                 <FigureSlider
                     varName="riemannSums_n"
